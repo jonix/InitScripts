@@ -1,0 +1,27 @@
+### Mapiton shortcuts ###
+
+MAPITON_PATH="~/Projects/Work/Mapiton"
+
+alias pigsty='cd ${MAPITON_PATH}/Native/Pigsty/MacOSX'
+
+alias mapiton='cd ${MAPITON_PATH}'
+alias functests='cd ${MAPITON_PATH}/Native/FunctionalTests/'
+alias sharedsrc='cd ${MAPITON_PATH}/Native/Source/SharedSource/CommonSource'
+
+
+alias rpig='cd ${MAPITON_PATH}/Native/Source/RenderPig/Source/CommonSource'
+alias pigerrors='cd ${MAPITON_PATH}/Native/Source/RenderPig/Resources/ErrorInclusion'
+alias pigtests='cd ${MAPITON_PATH}/Native/Source/RenderPig/TestRuns'
+
+alias lhog='cd ${MAPITON_PATH}/Native/Source/LicenseHog/Source/CommonSource'
+alias hogerrors='cd ${MAPITON_PATH}/Native/Source/LicenseHog/Resources/ErrorInclusion'
+alias hogtests='cd ${MAPITON_PATH}/Native/Source/LicenseHog/TestRuns'
+
+alias lcreator='cd ${MAPITON_PATH}/Native/Source/LicenseCreator/Source/CommonSource'
+
+
+alias pigtests='cd ${MAPITON_PATH}/Native/Source/RenderPig/TestRuns'
+alias hogtests='cd ${MAPITON_PATH}/Native/Source/LicenseHog/TestRuns'
+
+alias textpig='cd ${MAPITON_PATH}/Native/Source/Experimental/TextPig/Source/CommonSource'
+alias imgcrunch='cd ${MAPITON_PATH}/Native/Source/Experimental/ImageCruncher/Source/CommonSource'

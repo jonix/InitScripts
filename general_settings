@@ -1,0 +1,53 @@
+#!/bin/bash
+
+#export PS1="\h:\W \u\$"
+export PS1="\u:\w> "
+
+#export PATH="/usr/local/bin:/usr/local/mysql/bin:$PATH"
+#export PATH=/usr/local/mysql/bin:/Applications/MAMP/bin/php5/bin:$PATH:/Users/Jonix/Projects/Work/TopSecret/Mapiton/Native/Pigsty/MacOSX:/Users/Jonix/Scripts:
+export PATH=/Applications/Emacs.app/Contents/MacOS/:/opt/subversion/bin:Applications/MAMP/Library/bin:/Applications/MAMP/bin/php5/bin:$PATH:/Users/Jonix/Projects/Work/TopSecret/Mapiton/Native/Pigsty/MacOSX:/Users/Jonix/Scripts:/Users/Jonix/Scripts/GitScripts:/Users/Jonix/Projects/Work/Mapiton/Native/Pigsty/MacOSX
+
+export MANPATH="/usr/local/man:$MANPATH"
+
+export EDITOR="/usr/bin/mate --wait --change-dir"
+
+### For grep coloring ####
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32' # Regular 
+#export GREP_COLOR='7;32' # Invert color (set background) (Green)
+#export GREP_COLOR='5;32' # Blinking (Green)
+
+# For DistCC
+
+#export DISTCC_HOSTS='localhost JiPro.local'
+
+
+#
+# Your previous .profile  (if any) is saved as .profile.mpsaved
+# Setting the path for MacPorts.
+#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+fortunePath=`which fortune`
+if [ ! -z $fortunePath ] ; then
+	echo ""
+	echo "-----------"
+	fortune
+	echo "-----------"
+	echo ""
+fi
+
+
+## Working with history
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
+shopt -s histappend
+
+
+
+# 
+# export SURFRAW_graphical=no
+# export SURFRAW_browser=/opt/local/bin/w3m
+# export SURFRAW_text_browser=/opt/local/bin/w3m
+# export SURFRAW_graphical_browser=/Applications/Firefox.app/Contents/MacOS/firefox-bin
+# export SURFRAW_graphical_remote=yes
+# 

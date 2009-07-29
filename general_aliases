@@ -1,0 +1,12 @@
+
+### General aliases
+
+alias l='ls -lFG'
+alias lsd='ls -lF |grep /'
+
+alias baz='bzr'
+
+### an alias to make make make builds faster (it's not a typo and no pun intended)
+alias build="make -j3"
+alias rebuild="make clean && make -j3"
+

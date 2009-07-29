@@ -1,0 +1,46 @@
+#### Base skeleton for a modularized bash shell customization loading file
+
+## Loading general customization
+
+if [ -f ~/.InitScripts/general_settings ] ; then
+	echo "Loading general settings"
+	. ~/.InitScripts/general_settings
+fi
+
+
+if [ -f ~/.InitScripts/general_aliases ] ; then
+	echo "Loading general aliases"
+	. ~/.InitScripts/general_aliases
+fi
+
+if [ -f ~/.InitScripts/general_shortcuts ] ; then
+	echo "Loading general shortcuts"
+	. ~/.InitScripts/general_shortcuts
+fi
+
+
+
+#### Project specific customization
+
+## For the Mapiton project
+if [ -f ~/.InitScripts/mapiton_shortcuts ] ; then
+	echo "Loading mapiton shortcuts"
+	. ~/.InitScripts/mapiton_shortcuts
+fi
+
+## For the Mapiton project
+if [ -f ~/.InitScripts/gallery_monkey_shortcuts ] ; then
+	echo "Loading Gallery Monkey shortcuts"
+	. ~/.InitScripts/gallery_monkey_shortcuts
+fi
+
+## For the CycoreFx Website FS on local machine
+if [ -f ~/.InitScripts/ccfx_website_shortcuts ] ; then
+	echo "Loading ccfx website shortcuts"
+	. ~/.InitScripts/ccfx_website_shortcuts
+fi
+
+
+echo ""
+echo ""
+
