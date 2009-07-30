@@ -5,17 +5,23 @@
 if [ -f ~/.InitScripts/Bash/general_settings ] ; then
 	echo "Loading general settings"
 	. ~/.InitScripts/Bash/general_settings
+else
+	echo "Did not load general settings"
 fi
 
 
 if [ -f ~/.InitScripts/Bash/general_aliases ] ; then
 	echo "Loading general aliases"
 	. ~/.InitScripts/Bash/general_aliases
+else
+	echo "Did not load general aliases"
 fi
 
 if [ -f ~/.InitScripts/Bash/general_shortcuts ] ; then
 	echo "Loading general shortcuts"
 	. ~/.InitScripts/Bash/general_shortcuts
+else
+	echo "Did not load general shortcuts"
 fi
 
 
@@ -26,18 +32,24 @@ fi
 if [ -f ~/.InitScripts/Bash/mapiton_shortcuts ] ; then
 	echo "Loading mapiton shortcuts"
 	. ~/.InitScripts/Bash/mapiton_shortcuts
+else
+	echo "Did not load mapiton shortcuts"
 fi
 
 ## For the Mapiton project
 if [ -f ~/.InitScripts/Bash/gallery_monkey_shortcuts ] ; then
 	echo "Loading Gallery Monkey shortcuts"
 	. ~/.InitScripts/Bash/gallery_monkey_shortcuts
+else
+	echo "Did not load Gallery Monkey shortcuts"
 fi
 
 ## For the CycoreFx Website FS on local machine
 if [ -f ~/.InitScripts/Bash/ccfx_website_shortcuts ] ; then
 	echo "Loading ccfx website shortcuts"
 	. ~/.InitScripts/Bash/ccfx_website_shortcuts
+else
+	echo "Did not loadccfx website shortcuts"
 fi
 
 
