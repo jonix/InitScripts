@@ -1,0 +1,257 @@
+;; To keep custom variables in their own file
+;; via the customize interface (M-x customize*)
+(setq custom-file "~/.InitScripts/Emacs/.emacs-custom.el")
+(load custom-file 'noerror)
+
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(cua-mode t nil (cua-base))
+ '(save-place t nil (saveplace))
+ '(show-paren-mode t)
+ '(transient-mark-mode t))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+
+
+;; ========== Prevent Emacs from making backup files ==========
+(setq make-backup-files nil)
+
+;; Tell Emacs the Tab length
+;; For general indentation
+;; (setq-default c-basic-offset 4)
+
+;; === Start >> To tell Emacs to use a sane Tab&Space policy ===
+(setq-default tab-width 4) ; or any other preferred value
+(setq cua-auto-tabify-rectangles nil)
+
+(defadvice align (around smart-tabs activate)
+  (let ((indent-tabs-mode nil)) ad-do-it))
+
+(defadvice align-regexp (around smart-tabs activate)
+  (let ((indent-tabs-mode nil)) ad-do-it))
+
+(defmacro smart-tabs-advice (function offset)
+  (defvaralias offset 'tab-width)
+  `(defadvice ,function (around smart-tabs activate)
+     (if indent-tabs-mode
+         (progn
+          (save-excursion
+             (beginning-of-line)
+             (while (looking-at "\t*\\( +\\)\t+")
+               (replace-match "" nil nil nil 1)))
+           (setq tab-width tab-width)
+           (let ((tab-width fill-column)
+                 (,offset fill-column))
+             ad-do-it))
+       ad-do-it)))
+
+(smart-tabs-advice c-indent-line c-basic-offset)
+(smart-tabs-advice c-indent-region c-basic-offset)
+
+;; === End << To tell Emacs to use a sane Tab&Space policy ===
+
+;; The startup screen is annoying.
+(setq inhibit-startup-message t)
+
+;; Show time in status bar.
+(setq european-calendar-style t)
+(display-time)
+
+;; Setup syntax highlighting
+(setq global-font-lock-mode t)
+(setq font-lock-mode-maximum-decoration t)
+(require 'font-lock)
+
+
+;; Keystroke customization (functions)
+(global-set-key "\C-cc" 'compile)   ; to compile from within Emacs
+(global-set-key "\M-\C-r" `query-replace-regexp) ; regexp replace
+
+;; Highlight matching parenthesis () [] {} <> (depending on the mode)
+(require `paren)
+
+;; move cursor one line when going past end of page
+(setq scroll-step 1)
+
+;; something else that should make scrolling nicer
+(setq scroll-conservatively 1)
+
+;; === Start >> Setup org-mode TODO actions ===
+(setq load-path (cons "~/.InitScripts/Emacs/Plugins/org-mode/lisp" load-path))
+(require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+;; === End << Setup org-mode TODO actions ===
+
+;; == Start >> C++ IDE setup ==
+
+;; Treat .h files as C++ header files
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
+;; === Start >> Treat standard C++ header files with no file extension as C++ files ===
+(require 'cl)
+
+(defun file-in-directory-list-p (file dirlist)
+"Returns true if the file specified is contained within one of
+the directories in the list. The directories must also exist."
+(let ((dirs (mapcar 'expand-file-name dirlist))
+(filedir (expand-file-name (file-name-directory file))))
+(and
+(file-directory-p filedir)
+(member-if (lambda (x) ; Check directory prefix matches
+(string-match (substring x 0 (min(length filedir) (length x))) filedir))
+dirs))))
+
+(defun buffer-standard-include-p ()
+"Returns true if the current buffer is contained within one of
+the directories in the INCLUDE environment variable."
+(and (getenv "INCLUDE")
+(file-in-directory-list-p buffer-file-name (split-string (getenv "INCLUDE") path-separator))))
+
+(add-to-list 'magic-fallback-mode-alist '(buffer-standard-include-p . c++-mode))
+
+;; == End << Treat standard C++ header files with no file extension as C++ files ===
+
+
+;; For loading C++/header file counterpart
+(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
+(define-key global-map "\C-xg" 'sourcepair-load)
+
+;; For using EBrowse (ctags for C++)
+;; (global-set-key [f5] 'ebrowse-tree-mode)
+;; (add-to-list 'auto-mode-alist '("BROWSE\\.*" . ebrowse-tree-mode))
+
+;; For YASnippet (TextMate like snippets, think "cl+<Tab>" for a full C++ class definition)
+(add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
+(require 'yasnippet) ;; not yasnippet-bundle
+(yas/initialize)
+(yas/load-directory "~/.InitScripts/Emacs/Plugins/yasnippet/snippets")
+
+
+;; For IDO (Improved buffer switching, much like TextMate ALT+T fuzzy matching) (Ovverides C-x C-f and C-x b)
+(require 'ido)
+(ido-mode t)
+
+
+;; For Cedet (Project management)
+(load-file "~/.InitScripts/Emacs/Plugins/cedet/common/cedet.el")
+(global-ede-mode t)
+(semantic-load-enable-excessive-code-helpers)
+;(semantic-load-enable-excessive-code-helpers)
+;(semantic-load-enable-excessive-code-helpers)
+
+;; Enable EDE for a pre-existing C++ project
+;; (ede-cpp-root-project "NAME" :file "~/myproject/Makefile")
+
+
+;; Enabling Semantic (code-parsing, smart completion) features
+;; Select one of the following:
+
+;; * This enables the database and idle reparse engines
+;; (semantic-load-enable-minimum-features)
+
+;; * This enables some tools useful for coding, such as summary mode
+;;   imenu support, and the semantic navigator
+;; (semantic-load-enable-code-helpers)
+
+;; * This enables even more coding tools such as intellisense mode
+;;   decoration mode, and stickyfunc mode (plus regular code helpers)
+(semantic-load-enable-gaudy-code-helpers)
+
+;; * This enables the use of Exuberent ctags if you have it installed.
+;;   If you use C++ templates or boost, you should NOT enable it.
+;; (semantic-load-enable-all-exuberent-ctags-support)
+;;   Or, use one of these two types of support.
+;;   Add support for new languges only via ctags.
+;; (semantic-load-enable-primary-exuberent-ctags-support)
+;;   Add support for using ctags as a backup parser.
+;; (semantic-load-enable-secondary-exuberent-ctags-support)
+
+;; Enable SRecode (Template management) minor-mode.
+;; (global-srecode-minor-mode 1)
+
+;; Provide intellisense when typing . on a instance name
+(defun my-cedet-hook ()
+  (local-set-key [(control return)] 'semantic-ia-complete-symbol)
+  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
+  (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
+  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle))
+(add-hook 'c-mode-common-hook 'my-cedet-hook)
+
+(defun my-c-mode-cedet-hook ()
+ (local-set-key "." 'semantic-complete-self-insert)
+ (local-set-key ">" 'semantic-complete-self-insert))
+(add-hook 'c-mode-common-hook 'my-c-mode-cedet-hook)
+
+(require 'semantic-gcc)
+
+;; ==== <<< Cedet end =========
+
+;; For Git commands
+;;(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
+;;(require 'magit)
+(add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
+(require 'magit)
+
+
+
+;; === << Other stuff ===
+
+
+;; For disabling pc speaker beeps. Flashes instead
+(setq visible-bell t)
+
+;; Key bindings
+
+(global-set-key "\C-l" 'goto-line) ; Go to a specified line number
+
+
+;; For better support for .rhtml Ruby files
+(defun rhtml-modes ()
+  (two-mode-mode)
+  (rhtml-minor-mode))
+
+(setq auto-mode-alist
+      (cons '("\\.rhtml$" . rhtml-modes)
+	    auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.html\\.erb$" . rhtml-modes)
+	    auto-mode-alist))
+
+;; For RoR in RubyOnRails (From the RoR official site recommendation)
+;; (setq load-path (cons "~/.InitScripts/Emacs/Plugins/emacs-rails" load-path))
+;; (require 'rails)
+
+
+
+;;(ede-cpp-root-project "Test"
+;;                :name "Test Project"
+;;                :file "~/Projects/Work/Mapiton/Native/RenderPig/Source/CommonSource/CMakeLists.txt"
+;;                :include-path '("/"
+;;                                "/Auxiliary/"
+;;                                "/Rendering//"
+;;                                "/UIs/"
+;;                               )
+;;;;                :system-include-path '("~/exp/include")
+;;                :spp-table '(("isUnix" . "")
+;;                             ("BOOST_TEST_DYN_LINK" . "")))
+;;
+
+
+
+
+;; This might only be necessary on Mac OS X
+;; Note: Scrollbars on OS X is relative to the amount of scrolling (bottom of document is a very small scrollbar)
+(when window-system
+  (mwheel-install))
+
