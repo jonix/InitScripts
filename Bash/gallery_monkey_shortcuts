@@ -1,5 +1,5 @@
 
 ### GalleryMonkey shortcuts #######
-alias monkey='cd ~/Projects/Work/GalleryMonkey'
+alias monkey='cd ${HOME}/Projects/Work/GalleryMonkey'
 
 

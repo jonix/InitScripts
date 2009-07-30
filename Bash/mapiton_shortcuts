@@ -1,6 +1,6 @@
 ### Mapiton shortcuts ###
 
-MAPITON_PATH="~/Projects/Work/Mapiton"
+MAPITON_PATH="${HOME}/Projects/Work/Mapiton"
 
 alias pigsty='cd ${MAPITON_PATH}/Native/Pigsty/MacOSX'
 
