@@ -3,6 +3,8 @@
 (setq custom-file "~/.InitScripts/Emacs/.emacs-custom.el")
 (load custom-file 'noerror)
 
+(add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
+
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -132,7 +134,6 @@ the directories in the INCLUDE environment variable."
 ;; (add-to-list 'auto-mode-alist '("BROWSE\\.*" . ebrowse-tree-mode))
 
 ;; For YASnippet (TextMate like snippets, think "cl+<Tab>" for a full C++ class definition)
-(add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
 (yas/load-directory "~/.InitScripts/Emacs/Plugins/yasnippet/snippets")
@@ -211,8 +212,11 @@ the directories in the INCLUDE environment variable."
 ;; For disabling pc speaker beeps. Flashes instead
 (setq visible-bell t)
 
-;; Key bindings
+;; For smooth scrolling
+(require 'smooth-scrolling)
 
+
+;; Key bindings
 (global-set-key "\C-l" 'goto-line) ; Go to a specified line number
 
 
@@ -254,4 +258,5 @@ the directories in the INCLUDE environment variable."
 ;; Note: Scrollbars on OS X is relative to the amount of scrolling (bottom of document is a very small scrollbar)
 (when window-system
   (mwheel-install))
+
 
