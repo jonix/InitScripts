@@ -249,6 +249,8 @@ the directories in the INCLUDE environment variable."
 
 ;; Key bindings
 (global-set-key "\C-l" 'goto-line) ; Go to a specified line number
+(global-set-key (kbd "C-;") 'comment-region); Comment a selection
+(global-set-key (kbd "C-:") 'uncomment-region); Remove comments from a section
 
 
 ;; For better support for .rhtml Ruby files
