@@ -5,6 +5,7 @@ MAPITON_PATH="${HOME}/Projects/Work/Mapiton"
 alias pigsty='cd ${MAPITON_PATH}/Native/Pigsty/MacOSX'
 
 alias mapiton='cd ${MAPITON_PATH}'
+alias native='cd ${MAPITON_PATH}/Native/Source'
 alias functests='cd ${MAPITON_PATH}/Native/FunctionalTests/'
 alias sharedsrc='cd ${MAPITON_PATH}/Native/Source/SharedSource/CommonSource'
 
@@ -25,3 +26,4 @@ alias hogtests='cd ${MAPITON_PATH}/Native/Source/LicenseHog/TestRuns'
 
 alias textpig='cd ${MAPITON_PATH}/Native/Source/Experimental/TextPig/Source/CommonSource'
 alias imgcrunch='cd ${MAPITON_PATH}/Native/Source/Experimental/ImageCruncher/Source/CommonSource'
+
