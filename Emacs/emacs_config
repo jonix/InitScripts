@@ -72,6 +72,9 @@
 (setq font-lock-mode-maximum-decoration t)
 (require 'font-lock)
 
+;; To remove trailing whitespaces
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 
 ;; Keystroke customization (functions)
 (global-set-key "\C-cc" 'compile)   ; to compile from within Emacs
