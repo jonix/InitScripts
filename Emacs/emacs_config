@@ -1,3 +1,12 @@
+;; This is the configuration load points for the customization of Emacs
+;; Make a symbolic link from this file to ~/.emacs
+;;
+;; To speed up the start time of Emacs, you could byte-compile the .el files
+;; in the Plugins directory
+;; In a dired buffer of the ~/bin/emacslib
+;; directory, mark the .el files with 'M' and then byte-compile them with  'B'.
+
+
 ;; To keep custom variables in their own file
 ;; via the customize interface (M-x customize*)
 (setq custom-file "~/.InitScripts/Emacs/.emacs-custom.el")
@@ -79,6 +88,7 @@
 ;; Keystroke customization (functions)
 (global-set-key "\C-cc" 'compile)   ; to compile from within Emacs
 (global-set-key "\M-\C-r" `query-replace-regexp) ; regexp replace
+
 
 ;; Highlight matching parenthesis () [] {} <> (depending on the mode)
 (require `paren)
@@ -276,7 +286,7 @@ the directories in the INCLUDE environment variable."
 (setq auto-mode-alist
       (cons '("\\.html\\.erb$" . rhtml-modes)
 	    auto-mode-alist))
-	
+
 
 ;; For RoR in RubyOnRails (From the RoR official site recommendation)
 ;; (setq load-path (cons "~/.InitScripts/Emacs/Plugins/emacs-rails" load-path))
@@ -321,3 +331,18 @@ the directories in the INCLUDE environment variable."
              (not (file-executable-p buffer-file-name))
               (shell-command (concat "chmod u+x " (shell-quote-argument buffer-file-name)))             (message
               (concat "Saved as script: " buffer-file-name)))))
+
+
+;; Open files with sudo privs
+(defun find-alternative-file-with-sudo ()
+  "Open current buffer as root!"
+   (interactive)
+   (when buffer-file-name
+     (find-alternate-file
+        (concat "/sudo:root@localhost:"
+ 	      buffer-file-name))))
+ (global-set-key (kbd "C-x C-r") 'find-alternative-file-with-sudo)
+
+;; Add Latex AUCTex support
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
