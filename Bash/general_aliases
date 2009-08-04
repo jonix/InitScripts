@@ -1,8 +1,14 @@
 
 ### General aliases
 
+# A coloured ls
 alias l='ls -lFG'
+
+# A ls that only lists directories
 alias lsd='ls -lF |grep /'
+
+# A ls that lists hidden files
+alias lsh='ls -lFGA'
 
 alias baz='bzr'
 

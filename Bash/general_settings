@@ -5,7 +5,7 @@ export PS1="\u:\w> "
 
 #export PATH="/usr/local/bin:/usr/local/mysql/bin:$PATH"
 #export PATH=/usr/local/mysql/bin:/Applications/MAMP/bin/php5/bin:$PATH:/Users/Jonix/Projects/Work/TopSecret/Mapiton/Native/Pigsty/MacOSX:/Users/Jonix/Scripts:
-export PATH=/Applications/Emacs.app/Contents/MacOS/:/opt/subversion/bin:Applications/MAMP/Library/bin:/Applications/MAMP/bin/php5/bin:$PATH:/Users/Jonix/Projects/Work/TopSecret/Mapiton/Native/Pigsty/MacOSX:/Users/Jonix/Scripts:/Users/Jonix/Scripts/GitScripts:/Users/Jonix/Projects/Work/Mapiton/Native/Pigsty/MacOSX
+export PATH=/Applications/Emacs.app/Contents/MacOS/:/opt/subversion/bin:Applications/MAMP/Library/bin:/Applications/MAMP/bin/php5/bin:/Users/Jonix/Scripts:/Users/Jonix/Scripts/GitScripts:/Users/Jonix/Projects/Work/Mapiton/Native/Pigsty/MacOSX:/usr/texbin/latex:$PATH:
 
 export MANPATH="/usr/local/man:$MANPATH"
 
