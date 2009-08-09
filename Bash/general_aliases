@@ -10,6 +10,9 @@ alias lsd='ls -lF |grep /'
 # A ls that lists hidden files
 alias lsh='ls -lFGA'
 
+# A ls that ignores colors
+alias le="ls -lF --color=never"
+
 alias baz='bzr'
 
 ### an alias to make make make builds faster (it's not a typo and no pun intended)

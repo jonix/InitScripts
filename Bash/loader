@@ -25,6 +25,27 @@ else
 fi
 
 
+### OS specific settings ###
+
+if [ `uname` == "Linux" ] ; then
+	if [ -f ~/.InitScripts/Bash/linux_settings ] ; then
+		. ~/.InitScripts/Bash/linux_settings
+	else
+		echo "No Linux specific settings file found"
+	fi
+elif [ `uname` == "Darwin" ] ; then
+	if [ -f ~/.InitScripts/Bash/macosx_settings ] ; then
+		. ~/.InitScripts/Bash/macosx_settings
+	else
+		echo "No Mac OS X specific settings file found"
+	fi
+else
+	echo "Unknown OS, does not load any OS specific settings"
+fi
+
+
+### OS specific shortcuts ###
+
 
 #### Project specific customization
 
