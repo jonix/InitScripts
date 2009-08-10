@@ -269,7 +269,7 @@ the directories in the INCLUDE environment variable."
 (setq visible-bell t)
 
 ;; For smooth scrolling
-(require 'smooth-scrolling)
+;; (require 'smooth-scrolling)
 
 
 ;; Key bindings

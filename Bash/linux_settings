@@ -1,0 +1,7 @@
+#!/bin/bash
+
+### Linux specific settings ####
+
+echo "Loading Linux specific settings"
+
+export EDITOR="emacs"
