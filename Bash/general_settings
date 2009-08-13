@@ -44,3 +44,8 @@ shopt -s histappend
 # export SURFRAW_graphical_browser=/Applications/Firefox.app/Contents/MacOS/firefox-bin
 # export SURFRAW_graphical_remote=yes
 #
+
+
+# use the up/down keys to cycle through a list of commands starting with the given letters
+bind '"\e[A"':history-search-backward
+bind '"\e[B"':history-search-forward
