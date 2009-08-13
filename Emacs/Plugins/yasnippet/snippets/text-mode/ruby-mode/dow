@@ -1,6 +1,6 @@
 #name : downto(...) { |n| ... }
 #group : control structure
 # --
-downto(${0}) { |${n}|
+downto(${0}) do |${n}|
   $0
-}
+end

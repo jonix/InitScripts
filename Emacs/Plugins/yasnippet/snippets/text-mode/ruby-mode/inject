@@ -1,4 +1,6 @@
 #name : inject(...) { |...| ... }
 #group : collections
 # --
-inject(${1:0}) { |${2:injection}, ${3:element}| $0 }
+inject(${1:0}) do |${2:injection}, ${3:element}| 
+	$0
+end

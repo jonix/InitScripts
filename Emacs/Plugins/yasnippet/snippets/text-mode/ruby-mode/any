@@ -1,4 +1,6 @@
 #name : any? { |...| ... }
 #group : collections
 # --
-any? { |${e}| $0 }
+any? do |${e}| 
+	$0
+end

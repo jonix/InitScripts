@@ -1,0 +1,3 @@
+#name: str
+# --
+const std::string& $0

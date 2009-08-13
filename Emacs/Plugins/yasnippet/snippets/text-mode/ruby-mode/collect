@@ -1,4 +1,6 @@
 #name : collect { |...| ... }
 #group : collections
 # --
-collect { |${e}| $0 }
+collect do |${e}| 
+	$0
+end

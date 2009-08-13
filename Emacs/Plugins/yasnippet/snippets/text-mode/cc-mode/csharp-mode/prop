@@ -5,8 +5,7 @@
 /// $5
 /// </summary>
 /// <value>$6</value>
-$1 $2 $3
-{
+$1 $2 $3 {
     get {
         return this.$4;
     }

@@ -10,8 +10,7 @@ private $1 ${2:$(if (> (length text) 0) (format "_%s%s" (downcase (substring tex
 /// ${3:Description}
 /// </summary>
 /// <value><c>$1</c></value>
-public ${1:Type} ${2:Name}
-{
+public ${1:Type} ${2:Name} {
     get {
         return this.${2:$(if (> (length text) 0) (format "_%s%s" (downcase (substring text 0 1)) (substring text 1 (length text))) "")};
     }

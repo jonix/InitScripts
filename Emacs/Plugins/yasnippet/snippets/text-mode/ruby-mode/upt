@@ -1,6 +1,6 @@
 #name : upto(...) { |n| ... }
 #group : control structure
 # --
-upto(${n}) { |${i}|
+upto(${n}) do |${i}|
   $0
-}
+end
