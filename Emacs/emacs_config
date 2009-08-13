@@ -354,3 +354,11 @@ the directories in the INCLUDE environment variable."
 ;; Add JavaScript support
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+
+;; Reindent the copy&pasted code
+(defadvice yank (after indent-region activate)
+ (when (member major-mode '(c++-mode emacs-lisp-mode python-mode c-mode))
+   (unless mark-active
+     (exchange-point-and-mark))
+   (indent-region (region-beginning) (region-end) nil)))
