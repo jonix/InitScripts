@@ -359,6 +359,7 @@ the directories in the INCLUDE environment variable."
 ;; Reindent the copy&pasted code
 (defadvice yank (after indent-region activate)
  (when (member major-mode '(c++-mode emacs-lisp-mode python-mode c-mode))
-   (unless mark-active
-     (exchange-point-and-mark))
-   (indent-region (region-beginning) (region-end) nil)))
+	(unless mark-active
+	  (exchange-point-and-mark))
+	(indent-region (region-beginning) (region-end) nil)
+	(goto-char (region-end))))
