@@ -366,5 +366,21 @@ the directories in the INCLUDE environment variable."
 
 ;; Tell Emacs to have a fixed compilation buffers
 ;; (Special Buffer Frames)
-setq special-display-buffer-names
-           '("*Completions*" "*grep*" "*tex-shell*"))
+;; (setq special-display-buffer-names
+;;	  '("*Completions*" "*grep*" "*tex-shell*"))
+
+
+;; Tell Emacs to syntax highlight file that is emacs_config
+(setq auto-mode-alist (append
+	  '(("emacs_config" . lisp-mode))
+			 auto-mode-alist)
+      )
+
+;; Tell Emacs to highlight Arduino projects with C++ style
+(setq auto-mode-alist (append
+	  '((".*\\.pde\\'" . c++-mode))
+			 auto-mode-alist)
+)
+
+
+
