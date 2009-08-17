@@ -363,3 +363,8 @@ the directories in the INCLUDE environment variable."
 	  (exchange-point-and-mark))
 	(indent-region (region-beginning) (region-end) nil)
 	(goto-char (region-end))))
+
+;; Tell Emacs to have a fixed compilation buffers
+;; (Special Buffer Frames)
+setq special-display-buffer-names
+           '("*Completions*" "*grep*" "*tex-shell*"))
