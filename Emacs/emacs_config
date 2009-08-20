@@ -387,5 +387,6 @@ the directories in the INCLUDE environment variable."
 (windmove-default-keybindings 'meta)
 
 
-
+;; Let M-x shell show correct colors when working with shell
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
