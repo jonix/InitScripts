@@ -382,5 +382,10 @@ the directories in the INCLUDE environment variable."
 			 auto-mode-alist)
 )
 
+;; For easier navigation between multiple visible windows
+;; Use meta-arrow keys for simulating CTRL+o
+(windmove-default-keybindings 'meta)
+
+
 
 
