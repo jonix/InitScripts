@@ -1,0 +1,10 @@
+#name : cpp class declaration
+# --
+${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}::$1($0) {
+}
+
+$1::~$1() {
+}
+
+
+
