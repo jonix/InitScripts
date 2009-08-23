@@ -1,3 +1,4 @@
+
 ;; This is the configuration load points for the customization of Emacs
 ;; Make a symbolic link from this file to ~/.emacs
 ;;
@@ -31,13 +32,54 @@
   ;; If there is more than one, they won't work right.
  )
 
+;; The startup screen is annoying.
+(setq inhibit-startup-message t)
 
-;; ========== Prevent Emacs from making backup files ==========
+;; For disabling pc speaker beeps. Flashes instead
+(setq visible-bell t)
+
+;; For smooth scrolling
+;; (require 'smooth-scrolling)
+
+;; Show time in status bar.
+(setq european-calendar-style t)
+(display-time)
+
+;; To remove trailing whitespaces
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; move cursor one line when going past end of page
+(setq scroll-step 1)
+
+;; something else that should make scrolling nicer
+(setq scroll-conservatively 1)
+
+;; Prevent Emacs from making backup files
 (setq make-backup-files nil)
 
 ;; Tell Emacs the Tab length
 ;; For general indentation
 ;; (setq-default c-basic-offset 4)
+
+;; This might only be necessary on Mac OS X
+;; Note: Scrollbars on OS X is relative to the amount of scrolling (bottom of document is a very small scrollbar)
+(when window-system
+  (mwheel-install))
+
+;; (set-frame-parameter (selected-frame) 'alpha 70)
+
+
+
+;; Setup syntax highlighting
+(setq global-font-lock-mode t)
+(setq font-lock-mode-maximum-decoration t)
+(require 'font-lock)
+
+;; Highlight matching parenthesis () [] {} <> (depending on the mode)
+(require 'paren)
+
+
+
 
 ;; === Start >> To tell Emacs to use a sane Tab&Space policy ===
 (setq-default tab-width 4) ; or any other preferred value
@@ -69,40 +111,6 @@
 
 ;; === End << To tell Emacs to use a sane Tab&Space policy ===
 
-;; The startup screen is annoying.
-(setq inhibit-startup-message t)
-
-;; Show time in status bar.
-(setq european-calendar-style t)
-(display-time)
-
-;; Setup syntax highlighting
-(setq global-font-lock-mode t)
-(setq font-lock-mode-maximum-decoration t)
-(require 'font-lock)
-
-;; To remove trailing whitespaces
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-
-;; Keystroke customization (functions)
-(global-set-key "\C-cc" 'compile)						; to compile from within Emacs
-(global-set-key "\C-cv" 'recompile)						; to compile from within Emacs
-(global-set-key "\C-c." 'next-error)   					; Go to next error
-(global-set-key "\C-c," 'previous-error)				; Go to previous error
-
-(global-set-key "\M-\C-r" `query-replace-regexp) 		; regexp replace
-
-
-
-;; Highlight matching parenthesis () [] {} <> (depending on the mode)
-(require `paren)
-
-;; move cursor one line when going past end of page
-(setq scroll-step 1)
-
-;; something else that should make scrolling nicer
-(setq scroll-conservatively 1)
 
 ;; === Start >> Setup org-mode TODO actions ===
 (setq load-path (cons "~/.InitScripts/Emacs/Plugins/org-mode/lisp" load-path))
@@ -230,7 +238,7 @@ the directories in the INCLUDE environment variable."
 )
 
 
-;; For CMake mode
+;; === <<< For CMake mode start =========
 (require 'cmake-mode)
 (setq auto-mode-alist
       (append '(("CMakeLists\\.txt\\'" . cmake-mode)
@@ -254,7 +262,10 @@ the directories in the INCLUDE environment variable."
 	  )
 (add-hook 'cmake-mode-hook (function cmake-rename-buffer))
 
-;; For Waf / Scons mode
+;; === >>>> For CMake mode end =========
+
+
+;; === <<< For Waf / Scons mode start
 (setq auto-mode-alist
      (cons '("wscript" . python-mode) auto-mode-alist))
 
@@ -263,24 +274,9 @@ the directories in the INCLUDE environment variable."
 (setq auto-mode-alist
      (cons '("SConscript" . python-mode) auto-mode-alist))
 
+;; === >>>> For CMake mode end =========
 
-;; === << Other stuff ===
-
-
-;; For disabling pc speaker beeps. Flashes instead
-(setq visible-bell t)
-
-;; For smooth scrolling
-;; (require 'smooth-scrolling)
-
-
-;; Key bindings
-(global-set-key "\C-l" 'goto-line) ; Go to a specified line number
-(global-set-key (kbd "C-;") 'comment-region); Comment a selection
-(global-set-key (kbd "C-:") 'uncomment-region); Remove comments from a section
-
-
-;; For better support for .rhtml Ruby files
+;; === <<< Ruby and .rhtml support start =========
 (defun rhtml-modes ()
   (two-mode-mode)
   (rhtml-minor-mode))
@@ -296,6 +292,8 @@ the directories in the INCLUDE environment variable."
 ;; For RoR in RubyOnRails (From the RoR official site recommendation)
 ;; (setq load-path (cons "~/.InitScripts/Emacs/Plugins/emacs-rails" load-path))
 ;; (require 'rails)
+
+;; === >>> Ruby and .rhtml support end  =========
 
 
 
@@ -313,18 +311,7 @@ the directories in the INCLUDE environment variable."
 ;;
 
 
-
-
-;; This might only be necessary on Mac OS X
-;; Note: Scrollbars on OS X is relative to the amount of scrolling (bottom of document is a very small scrollbar)
-(when window-system
-  (mwheel-install))
-
-
-;; (set-frame-parameter (selected-frame) 'alpha 70)
-
-
-;; To make a new script executable when saving
+;; === <<< To make a new script executable when saving start =========
 (add-hook 'after-save-hook
         #'(lambda ()
         (and (save-excursion
@@ -336,17 +323,8 @@ the directories in the INCLUDE environment variable."
              (not (file-executable-p buffer-file-name))
               (shell-command (concat "chmod u+x " (shell-quote-argument buffer-file-name)))             (message
               (concat "Saved as script: " buffer-file-name)))))
+;; === >>> To make a new script executable when saving end =========
 
-
-;; Open files with sudo privs
-(defun find-alternative-file-with-sudo ()
-  "Open current buffer as root!"
-   (interactive)
-   (when buffer-file-name
-     (find-alternate-file
-        (concat "/sudo:root@localhost:"
- 	      buffer-file-name))))
- (global-set-key (kbd "C-x C-r") 'find-alternative-file-with-sudo)
 
 ;; Add Latex AUCTex support
 (load "auctex.el" nil t t)
@@ -358,13 +336,27 @@ the directories in the INCLUDE environment variable."
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 
-;; Reindent the copy&pasted code
+;; === <<< Open files with sudo privs start =========
+(defun find-alternative-file-with-sudo ()
+  "Open current buffer as root!"
+   (interactive)
+   (when buffer-file-name
+     (find-alternate-file
+        (concat "/sudo:root@localhost:"
+ 	      buffer-file-name))))
+ (global-set-key (kbd "C-x C-r") 'find-alternative-file-with-sudo)
+;; === <<< Open files with sudo privs end =========
+
+
+;; === <<< Reindent the copy&pasted code start =======
 (defadvice yank (after indent-region activate)
  (when (member major-mode '(c++-mode emacs-lisp-mode python-mode c-mode ruby-mode))
 	(unless mark-active
 	  (exchange-point-and-mark))
 	(indent-region (region-beginning) (region-end) nil)
 	(goto-char (region-end))))
+
+;; === >>> Reindent the copy&pasted code end =======
 
 ;; Tell Emacs to have a fixed compilation buffers
 ;; (Special Buffer Frames)
@@ -390,4 +382,8 @@ the directories in the INCLUDE environment variable."
 
 ;; Let M-x shell show correct colors when working with shell
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+
+;;; Loading extracted settings ;;;
+(load-file "/home/jonix/.InitScripts/Emacs/emacs_config_keybindings")
 
