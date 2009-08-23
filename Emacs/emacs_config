@@ -347,18 +347,6 @@ the directories in the INCLUDE environment variable."
 ;;	  '("*Completions*" "*grep*" "*tex-shell*"))
 
 
-;; Tell Emacs to syntax highlight file that is emacs_config
-(setq auto-mode-alist (append
-	  '(("emacs_config" . lisp-mode))
-			 auto-mode-alist)
-      )
-
-;; Tell Emacs to highlight Arduino projects with C++ style
-(setq auto-mode-alist (append
-	  '((".*\\.pde\\'" . c++-mode))
-			 auto-mode-alist)
-)
-
 ;; For easier navigation between multiple visible windows
 ;; Use meta-arrow keys for simulating CTRL+o
 (windmove-default-keybindings 'meta)
@@ -368,5 +356,7 @@ the directories in the INCLUDE environment variable."
 
 
 ;;; Loading extracted settings ;;;
-(load-file "/home/jonix/.InitScripts/Emacs/emacs_config_keybindings")
+(load-file "/home/jonix/.InitScripts/Emacs/emacs_config_highlighting.el")
+(load-file "/home/jonix/.InitScripts/Emacs/emacs_config_keybindings.el")
+
 
