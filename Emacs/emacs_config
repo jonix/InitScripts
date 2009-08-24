@@ -140,7 +140,7 @@
 ;; (global-set-key [f5] 'ebrowse-tree-mode)
 ;; (add-to-list 'auto-mode-alist '("BROWSE\\.*" . ebrowse-tree-mode))
 
-;; For YASnippet (TextMate like snippets, think "cl+<Tab>" for a full C++ class definition)
+;;;; For YASnippet (TextMate like snippets, think "cl+<Tab>" for a full C++ class definition)
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
 (yas/load-directory "~/.InitScripts/Emacs/Plugins/yasnippet/snippets")
@@ -319,7 +319,7 @@
 
 
 ;;; Loading extracted settings ;;;
-(load-file "/home/jonix/.InitScripts/Emacs/emacs_config_highlighting.el")
-(load-file "/home/jonix/.InitScripts/Emacs/emacs_config_keybindings.el")
+(load-file "~/.InitScripts/Emacs/emacs_config_highlighting.el")
+(load-file "~/.InitScripts/Emacs/emacs_config_keybindings.el")
 
 
