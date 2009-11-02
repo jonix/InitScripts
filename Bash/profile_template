@@ -8,3 +8,17 @@ fi
 
 . ~/.InitScripts/Bash/loader
 
+
+##
+# Your previous /Users/jonix/.profile file was backed up as /Users/jonix/.profile.macports-saved_2009-09-07_at_11:25:12
+##
+
+
+##
+# Your previous /Users/jonix/.profile file was backed up as /Users/jonix/.profile.macports-saved_2009-09-16_at_15:28:23
+##
+
+# MacPorts Installer addition on 2009-09-16_at_15:28:23: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
