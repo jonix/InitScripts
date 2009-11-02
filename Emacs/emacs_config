@@ -21,6 +21,9 @@
 ;; For disabling pc speaker beeps. Flashes instead
 (setq visible-bell t)
 
+;; For using the built-in clipboard provided by the OS
+(setq menu-bar-enable-clipboard t)
+
 ;; For smooth scrolling
 ;; (require 'smooth-scrolling)
 
