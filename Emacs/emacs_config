@@ -151,20 +151,41 @@
 ;; === End << To tell Emacs to use a sane Tab&Space policy ===
 
 
-;; === Start >> Setup org-mode TODO actions ===
-(setq load-path (cons "~/.InitScripts/Emacs/Plugins/org-mode/lisp" load-path))
-(require 'org-install)
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
-;; === End << Setup org-mode TODO actions ===
+;; === <<< To make a new script executable when saving start =========
+(add-hook 'after-save-hook
+        #'(lambda ()
+        (and (save-excursion
+               (save-restriction
+                 (widen)
+                 (goto-char (point-min))
+                 (save-match-data
+                   (looking-at "^#!"))))
+             (not (file-executable-p buffer-file-name))
+              (shell-command (concat "chmod u+x " (shell-quote-argument buffer-file-name)))             (message
+              (concat "Saved as script: " buffer-file-name)))))
+;; === >>> To make a new script executable when saving end =========
+
+;; ======= >>> Easy Gnu Privacy Guard (eGPG) ==========
+(require 'epa)
+(epa-file-enable)
+ ;; ====== <<< Easy Gnu Privacy Guard (eGPG) end ==========
+
+;; ====== >>> Recent files support ==========
+(require 'recentf) ;; save recently used files
+(recentf-mode t)
+(setq
+   recentf-max-saved-items 100
+   recentf-max-menu-items 25
+)
+(add-hook 'kill-emacs-hook 'recentf-save-list)
+;; ====== <<< Recent files end ==========
+
 
 ;; == Start >> C++ IDE setup ==
 
 ;; For loading C++/header file counterpart
-(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
-(define-key global-map "\C-xg" 'sourcepair-load)
+;; (load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
+;; (define-key global-map "\C-xg" 'sourcepair-load)
 
 ;; For using EBrowse (ctags for C++)
 ;; (global-set-key [f5] 'ebrowse-tree-mode)
@@ -231,27 +252,6 @@
      (cons '("SConscript" . python-mode) auto-mode-alist))
 
 ;; === >>>> For CMake mode end =========
-
-;; === <<< Ruby and .rhtml support start =========
-(defun rhtml-modes ()
-  (two-mode-mode)
-  (rhtml-minor-mode))
-
-(setq auto-mode-alist
-      (cons '("\\.rhtml$" . rhtml-modes)
-	    auto-mode-alist))
-(setq auto-mode-alist
-      (cons '("\\.html\\.erb$" . rhtml-modes)
-	    auto-mode-alist))
-
-
-;; For RoR in RubyOnRails (From the RoR official site recommendation)
-;; (setq load-path (cons "~/.InitScripts/Emacs/Plugins/emacs-rails" load-path))
-;; (require 'rails)
-
-;; === >>> Ruby and .rhtml support end  =========
-
-
 
 ;;(ede-cpp-root-project "Test"
 ;;                :name "Test Project"
@@ -323,7 +323,61 @@
 
 ;; =============== Disabled C++ support end ====================
 
+;; === Start >> Setup org-mode TODO actions ===
+(setq load-path (cons "~/.InitScripts/Emacs/Plugins/org-mode/lisp" load-path))
+(require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+;; === End << Setup org-mode TODO actions ===
 
+;; ======= >>> Org mode start =======
+;; Remember
+(org-remember-insinuate)
+  (setq org-indent-mode t)
+  (setq org-hide-leading-stars t)
+  (setq org-directory "~/Documents/GTD/")
+  (setq org-default-notes-file (concat org-directory "/notes.org"))
+
+;; ======= <<< Org mode end ===========
+
+;; ==== >>> Add JavaScript support ====
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;; ==== <<< Add JavaScript support end ====
+
+;; === >>> Add Latex AUCTex support ====
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
+;; == <<< Add Latex AUCTex support end ====
+
+;; === <<< Ruby and .rhtml support start =========
+(defun rhtml-modes ()
+  (two-mode-mode)
+  (rhtml-minor-mode))
+
+(setq auto-mode-alist
+      (cons '("\\.rhtml$" . rhtml-modes)
+	    auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.html\\.erb$" . rhtml-modes)
+	    auto-mode-alist))
+
+
+;; For RoR in RubyOnRails (From the RoR official site recommendation)
+;; (setq load-path (cons "~/.InitScripts/Emacs/Plugins/emacs-rails" load-path))
+;; (require 'rails)
+
+;; === >>> Ruby and .rhtml support end  =========
+
+;; === >>> Complete anything support =====
+
+;; Add company The package to COMP(lete) ANY(thing)
+;; (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins/company")
+;; (autoload 'company-mode "company" nil t)
+
+;; ==== <<< Complete anything end ====
 
 
 ;;; Loading extracted settings ;;;
