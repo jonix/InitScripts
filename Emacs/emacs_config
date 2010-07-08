@@ -21,11 +21,16 @@
 ;; For disabling pc speaker beeps. Flashes instead
 (setq visible-bell t)
 
+
 ;; For using the built-in clipboard provided by the OS
 (setq menu-bar-enable-clipboard t)
 
 ;; For smooth scrolling
 ;; (require 'smooth-scrolling)
+
+;; For Delete to delete characters forward instead of backwards
+(normal-erase-is-backspace-mode 0)
+;; (keyboard-translate ?\C-? ?\C-d)
 
 ;; Show time in status bar.
 (setq european-calendar-style t)
@@ -54,7 +59,14 @@
 
 ;; (set-frame-parameter (selected-frame) 'alpha 70)
 
+;; make C-h delete (not Help) in ttys
+(global-set-key [?\C-h] 'backward-delete-char)
 
+;;Del will delete forward and Backspace will delete backwards
+(normal-erase-is-backspace-mode)
+
+;; Help is now M-? instead of C-h
+(global-set-key "\M-\?" 'help-command)
 
 
 ;; === <<< Open files with sudo privs start =========
@@ -208,7 +220,6 @@
 (add-hook 'cmake-mode-hook (function cmake-rename-buffer))
 
 ;; === >>>> For CMake mode end =========
-
 
 ;; === <<< For Waf / Scons mode start
 (setq auto-mode-alist
