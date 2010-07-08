@@ -181,6 +181,7 @@
   ; (setq uniquify-buffer-name-style 'post-forward)
 )
 
+;; =============== Disabled C++ support start ====================
 
 ;; === <<< For CMake mode start =========
 (require 'cmake-mode)
@@ -254,45 +255,20 @@
 ;;                             ("BOOST_TEST_DYN_LINK" . "")))
 ;;
 
-
-;; === <<< To make a new script executable when saving start =========
-(add-hook 'after-save-hook
-        #'(lambda ()
-        (and (save-excursion
-               (save-restriction
-                 (widen)
-                 (goto-char (point-min))
-                 (save-match-data
-                   (looking-at "^#!"))))
-             (not (file-executable-p buffer-file-name))
-              (shell-command (concat "chmod u+x " (shell-quote-argument buffer-file-name)))             (message
-              (concat "Saved as script: " buffer-file-name)))))
-;; === >>> To make a new script executable when saving end =========
-
-
-;; Add Latex AUCTex support
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
-
-
-;; Add JavaScript support
-(autoload 'js2-mode "js2" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
-
+;;;; Disabled since I am not using Emacs for C++ developing
 ;; For Cedet (Project management)
-(load-file "~/.InitScripts/Emacs/Plugins/cedet/common/cedet.el")
-(global-ede-mode t)
-(semantic-load-enable-excessive-code-helpers)
-;(semantic-load-enable-excessive-code-helpers)
-;(semantic-load-enable-excessive-code-helpers)
+;;(load-file "~/.InitScripts/Emacs/Plugins/cedet/common/cedet.el")
+;;(global-ede-mode t)
+;;(semantic-load-enable-excessive-code-helpers)
+;;;(semantic-load-enable-excessive-code-helpers)
+;;;(semantic-load-enable-excessive-code-helpers)
 
-;; Enable EDE for a pre-existing C++ project
-;; (ede-cpp-root-project "NAME" :file "~/myproject/Makefile")
+;;;; Enable EDE for a pre-existing C++ project
+;;;; (ede-cpp-root-project "NAME" :file "~/myproject/Makefile")
 
 
-;; Enabling Semantic (code-parsing, smart completion) features
-;; Select one of the following:
+;;;; Enabling Semantic (code-parsing, smart completion) features
+;;;; Select one of the following:
 
 ;; * This enables the database and idle reparse engines
 ;; (semantic-load-enable-minimum-features)
@@ -303,7 +279,7 @@
 
 ;; * This enables even more coding tools such as intellisense mode
 ;;   decoration mode, and stickyfunc mode (plus regular code helpers)
-(semantic-load-enable-gaudy-code-helpers)
+;;(semantic-load-enable-gaudy-code-helpers)
 
 ;; * This enables the use of Exuberent ctags if you have it installed.
 ;;   If you use C++ templates or boost, you should NOT enable it.
@@ -318,26 +294,29 @@
 ;; (global-srecode-minor-mode 1)
 
 ;; Provide intellisense when typing . on a instance name
-(defun my-cedet-hook ()
-  (local-set-key [(control return)] 'semantic-ia-complete-symbol)
-  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
-  (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
-  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle))
-(add-hook 'c-mode-common-hook 'my-cedet-hook)
+;;(defun my-cedet-hook ()
+;;  (local-set-key [(control return)] 'semantic-ia-complete-symbol)
+;;  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
+;;  (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
+;;  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle))
+;;(add-hook 'c-mode-common-hook 'my-cedet-hook)
 
-(defun my-c-mode-cedet-hook ()
- (local-set-key "." 'semantic-complete-self-insert)
- (local-set-key ">" 'semantic-complete-self-insert))
-(add-hook 'c-mode-common-hook 'my-c-mode-cedet-hook)
+;;(defun my-c-mode-cedet-hook ()
+;; (local-set-key "." 'semantic-complete-self-insert)
+;; (local-set-key ">" 'semantic-complete-self-insert))
+;;(add-hook 'c-mode-common-hook 'my-c-mode-cedet-hook)
 
-(require 'semantic-gcc)
+;;(require 'semantic-gcc)
 
 ;; ==== <<< Cedet end =========
+
+;; =============== Disabled C++ support end ====================
+
 
 
 
 ;;; Loading extracted settings ;;;
 (load-file "~/.InitScripts/Emacs/emacs_config_highlighting.el")
-(load-file "~/.InitScripts/Emacs/emacs_config_keybindings.el")
+(load-file "~/.Initscripts/Emacs/emacs_config_keybindings.el")
 
 
