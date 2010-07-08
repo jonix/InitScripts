@@ -19,3 +19,6 @@ alias baz='bzr'
 alias build="make -j3"
 alias rebuild="make clean && make -j3"
 
+### Various git shotcuts
+alias gb="git branch |grep -v __merged"
+

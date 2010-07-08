@@ -18,7 +18,12 @@ fi
 # Your previous /Users/jonix/.profile file was backed up as /Users/jonix/.profile.macports-saved_2009-09-16_at_15:28:23
 ##
 
+export PATH=/opt/subversion/bin:$PATH
+export DYLD_LIBRARY_PATH="/opt/subversion/lib:/usr/lib:$DYLD_LIBRARY_PATH"
+
 # MacPorts Installer addition on 2009-09-16_at_15:28:23: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+
+test -r /sw/bin/init.sh && . /sw/bin/init.sh

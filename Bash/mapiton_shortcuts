@@ -19,6 +19,7 @@ alias hogerrors='cd ${MAPITON_PATH}/Native/Source/LicenseHog/Resources/ErrorIncl
 alias hogtests='cd ${MAPITON_PATH}/Native/Source/LicenseHog/TestRuns'
 
 alias lcreator='cd ${MAPITON_PATH}/Native/Source/LicenseCreator/Source/CommonSource'
+alias swine='cd ${MAPITON_PATH}/Native/Source/StudioSwine/Source/CommonSource'
 
 
 alias pigtests='cd ${MAPITON_PATH}/Native/Source/RenderPig/TestRuns'
