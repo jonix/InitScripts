@@ -68,6 +68,8 @@
 ;; Help is now M-? instead of C-h
 (global-set-key "\M-\?" 'help-command)
 
+;; Add support for Cups printing
+(setq lpr-command "xpp")
 
 ;; === <<< Open files with sudo privs start =========
 (defun find-alternative-file-with-sudo ()
