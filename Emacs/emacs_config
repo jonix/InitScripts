@@ -371,6 +371,14 @@
 
 ;; === >>> Ruby and .rhtml support end  =========
 
+;; === >>> reStructured Text support ====
+(require 'rst)
+(setq auto-mode-alist
+      (append '(("\\.txt$" . rst-mode)
+                ("\\.rst$" . rst-mode)
+                ("\\.rest$" . rst-mode)) auto-mode-alist))
+;; === <<< reStructedText support end ===
+
 ;; === >>> Complete anything support =====
 
 ;; Add company The package to COMP(lete) ANY(thing)
