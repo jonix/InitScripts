@@ -380,8 +380,13 @@
 ;; ==== <<< Complete anything end ====
 
 
+;; ==== >>> Ascii Table support =====
+(require 'table)
+(add-hook 'text-mode-hook 'table-recognize)
+;; ==== <<< Ascii Table support end =====
+
 ;;; Loading extracted settings ;;;
 (load-file "~/.InitScripts/Emacs/emacs_config_highlighting.el")
-(load-file "~/.Initscripts/Emacs/emacs_config_keybindings.el")
+(load-file "~/.InitScripts/Emacs/emacs_config_keybindings.el")
 
 
