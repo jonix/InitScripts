@@ -12,6 +12,7 @@
  '(js2-enter-indents-newline t)
  '(ns-tool-bar-display-mode (quote both) t)
  '(ns-tool-bar-size-mode (quote regular) t)
+ '(php-manual-path "~/Documents/PHPDoc/")
  '(save-place t nil (saveplace)))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.

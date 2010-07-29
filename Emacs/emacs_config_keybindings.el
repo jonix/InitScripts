@@ -22,3 +22,5 @@
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 ;;  (define-key global-map "\C-cr" 'org-remember)
 (global-set-key "\C-cr" 'org-remember)
+(global-set-key (kbd "<C-tab>") 'php-complete-function)
+
