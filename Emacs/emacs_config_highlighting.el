@@ -51,6 +51,9 @@ the directories in the INCLUDE environment variable."
 
 ;; == End << Treat standard C++ header files with no file extension as C++ files ===
 
+;; Tell Emacs how to highlight embedded scripts within a HTML file
+(load "~/.InitScripts/Emacs/Plugins/nxhtml/autostart.el")
+
 
 ;; Tell Emacs how to highlight XML files
 (load "~/.InitScripts/Emacs/Plugins/nxml-mode/rng-auto.el")
