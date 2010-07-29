@@ -71,6 +71,9 @@
 ;; Add support for Cups printing
 (setq lpr-command "xpp")
 
+;; Add support for Ack (a better grep)
+(require 'ack)
+
 ;; === <<< Open files with sudo privs start =========
 (defun find-alternative-file-with-sudo ()
   "Open current buffer as root!"
