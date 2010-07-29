@@ -2,7 +2,15 @@
 
 MAPITON_PATH="${HOME}/Projects/Work/Mapiton"
 
-alias pigsty='cd ${MAPITON_PATH}/Native/Pigsty/MacOSX'
+if [ `uname` == "Linux" ] ; then
+	alias pigsty='cd ${MAPITON_PATH}/Native/Pigsty/Linux'
+elif [ `uname` == "Darwin" ] ; then
+	alias pigsty='cd ${MAPITON_PATH}/Native/Pigsty/MacOSX'
+else
+	echo "Unknown OS, does not load any OS specific settings"
+fi
+
+
 
 alias mapiton='cd ${MAPITON_PATH}'
 alias native='cd ${MAPITON_PATH}/Native/Source'
