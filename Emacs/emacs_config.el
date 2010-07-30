@@ -1,4 +1,3 @@
-
 ;; This is the configuration load points for the customization of Emacs
 ;; Make a symbolic link from this file to ~/.emacs
 ;;
@@ -62,7 +61,7 @@
 ;; make C-h delete (not Help) in ttys
 (global-set-key [?\C-h] 'backward-delete-char)
 
-;;Del will delete forward and Backspace will delete backwards
+;; Del will delete forward and Backspace will delete backwards
 (normal-erase-is-backspace-mode)
 
 ;; Help is now M-? instead of C-h
@@ -82,7 +81,6 @@
      (find-alternate-file
         (concat "/sudo:root@localhost:"
  	      buffer-file-name))))
- (global-set-key (kbd "C-x C-r") 'find-alternative-file-with-sudo)
 ;; === <<< Open files with sudo privs end =========
 
 

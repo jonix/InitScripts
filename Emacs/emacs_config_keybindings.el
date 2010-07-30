@@ -11,6 +11,11 @@
 ;; For line jump to
 (global-set-key "\C-l" 'goto-line) ; Go to a specified line number
 
+;; Open file with sudo privs
+(global-set-key (kbd "C-x C-r") 'find-alternative-file-with-sudo)
+
+
+;; Commenting
 (global-set-key (kbd "C-;") 'comment-region); Comment a selection
 (global-set-key (kbd "C-:") 'uncomment-region); Remove comments from a section
 
