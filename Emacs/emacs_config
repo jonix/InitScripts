@@ -185,6 +185,11 @@
 (add-hook 'kill-emacs-hook 'recentf-save-list)
 ;; ====== <<< Recent files end ==========
 
+;; ===== <<< Bookmark support ====
+(load-file "~/.InitScripts/Emacs/Plugins/bookmark_cycling.el")
+;; ===== >>> Bookmark support end ====
+
+
 ;;;; For YASnippet (TextMate like snippets, think "cl+<Tab>" for a full C++ class definition)
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
