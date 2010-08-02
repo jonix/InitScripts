@@ -12,7 +12,7 @@
 (global-set-key "\C-l" 'goto-line) ; Go to a specified line number
 
 ;; Open file with sudo privs
-(global-set-key (kbd "C-x C-r") 'find-alternative-file-with-sudo)
+(global-set-key "\C-cs" 'find-alternative-file-with-sudo)
 
 
 ;; Commenting
@@ -22,7 +22,7 @@
 
 (global-set-key "\M-\C-r" `query-replace-regexp) 		; regexp replace
 
-(global-set-key "\C-c\ \C-o" 'ffap)     ; Go to file under cursor
+(global-set-key "\C-co" 'ffap)     ; Go to file under cursor
 
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 ;;  (define-key global-map "\C-cr" 'org-remember)

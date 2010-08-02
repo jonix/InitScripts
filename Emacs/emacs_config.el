@@ -234,7 +234,6 @@
 ;; Add company The package to COMP(lete) ANY(thing)
 ;; (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins/company")
 ;; (autoload 'company-mode "company" nil t)
-
 ;; ==== <<< Complete anything end ====
 
 
