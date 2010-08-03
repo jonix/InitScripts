@@ -20,7 +20,6 @@
 ;; For disabling pc speaker beeps. Flashes instead
 (setq visible-bell t)
 
-
 ;; For using the built-in clipboard provided by the OS
 (setq menu-bar-enable-clipboard t)
 
@@ -245,5 +244,14 @@
 ;;; Loading extracted settings ;;;
 (load-file "~/.InitScripts/Emacs/emacs_config_highlighting.el")
 (load-file "~/.InitScripts/Emacs/emacs_config_keybindings.el")
+
+
+
+
+;; ========================================================
+;; Override add-ons fixation on setting debug mode
+
+;; Disable Lisp debugging mode
+(setq debug-on-error nil)
 
 
