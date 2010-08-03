@@ -25,6 +25,16 @@ else
 fi
 
 
+### SSH command line shortcuts ###
+
+if [ -f ~/.InitScripts/Bash/ssh_shortcuts ] ; then
+	echo "Loading SSH shortcuts"
+	. ~/.InitScripts/Bash/ssh_shortcuts
+else
+	echo "Did not load SSH shortcuts"
+fi
+
+
 ### OS specific settings ###
 
 if [ `uname` == "Linux" ] ; then
@@ -32,6 +42,12 @@ if [ `uname` == "Linux" ] ; then
 		. ~/.InitScripts/Bash/linux_settings
 	else
 		echo "No Linux specific settings file found"
+	fi
+
+	if [ -f ~/.InitScripts/Bash/linux_alias ] ; then
+	   . ~/.InitScripts/Bash/linux_alias
+	else
+		echo "No Linux specific aliases found"
 	fi
 elif [ `uname` == "Darwin" ] ; then
 	if [ -f ~/.InitScripts/Bash/macosx_settings ] ; then
