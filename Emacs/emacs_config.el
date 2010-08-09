@@ -246,6 +246,13 @@
 (add-hook 'text-mode-hook 'table-recognize)
 ;; ==== <<< Ascii Table support end =====
 
+;; ==== >>> Ditaa support (Render ascii to graphics)
+(setq ditaa-cmd "java -jar ~/Scripts/ditaa0_9.jar")
+(defun ditaa-generate()
+  (interactive)
+  (shell-command
+   (concat ditaa-cmd " " buffer-file-name)))
+
 ;;; Loading extracted settings ;;;
 (load-file "~/.InitScripts/Emacs/emacs_config_highlighting.el")
 (load-file "~/.InitScripts/Emacs/emacs_config_keybindings.el")
