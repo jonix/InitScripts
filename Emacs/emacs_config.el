@@ -266,4 +266,8 @@
 ;; Disable Lisp debugging mode
 (setq debug-on-error nil)
 
+;; Disable Ctrl+x, Ctrl+c, and other "standardized" keyboard shortcuts for copy and paste text. Why? Because Ctrl+x is used in many key combinations.
+(cua-mode nil)
 
+
+(put 'narrow-to-region 'disabled nil)
