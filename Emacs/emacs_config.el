@@ -42,6 +42,11 @@
 ;; Prevent Emacs from making backup files
 (setq make-backup-files nil)
 
+;; Tell Emacs to use SmartTab
+(require 'smart-tab)
+(global-smart-tab-mode 1)
+
+
 ;; Tell Emacs the Tab length
 ;; For general indentation
 ;; (setq-default c-basic-offset 4)
