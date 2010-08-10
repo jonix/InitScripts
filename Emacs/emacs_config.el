@@ -340,12 +340,11 @@
   (interactive)
   (shell-command
    (concat ditaa-cmd " " buffer-file-name)))
+;; ==== <<< Ditaa support end =========
 
-;;; Loading extracted settings ;;;
-(load-file "~/.InitScripts/Emacs/emacs_config_highlighting.el")
-(load-file "~/.InitScripts/Emacs/emacs_config_keybindings.el")
 
-;; Folding support ;;;
+
+;; ==== >>> Folding support start =====
 (defun toggle-selective-display (column)
   (interactive "P")
   (set-selective-display
@@ -373,7 +372,15 @@
 (add-hook 'lisp-mode-hook       'hs-minor-mode)
 (add-hook 'perl-mode-hook       'hs-minor-mode)
 (add-hook 'sh-mode-hook         'hs-minor-mode)
+;; ===== <<< Folding end =======
 
+;; (load "~/.InitScripts/Emacs/Plugins/icicles-install")
+(add-to-list 'load-path "~/.InitScripts/Emacs/Plugins/icicles")
+(require 'icicles)
+
+;;; Loading extracted settings ;;;
+(load-file "~/.InitScripts/Emacs/emacs_config_highlighting.el")
+(load-file "~/.InitScripts/Emacs/emacs_config_keybindings.el")
 
 ;; ========================================================
 ;; Override add-ons fixation on setting debug mode
