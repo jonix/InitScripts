@@ -30,6 +30,12 @@
 ;; For using the built-in clipboard provided by the OS
 (setq menu-bar-enable-clipboard t)
 
+; Deleting files goes to OS's trash folder
+(setq delete-by-moving-to-trash t)
+
+; Try to have wordboundary on seperate lines (don't cut words in half)
+; (global-visual-line-mode 1)
+
 ;; For smooth scrolling
 ;; (require 'smooth-scrolling)
 
