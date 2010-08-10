@@ -19,8 +19,6 @@
 (setq auto-async-byte-compile-exclude-files-regexp "/junk/")
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 
-
-
 ;; The startup screen is annoying.
 (setq inhibit-startup-message t)
 
@@ -58,6 +56,47 @@
 ;; Tell Emacs to use SmartTab
 (require 'smart-tab)
 (global-smart-tab-mode 1)
+
+;; Tell Emacs to spell check documents (aspell)
+(defun turn-spell-checking-on ()
+  "Turn speck-mode or flyspell-mode on."
+  ;; (speck-mode 1)
+  (flyspell-mode 1)
+  )
+(add-hook 'text-mode-hook 'turn-spell-checking-on)
+(add-hook 'org-mode-hook  'turn-spell-checking-on)
+;;(add-hook 'c-mode-common-hook   'hs-minor-mode)
+;;(add-hook 'c-mode-common-hook
+;;		  (lambda()
+;;			(flyspell-prog-mode 1)))
+
+(add-hook 'c-mode-common-hook
+ (lambda()
+   (flyspell-mode 1)))
+
+(add-hook 'php-mode-hook
+ (lambda()
+   (flyspell-mode 1)))
+
+(add-hook 'org-mode-hook
+ (lambda()
+   (flyspell-mode 1)))
+
+(add-hook 'ruby-mode-hook
+ (lambda()
+   (flyspell-mode 1)))
+
+(add-hook 'perl-mode-hook
+ (lambda()
+   (flyspell-mode 1)))
+
+(add-hook 'javascript-mode-hook
+ (lambda()
+   (flyspell-mode 1)))
+
+(add-hook 'LaTeX-mode-hook
+ (lambda()
+   (flyspell-mode 1)))
 
 
 ;; Tell Emacs the Tab length
