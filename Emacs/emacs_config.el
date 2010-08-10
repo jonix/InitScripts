@@ -19,11 +19,29 @@
 (setq auto-async-byte-compile-exclude-files-regexp "/junk/")
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 
+;; Aliases - Shortening of often used commands
+(defalias 'gf 'grep-find)
+(defalias 'fd 'find-dired)
+(defalias 'sh 'shell)
+
+(defalias 'qrr 'query-replace-regexp)
+(defalias 'lml 'list-matching-lines)
+(defalias 'dml 'delete-matching-lines)
+(defalias 'rof 'recentf-open-files)
+
+(defalias 'eb 'eval-buffer)
+(defalias 'er 'eval-region)
+(defalias 'ee 'eval-expression)
+
+
 ;; The startup screen is annoying.
 (setq inhibit-startup-message t)
 
 ;; For disabling pc speaker beeps. Flashes instead
 (setq visible-bell t)
+
+;; Remove prompt that forces full “yes” or “no” when "y" or "no" suffice.
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; For using the built-in clipboard provided by the OS
 (setq menu-bar-enable-clipboard t)

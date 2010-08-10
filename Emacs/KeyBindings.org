@@ -1,66 +1,57 @@
-* Bookmark keybindings
-** `C-x r m <RET>'
-     Set the bookmark for the visited file, at point.
-
-** `C-x r m BOOKMARK <RET>'
-     Set the bookmark named BOOKMARK at point (`bookmark-set').
-
-** `C-x r b BOOKMARK <RET>'
-     Jump to the bookmark named BOOKMARK (`bookmark-jump').
-
-** `C-x r l'
-     List all bookmarks (`list-bookmarks').
-
-** `M-x bookmark-save'
-     Save all the current bookmark values in the default bookmark file.
-
+* Bookmark key bindings
+** [f2]     - Cycle bookmark forward
+** [S-f2]   - Cycle bookmark previous
+** [C-S-f2] - Clear bookmarks
+** Built in bookmark support
+*** `C-x r m <RET>'
+       Set the bookmark for the visited file, at point.
+*** `C-x r m BOOKMARK <RET>'
+       Set the bookmark named BOOKMARK at point (`bookmark-set').
+*** `C-x r b BOOKMARK <RET>'
+       Jump to the bookmark named BOOKMARK (`bookmark-jump').
+*** `C-x r l'
+       List all bookmarks (`list-bookmarks').
+*** `M-x bookmark-save'
+       Save all the current bookmark values in the default bookmark file.
 
 * Compilation keybindings
 ** `C-cc` compile
-
 ** `C-cv` recompile
     Shortcut to compile a buffer that has already been compiled at least once
-
 ** `C-c.` Go to next error
-
 ** `C-c,` Go to previous errors
-
 
 * Navigational keybindings
 ** `C-l NUMBER <RET>` Go to line number in buffer
-
 ** `C-c C-o` Go to file under cursor
-
 ** `M-C-r` Replace text with a regular expression
-
 ** `C-x C-r` Recent file
    Opens a buffer with list of recently opened files where you can navigate to
    by pressing enter on a selected file
-
 ** `C-xg` Toggle between C/C++ implementation file and header file
-
 ** `f5` C++ ebrowse tree mode
-
-
 ** `C-s C-s` Search again for the same string
 ** `C-s C-w` Search for word under cursor. Press C-w to include more words
 
+
 * Formatting
 ** [M-x align-regexp] - Align region with regex. Ex. ' = '
-
-
 ** [M-x delete-trailing-whitespace] - Removes white spaces
+
 
 * Editing
 ** `C-;`   comment selected region
 ** `C-:`   uncomment selected region
 ** `C-tab` (PHP) complete built-in PHP functions
-
 ** [M-x highlight-phrase] - Highlight all occurrences of the phrase
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
 
+
 * Misc
+** `M-!`      Run the shell command and show the output in mini buffer
+** `M-|`      Run the shell command with the selected region as input data.
+** `C-u M-|`  Run the shell command with the selected region as input data. Replace selection with output
 ** `C-x C-r`  Open file with sudo privileges
 ** `C-h`      Backward delete char
 ** `M-?`      Help
@@ -69,22 +60,16 @@
 ** [M-x re-builder] - Interactive Regex builder realtime display
 
 
-
-
-
 * Org-mode
 ** `C-c C-x C-c` Switch to Column view
 ** Project planning with org-mode - http://www.contextualdevelopment.com/articles/2008/project-planning
 
 
-
 * General notes
 ** The single most useful Emacs feature - http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature
+** For a more ergonomic Emacs - http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
 ** Drawing ascii charts
 *** Ditaa
 **** Renders an ascii image to full featured graphics file (jpg, png, etc)
 *** Artist mode
 **** Draw ascii arts with the mouse withing Emacs using a mouse
-***
-
- LocalWords:  whitespace xg
