@@ -14,10 +14,13 @@
 ;; Open file with sudo privs
 (global-set-key "\C-cs" 'find-alternative-file-with-sudo)
 
-
 ;; Commenting
 (global-set-key (kbd "C-;") 'comment-region); Comment a selection
 (global-set-key (kbd "C-:") 'uncomment-region); Remove comments from a section
+
+;; Folding support (fold code to view just the head of a function, first line of a comment, etc)
+(load "folding" 'nomessage 'noerror)
+(folding-mode-add-find-file-hook)
 
 ;; Alternative abbrevation expand
 ;; I don't see any advantages from simple abbrev-expand
