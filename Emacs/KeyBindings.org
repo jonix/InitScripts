@@ -42,13 +42,49 @@
 ** `f5` C++ ebrowse tree mode
 
 
+** `C-s C-s` Search again for the same string
+** `C-s C-w` Search for word under cursor. Press C-w to include more words
+
+* Formatting
+** [M-x align-regexp] - Align region with regex. Ex. ' = '
+
+
+** [M-x delete-trailing-whitespace] - Removes white spaces
+
 * Editing
 ** `C-;`   comment selected region
 ** `C-:`   uncomment selected region
 ** `C-tab` (PHP) complete built-in PHP functions
 
+** [M-x highlight-phrase] - Highlight all occurrences of the phrase
+** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
+*** http://xahlee.org/emacs/whitespace-mode.html
 
 * Misc
-** `C-x C-r`  Open file with sudo privelegies
+** `C-x C-r`  Open file with sudo privileges
 ** `C-h`      Backward delete char
 ** `M-?`      Help
+** `C-x n n`  Narrow the region. Display only the selection
+** `C-x n w`  Widen the region. Display the full text that were hidden.
+** [M-x re-builder] - Interactive Regex builder realtime display
+
+
+
+
+
+* Org-mode
+** `C-c C-x C-c` Switch to Column view
+** Project planning with org-mode - http://www.contextualdevelopment.com/articles/2008/project-planning
+
+
+
+* General notes
+** The single most useful Emacs feature - http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature
+** Drawing ascii charts
+*** Ditaa
+**** Renders an ascii image to full featured graphics file (jpg, png, etc)
+*** Artist mode
+**** Draw ascii arts with the mouse withing Emacs using a mouse
+***
+
+ LocalWords:  whitespace xg
