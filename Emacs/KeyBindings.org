@@ -14,12 +14,14 @@
 *** `M-x bookmark-save'
        Save all the current bookmark values in the default bookmark file.
 
+
 * Compilation keybindings
 ** `C-cc` compile
 ** `C-cv` recompile
     Shortcut to compile a buffer that has already been compiled at least once
 ** `C-c.` Go to next error
 ** `C-c,` Go to previous errors
+
 
 * Navigational keybindings
 ** `C-l NUMBER <RET>` Go to line number in buffer
@@ -40,9 +42,10 @@
 
 
 * Editing
-** `C-;`   comment selected region
-** `C-:`   uncomment selected region
-** `C-tab` (PHP) complete built-in PHP functions
+** `C-c C-k` Copy line (instead of killing&yanking)
+** `C-;`     Comment selected region
+** `C-:`     Uncomment selected region
+** `C-tab`   (PHP) Complete built-in PHP functions
 ** [M-x highlight-phrase] - Highlight all occurrences of the phrase
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
