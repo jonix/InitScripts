@@ -6,6 +6,9 @@
 ;; In a dired buffer of the ~/bin/emacslib
 ;; directory, mark the .el files with 'M' and then byte-compile them with  'B'.
 
+;; This .emacs resource loooks interesting, take bit and pieces
+;; http://en.wikipedia.org/wiki/User:Gwern/.emacs
+
 
 ;; To keep custom variables in their own file
 ;; via the customize interface (M-x customize*)
@@ -20,6 +23,14 @@
 (require 'auto-async-byte-compile)
 (setq auto-async-byte-compile-exclude-files-regexp "/junk/")
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
+
+;; Save all buffers before compiling
+(setq compilation-ask-about-save nil)
+
+;; Follow the ouput from Compilation buffer
+;; (setq compilation-scroll-output t)
+;; Follow the output from Compilation buffer until first error appears
+(setq compilation-scroll-output 'first-error)
 
 ;; Aliases - Shortening of often used commands
 (defalias 'gf 'grep-find)
@@ -94,6 +105,13 @@
 ;; Tell Emacs to use SmartTab
 (require 'smart-tab)
 (global-smart-tab-mode 1)
+
+;; Tell Emacs to save before compiling
+(defun my-save-and-compile ()
+  (interactive)
+  (save-buffer 0)
+  (compile compile-command)
+)
 
 ;; Tell Emacs to spell check documents (aspell)
 (defun turn-spell-checking-on ()
@@ -379,6 +397,24 @@
 ;; (load "~/.InitScripts/Emacs/Plugins/icicles-install")
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins/icicles")
 (require 'icicles)
+
+
+
+
+;; ==== Start Compile-Mode =====
+(autoload 'mode-compile "mode-compile"
+  "Command to compile current buffer file based on the major mode" t)
+ (global-set-key "\C-cc" 'mode-compile)
+ (autoload 'mode-compile-kill "mode-compile"
+  "Command to kill a compilation launched by `mode-compile'" t)
+ (global-set-key "\C-ck" 'mode-compile-kill)
+;; ==== Start Compile-Mode End =====
+
+;; Put etags information in bookmark
+;; (defun ivan-etags-bookmark ()
+;;  (bookmark-set tagname))
+;;(add-hook 'find-tag-hook 'ivan-etags-bookmark)
+
 
 ;;; Loading extracted settings ;;;
 (load-file "~/.InitScripts/Emacs/emacs_config_highlighting.el")
