@@ -25,3 +25,7 @@ alias rebuild="make clean && make -j3"
 alias gb="git branch |grep -v __merged"
 
 alias baz='bzr'
+
+### Coloured less/cat
+alias cless='vim -u /usr/share/vim/vim72/macros/less.vim'
+alias ccat='vim -u /usr/share/vim/vim72/macros/less.vim'
