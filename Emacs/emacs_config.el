@@ -50,6 +50,9 @@
 ;; The startup screen is annoying.
 (setq inhibit-startup-message t)
 
+;; Disable minimizing Emacs with CTRL+z
+(global-set-key "C-Z" nil)
+
 ;; For disabling pc speaker beeps. Flashes instead
 (setq visible-bell t)
 
@@ -88,7 +91,6 @@
    (newline-mark 10 [182 10]) ; newline
    (tab-mark 9 [9655 9] [92 9]) ; tab
 ))
-
 
 ;; To remove trailing whitespaces
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
