@@ -14,6 +14,8 @@
 
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
 
+(setq bookmark-default-file "~/.InitScripts/Emacs/emacs_bookmarks.bmk")
+
 ;; Auto byte-compile lisp plugins
 (require 'auto-async-byte-compile)
 (setq auto-async-byte-compile-exclude-files-regexp "/junk/")

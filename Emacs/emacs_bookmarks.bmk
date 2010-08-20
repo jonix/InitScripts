@@ -1,0 +1,30 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("Todo.org"
+ (filename . "~/Documents/GTD/Todo.org")
+ (front-context-string . "* Remember\n** fd")
+ (rear-context-string . "her reasons\n\n\n\n\n")
+ (position . 2639))
+("Personal.org"
+ (filename . "~/Documents/GTD/Personal.org")
+ (front-context-string . "* Arbete\n** Koll")
+ (rear-context-string . "010-07-06 Tue>\n\n")
+ (position . 88))
+("RenderPig main"
+ (filename . "~/Projects/Work/Mapiton/Native/Source/RenderPig/Source/CommonSource/main.cpp")
+ (front-context-string . "/**\n *  main.cpp")
+ (rear-context-string)
+ (position . 1))
+("CycoreFX Web"
+ (filename . "~/Projects/Work/CycoreFx/CCfx_WebSite/wwwroot/")
+ (front-context-string . "dload_csptools.p")
+ (rear-context-string . "33 Mar 10 15:56 ")
+ (position . 2001))
+("Emacs config file"
+ (filename . "~/.InitScripts/Emacs/emacs_config.el")
+ (front-context-string . " =====\n\n;;; Load")
+ (rear-context-string . "Compile-Mode End")
+ (position . 12295))
+)
