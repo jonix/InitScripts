@@ -47,3 +47,18 @@
 ;; (global-set-key [(shift f2)]  'af-bookmark-cycle-reverse )        ;; Prev bookmark
 ;; (global-set-key [(control shift f2)]  'af-bookmark-clear-all )    ;; Remove all bookmarks
 
+;; Alias C-x k to C-xC-k and C-xC-c
+;; Kill named buffer
+(global-set-key "\C-x\C-k" 'kill-buffer)
+(global-set-key "\C-x\C-c"
+                '(lambda () (interactive)
+                   (progn (get-buffer-create "*scratch*")
+                          (kill-buffer "*scratch*")
+                          (save-buffers-kill-emacs t))))
+
+;; Change C-x C-b behavior so it uses bs;
+;; shows only interesting buffers.
+(global-set-key "\C-x\C-b" 'bs-show)
+
+;; Open file at point
+(global-set-key "\C-xp" 'find-file-at-point)
