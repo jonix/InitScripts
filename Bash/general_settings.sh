@@ -1,4 +1,4 @@
-#!/bin/bash
+	#!/bin/bash
 
 #export PS1="\h:\W \u\$"
 export PS1="\u:\w> "
@@ -49,3 +49,5 @@ shopt -s histappend
 # use the up/down keys to cycle through a list of commands starting with the given letters
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
+
+export ALTERNATE_EDITOR=""

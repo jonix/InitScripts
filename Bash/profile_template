@@ -2,8 +2,9 @@
 ### It will load customized settings for the bash shell
 
 
-if [ ! -f ~/.InitScripts/Bash/loaders.h ] ; then
+if [ -f ~/.InitScripts/Bash/loader.sh ] ; then
+	. ~/.InitScripts/Bash/loader.sh
+else
 	echo "ERROR: Could not locate the shell customization loader"
 fi
 
-. ~/.InitScripts/Bash/loader.sh
