@@ -35,6 +35,9 @@
 ** `C-s C-s` Search again for the same string
 ** `C-s C-w` Search for word under cursor. Press C-w to include more words
 
+** `C-x <SPC> r` Save the position into register 'r'
+** `C-x r j r` Jump back to position stored in register 'r'
+
 
 * Formatting
 ** [M-x align-regexp] - Align region with regex. Ex. ' = '
@@ -42,15 +45,20 @@
 
 
 * Editing
+** `C-x M-f`   Find file recursively
 ** `C-x r x 1` Put region in register 1
 ** `C-x r g 1` Paste text from register 1 into buffer at cursor
 ** `C-c C-k`   Copy line (instead of killing&yanking)
+** `C-x r k`   Kill the selected region-rectangle
+** `C-x r y`   Yank the selected region-rectangle
 ** `C-;`       Comment selected region
 ** `C-:`       Uncomment selected region
 ** `C-tab`     (PHP) Complete built-in PHP functions
 ** [M-x highlight-phrase] - Highlight all occurrences of the phrase
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
+
+** `C-x 4 f`   find-file-other-window
 
 
 * Misc
@@ -72,6 +80,7 @@
 
 * General notes
 ** The single most useful Emacs feature - http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature
+** Ten essential Emacs tips and tricks - http://web.psung.name/emacstips/essential.html
 ** For a more ergonomic Emacs - http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
 ** Drawing ascii charts
 *** Ditaa
