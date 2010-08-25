@@ -16,13 +16,18 @@
 (load custom-file 'noerror)
 
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
-
 (setq bookmark-default-file "~/.InitScripts/Emacs/emacs_bookmarks.bmk")
+
+;; Disable the Toolbar
+(tool-bar-mode -1)
 
 ;; Auto byte-compile lisp plugins
 (require 'auto-async-byte-compile)
 (setq auto-async-byte-compile-exclude-files-regexp "/junk/")
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
+
+;; Start Emacs in Daemon mode. If you have run Emacs once a daemon is started in the background which all other Emacs is connected to, hence a much faster startup time
+;; (server-start)
 
 ;; Save all buffers before compiling
 (setq compilation-ask-about-save nil)
@@ -51,7 +56,7 @@
 (setq inhibit-startup-message t)
 
 ;; Disable minimizing Emacs with CTRL+z
-(global-set-key "C-Z" nil)
+(global-set-key "\C-z" nil)
 
 ;; For disabling pc speaker beeps. Flashes instead
 (setq visible-bell t)
@@ -187,6 +192,9 @@
 ;; Add support for Ack (a better grep)
 (require 'ack)
 
+
+;; Open file recursively
+(require 'find-recursive)
 
 ;; ==== <<<< Copy lines (instead of killing and instantly yanking) ================
 (defun copy-line (&optional arg)
@@ -418,8 +426,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (require 'icicles)
 
 
-
-
 ;; ==== Start Compile-Mode =====
 (autoload 'mode-compile "mode-compile"
   "Command to compile current buffer file based on the major mode" t)
@@ -434,6 +440,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;;  (bookmark-set tagname))
 ;;(add-hook 'find-tag-hook 'ivan-etags-bookmark)
 
+
+;; Add scratch buffer with previous selected mode active
+(autoload 'scratch "scratch" nil t)
 
 ;;; Loading extracted settings ;;;
 (load-file "~/.InitScripts/Emacs/emacs_config_highlighting.el")
@@ -450,3 +459,12 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 
 (put 'narrow-to-region 'disabled nil)
+
+;; Disable Quit Emacs
+(defun dont-kill-emacs()
+  (interactive)
+  (error (substitute-command-keys "To exit emacs: \\[kill-emacs]")))
+(global-set-key "\C-x\C-c" 'dont-kill-emacs)
+
+;; In dired mode, go up to parent directory by pressing backspace
+(define-key dired-mode-map (kbd "<backspace>") 'dired-up-directory)
