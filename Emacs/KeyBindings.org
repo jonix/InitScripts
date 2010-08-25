@@ -63,6 +63,7 @@
 
 * Misc
 ** `M-!`      Run the shell command and show the output in mini buffer
+** `M-n`      When in M-! mode, provide some default choices
 ** `M-|`      Run the shell command with the selected region as input data.
 ** `C-u M-|`  Run the shell command with the selected region as input data. Replace selection with output
 ** `C-x C-r`  Open file with sudo privileges

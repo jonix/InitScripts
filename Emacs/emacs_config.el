@@ -54,9 +54,17 @@
 
 ;; The startup screen is annoying.
 (setq inhibit-startup-message t)
+;; (setq initial-scratch-message nil)
+
+;; Change buffer does not fail if in mini-buffer
+;; (setq enable-recursive-minibuffers t)
 
 ;; Disable minimizing Emacs with CTRL+z
 (global-set-key "\C-z" nil)
+
+;; Ignore file case when opening file / changing buffers
+;; read-file-name-completion-ignore-case overrides completion-ignore-case
+;; read-buffer-completion-ignore-case overides completion-ignore-case
 
 ;; For disabling pc speaker beeps. Flashes instead
 (setq visible-bell t)
@@ -468,3 +476,5 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 ;; In dired mode, go up to parent directory by pressing backspace
 (define-key dired-mode-map (kbd "<backspace>") 'dired-up-directory)
+;; Revert dired lists on revisiting them
+(setq dired-auto-revert-buffer t)
