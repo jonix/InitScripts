@@ -2,7 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Todo.org"
+(("CCFx_WebSite"
+ (filename . "~/Projects/Work/CycoreFx/CCfx_WebSite/wwwroot/index.php")
+ (front-context-string . "<!DOCTYPE html P")
+ (rear-context-string)
+ (position . 1))
+("KeyBindings.org"
+ (filename . "~/.InitScripts/Emacs/KeyBindings.org")
+ (front-context-string . "** `C-;`       C")
+ (rear-context-string . "egion-rectangle\n")
+ (position . 1827))
+("Todo.org"
  (filename . "~/Documents/GTD/Todo.org")
  (front-context-string . "* Remember\n** fd")
  (rear-context-string . "her reasons\n\n\n\n\n")
