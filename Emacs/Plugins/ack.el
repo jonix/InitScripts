@@ -41,7 +41,7 @@
   "Setting this value to `t' will have `ack' do its best to fill
 in the --type argument to the ack command")
 
-(defvar ack-command "ack --nocolor --nogroup "
+(defvar ack-command "ack -i --sort-files --nocolor --nogroup "
   "The command to be run by the ack function.")
 
 (defvar ack-mode-type-map

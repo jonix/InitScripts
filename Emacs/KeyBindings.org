@@ -46,8 +46,8 @@
 
 * Editing
 ** `C-x M-f`   Find file recursively
-** `C-x r x 1` Put region in register 1
-** `C-x r g 1` Paste text from register 1 into buffer at cursor
+** `C-x r x r` Put region in register r
+** `C-x r i r` Paste text from register r into buffer at cursor
 ** `C-c C-k`   Copy line (instead of killing&yanking)
 ** `C-x r k`   Kill the selected region-rectangle
 ** `C-x r y`   Yank the selected region-rectangle
@@ -80,6 +80,12 @@
 ** `C-c C-x C-c` Switch to Column view
 ** Project planning with org-mode - http://www.contextualdevelopment.com/articles/2008/project-planning
 
+
+* C++ mode
+** (Semantic mode must be enabled)
+** `C-c C-d d` Parse function and generate a Doxygen comment block of the function signature
+** `C-c C-d f` Fold the Doxygen comment
+** `C-c C-d u` Unfold the Doxygen comment
 
 * General notes
 ** The single most useful Emacs feature - http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature
