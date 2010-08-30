@@ -12,11 +12,11 @@
 
 ;; To keep custom variables in their own file
 ;; via the customize interface (M-x customize*)
-(setq custom-file "~/.InitScripts/Emacs/emacs_custom.el")
+(setq custom-file "~/.InitScripts/Emacs/Configs/emacs_custom.el")
 (load custom-file 'noerror)
 
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
-(setq bookmark-default-file "~/.InitScripts/Emacs/emacs_bookmarks.bmk")
+(setq bookmark-default-file "~/.InitScripts/Emacs/Configs/emacs_bookmarks.bmk")
 
 ;; Disable the Toolbar
 (tool-bar-mode -1)
@@ -465,8 +465,8 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (autoload 'scratch "scratch" nil t)
 
 ;;; Loading extracted settings ;;;
-(load-file "~/.InitScripts/Emacs/emacs_config_highlighting.el")
-(load-file "~/.InitScripts/Emacs/emacs_config_keybindings.el")
+(load-file "~/.InitScripts/Emacs/Configs/emacs_config_highlighting.el")
+(load-file "~/.InitScripts/Emacs/Configs/emacs_config_keybindings.el")
 
 ;; ========================================================
 ;; Override add-ons fixation on setting debug mode

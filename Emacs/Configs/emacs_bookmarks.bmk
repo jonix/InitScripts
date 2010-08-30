@@ -8,7 +8,7 @@
  (rear-context-string)
  (position . 1))
 ("KeyBindings.org"
- (filename . "~/.InitScripts/Emacs/KeyBindings.org")
+ (filename . "~/.InitScripts/Configs/Emacs/Configs/KeyBindings.org")
  (front-context-string . "** `C-;`       C")
  (rear-context-string . "egion-rectangle\n")
  (position . 1827))
@@ -33,7 +33,7 @@
  (rear-context-string . "33 Mar 10 15:56 ")
  (position . 2001))
 ("Emacs config file"
- (filename . "~/.InitScripts/Emacs/emacs_config.el")
+ (filename . "~/.InitScripts/Emacs/Configs/emacs_config.el")
  (front-context-string . " =====\n\n;;; Load")
  (rear-context-string . "Compile-Mode End")
  (position . 12295))
