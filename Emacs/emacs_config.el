@@ -47,6 +47,8 @@
 (defalias 'dml 'delete-matching-lines)
 (defalias 'rof 'recentf-open-files)
 
+(defalias 'gs 'magit-status)
+
 (defalias 'eb 'eval-buffer)
 (defalias 'er 'eval-region)
 (defalias 'ee 'eval-expression)
@@ -349,6 +351,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;;(require 'magit)
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
 (require 'magit)
+(require 'git)
+(require 'git-blame)
+
 
 ;; uniquify.el is a helper routine to help give buffer names a better unique name.
 (when (load "uniquify" 'NOERROR)
@@ -433,6 +438,13 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins/icicles")
 (require 'icicles)
 
+
+;; Doxygen/Javadoc help
+(require 'doc-mode)
+(add-hook 'c-mode-common-hook 'doc-mode)
+
+;; Automatically load TAGS file
+(require 'etags-table)
 
 ;; ==== Start Compile-Mode =====
 (autoload 'mode-compile "mode-compile"

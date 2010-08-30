@@ -71,6 +71,8 @@
 ** `M-?`      Help
 ** `C-x n n`  Narrow the region. Display only the selection
 ** `C-x n w`  Widen the region. Display the full text that were hidden.
+** [M-x gs]   Open Git status in current Git repository
+*** http://philjackson.github.com/magit/magit.html
 ** [M-x re-builder] - Interactive Regex builder realtime display
 
 
