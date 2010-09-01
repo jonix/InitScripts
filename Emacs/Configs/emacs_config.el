@@ -88,6 +88,9 @@
 ; Deleting files goes to OS's trash folder
 (setq delete-by-moving-to-trash t)
 
+; Kill the line including the new line character
+(setq kill-whole-line t)
+
 ; Try to have wordboundary on seperate lines (don't cut words in half)
 ; (global-visual-line-mode 1)
 
