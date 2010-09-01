@@ -62,3 +62,13 @@
 
 ;; Open file at point
 (global-set-key "\C-xp" 'find-file-at-point)
+
+;; (defun my-next-tag ()
+;; (interactive)
+;; (find-tag t nil))
+;; (global-set-key "\M-," 'my-next-tag)
+
+;; C++ (semantic)
+;  (define-key c++-mode-map "\C-m" 'reindent-then-newline-and-indent)
+;; (global-set-key [control escape] 'semantic-ia-complete-symbol)
+;; semantic-analyze-possible-completions

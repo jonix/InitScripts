@@ -45,6 +45,7 @@
 
 
 * Editing
+** `C-x C-r`   Open Recent file menu
 ** `C-x M-f`   Find file recursively
 ** `C-x r x r` Put region in register r
 ** `C-x r i r` Paste text from register r into buffer at cursor
@@ -66,7 +67,7 @@
 ** `M-n`      When in M-! mode, provide some default choices
 ** `M-|`      Run the shell command with the selected region as input data.
 ** `C-u M-|`  Run the shell command with the selected region as input data. Replace selection with output
-** `C-x C-r`  Open file with sudo privileges
+** `C-xs`     Open file with sudo privileges
 ** `C-h`      Backward delete char
 ** `M-?`      Help
 ** `C-x n n`  Narrow the region. Display only the selection
@@ -83,9 +84,18 @@
 
 * C++ mode
 ** (Semantic mode must be enabled)
-** `C-c C-d d` Parse function and generate a Doxygen comment block of the function signature
-** `C-c C-d f` Fold the Doxygen comment
-** `C-c C-d u` Unfold the Doxygen comment
+*** `C-c C-d d` Parse function and generate a Doxygen comment block of the function signature
+*** `C-c C-d f` Fold the Doxygen comment
+*** `C-c C-d u` Unfold the Doxygen comment
+
+** `[M-x visit-tags-table]` load the pre-generated TAGS file
+** `M-.`     Go to tag under cursor
+** `C-u M-.` Go to next tag
+** `C-u - M-.` Go to previous tag
+** `M-*`     Pop back from tag
+** `C-M-.`   Search for symbols that matches the pattern
+** `C-c c`   Compile file
+** `C-``     Jump to next error
 
 * General notes
 ** The single most useful Emacs feature - http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature

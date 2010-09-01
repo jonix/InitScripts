@@ -71,6 +71,10 @@
 ;; For disabling pc speaker beeps. Flashes instead
 (setq visible-bell t)
 
+;; Enable Mac OS X Antialiasing fonts
+;; Seems to be defaulted to non-nil
+;; (setq ns-antialias-text t)
+
 ;; Remove prompt that forces full “yes” or “no” when "y" or "no" suffice.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -401,7 +405,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
   (shell-command
    (concat ditaa-cmd " " buffer-file-name)))
 ;; ==== <<< Ditaa support end =========
-
 
 
 ;; ==== >>> Folding support start =====

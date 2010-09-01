@@ -8,7 +8,7 @@
  (rear-context-string)
  (position . 1))
 ("KeyBindings.org"
- (filename . "~/.InitScripts/Configs/Emacs/Configs/KeyBindings.org")
+ (filename . "~/.InitScripts/Emacs/KeyBindings.org")
  (front-context-string . "** `C-;`       C")
  (rear-context-string . "egion-rectangle\n")
  (position . 1827))
