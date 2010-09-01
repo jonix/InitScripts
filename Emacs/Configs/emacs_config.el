@@ -402,6 +402,11 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (add-hook 'text-mode-hook 'table-recognize)
 ;; ==== <<< Ascii Table support end =====
 
+;; Synthax highlight RTF file structure
+(autoload 'rtf-mode "rtf-mode.el" "RTF mode" t)
+(add-to-list 'auto-mode-alist
+  '("\\.rtf$" . rtf-mode))
+
 ;; ==== >>> Ditaa support (Render ascii to graphics)
 (setq ditaa-cmd "java -jar ~/Scripts/ditaa0_9.jar")
 (defun ditaa-generate()
