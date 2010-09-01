@@ -150,34 +150,34 @@
 ;;(add-hook 'c-mode-common-hook
 ;;		  (lambda()
 ;;			(flyspell-prog-mode 1)))
-
-(add-hook 'c-mode-common-hook
- (lambda()
-   (flyspell-mode 1)))
-
-(add-hook 'php-mode-hook
- (lambda()
-   (flyspell-mode 1)))
-
 (add-hook 'org-mode-hook
- (lambda()
-   (flyspell-mode 1)))
-
-(add-hook 'ruby-mode-hook
- (lambda()
-   (flyspell-mode 1)))
-
-(add-hook 'perl-mode-hook
- (lambda()
-   (flyspell-mode 1)))
-
-(add-hook 'javascript-mode-hook
  (lambda()
    (flyspell-mode 1)))
 
 (add-hook 'LaTeX-mode-hook
  (lambda()
    (flyspell-mode 1)))
+
+(add-hook 'c-mode-common-hook
+ (lambda()
+   (flyspell-prog-mode)))
+
+(add-hook 'php-mode-hook
+ (lambda()
+   (flyspell-prog-mode)))
+
+(add-hook 'ruby-mode-hook
+ (lambda()
+   (flyspell-prog-mode)))
+
+(add-hook 'perl-mode-hook
+ (lambda()
+   (flyspell-prog-mode)))
+
+(add-hook 'javascript-mode-hook
+ (lambda()
+   (flyspell-prog-mode)))
+
 
 
 ;; Tell Emacs the Tab length
