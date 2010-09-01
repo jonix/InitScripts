@@ -26,6 +26,10 @@
 (setq auto-async-byte-compile-exclude-files-regexp "/junk/")
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 
+;; Lookup Qt C++ doc
+(require 'qtdoc)
+
+
 ;; Start Emacs in Daemon mode. If you have run Emacs once a daemon is started in the background which all other Emacs is connected to, hence a much faster startup time
 ;; (server-start)
 
