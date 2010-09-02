@@ -8,8 +8,6 @@
 ;; Highlight matching parenthesis () [] {} <> (depending on the mode)
 (require 'paren)
 
-
-
 ;; Tell Emacs to syntax highlight file that is emacs_config
 (setq auto-mode-alist (append
 	  '(("emacs_config" . lisp-mode))
@@ -24,8 +22,6 @@
 
 ;; Treat .h files as C++ header files
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-
-
 
 ;; === Start >> Treat standard C++ header files with no file extension as C++ files ===
 (require 'cl)

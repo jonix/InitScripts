@@ -18,6 +18,16 @@
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
 (setq bookmark-default-file "~/.InitScripts/Emacs/Configs/emacs_bookmarks.bmk")
 
+(load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
+
+
+
+;; Disable the built-in version of Cedet
+;; (setq load-path
+;;       (remove (concat "/usr/share/emacs/"
+;; 		      (substring emacs-version 0 -2) "/lisp/cedet")
+;; 	      load-path))
+
 ;; Disable the Toolbar
 (tool-bar-mode -1)
 
@@ -27,7 +37,7 @@
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 
 ;; Lookup Qt C++ doc
-(require 'qtdoc)
+;; (require 'qtdoc)
 
 
 ;; Start Emacs in Daemon mode. If you have run Emacs once a daemon is started in the background which all other Emacs is connected to, hence a much faster startup time
@@ -455,8 +465,8 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 
 ;; Doxygen/Javadoc help
-(require 'doc-mode)
-(add-hook 'c-mode-common-hook 'doc-mode)
+;;(require 'doc-mode)
+;; (add-hook 'c-mode-common-hook 'doc-mode)
 
 ;; Automatically load TAGS file
 (require 'etags-table)
