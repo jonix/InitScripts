@@ -76,6 +76,7 @@
 *** http://philjackson.github.com/magit/magit.html
 ** [M-x re-builder] - Interactive Regex builder realtime display
 
+** `C-cf`     Open URL at point in system web browser
 
 * Org-mode
 ** `C-c C-x C-c` Switch to Column view

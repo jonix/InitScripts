@@ -72,3 +72,5 @@
 ;  (define-key c++-mode-map "\C-m" 'reindent-then-newline-and-indent)
 ;; (global-set-key [control escape] 'semantic-ia-complete-symbol)
 ;; semantic-analyze-possible-completions
+
+(global-set-key "\C-cf" 'browse-url-at-point)
