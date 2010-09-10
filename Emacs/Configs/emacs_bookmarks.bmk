@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("CCFx_WebSite"
+(("DayPlanner.org"
+ (filename . "~/Documents/GTD/DayPlanner.org")
+ (front-context-string)
+ (rear-context-string . "TUP: hidestars\n\n")
+ (position . 42))
+("CCFx_WebSite"
  (filename . "~/Projects/Work/CycoreFx/CCfx_WebSite/wwwroot/index.php")
  (front-context-string . "<!DOCTYPE html P")
  (rear-context-string)

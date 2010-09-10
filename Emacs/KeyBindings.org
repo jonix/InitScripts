@@ -58,7 +58,6 @@
 ** [M-x highlight-phrase] - Highlight all occurrences of the phrase
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
-
 ** `C-x 4 f`   find-file-other-window
 
 
@@ -76,12 +75,33 @@
 *** http://philjackson.github.com/magit/magit.html
 ** [M-x re-builder] - Interactive Regex builder realtime display
 
+** [M-x describe-last-function] - Looks up the previous function and describes it
+** `C-x z`    Repeat the last command
+** `C-x C-+`  Increase the font size
+** `C-x C--`  Decrease the font size
+** [M-x make-directory] - Creates a directory
+
 ** `C-cf`     Open URL at point in system web browser
+** `M-$`      Show suggestion for misspelled word
 
 * Org-mode
+** Links
+*** Project planning with org-mode - http://www.contextualdevelopment.com/articles/2008/project-planning
+*** Remember work flow - http://orgmode.org/worg/users/rpr.php
+*** Wiki: http://www.emacswiki.org/emacs/RememberMode
 ** `C-c C-x C-c` Switch to Column view
-** Project planning with org-mode - http://www.contextualdevelopment.com/articles/2008/project-planning
+** `C-c C-s` - Schedule a date
+** `C-c r` (remember-mode) A scratch buffer that is saved for fast jotting of thoughts
+*** Can use tags to open a specific remember file (n for notes.org, t for todo.org, etc)
 
+** `C-c <` Add current date
+
+
+
+* Remember mode
+** Tutorial - http://members.optusnet.com.au/~charles57/GTD/remember.html
+** `C-c r`   Switch to remember mode file(s)
+** `C-c C-c` Save and close the buffer and go back to previous buffer where you worked
 
 * C++ mode
 ** (Semantic mode must be enabled)
@@ -97,6 +117,7 @@
 ** `C-M-.`   Search for symbols that matches the pattern
 ** `C-c c`   Compile file
 ** `C-``     Jump to next error
+
 
 * General notes
 ** The single most useful Emacs feature - http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature
