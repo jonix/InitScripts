@@ -243,6 +243,12 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; ==== >>>>> Copy lines (instead of killing and instantly yanking) end ================
 
 
+;; === <<< Start Disable mouse copying ====
+(setq mouse-drag-copy-region nil)
+(global-unset-key [mouse-2])
+;; === >>> End disable mouse copying ====
+
+
 ;; === <<< Open files with sudo privs start =========
 (defun find-alternative-file-with-sudo ()
   "Open current buffer as root!"
