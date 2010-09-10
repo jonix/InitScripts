@@ -56,6 +56,8 @@
                           (kill-buffer "*scratch*")
                           (save-buffers-kill-emacs t))))
 
+(global-set-key (kbd "<C-tab>") 'yas/expand)
+
 ;; Change C-x C-b behavior so it uses bs;
 ;; shows only interesting buffers.
 (global-set-key "\C-x\C-b" 'bs-show)
