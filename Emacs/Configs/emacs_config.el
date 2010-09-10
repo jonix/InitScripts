@@ -18,7 +18,8 @@
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
 (setq bookmark-default-file "~/.InitScripts/Emacs/Configs/emacs_bookmarks.bmk")
 
-(load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
+;; (load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
+(load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
 
 
 
@@ -539,3 +540,4 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (define-key dired-mode-map (kbd "<backspace>") 'dired-up-directory)
 ;; Revert dired lists on revisiting them
 (setq dired-auto-revert-buffer t)
+(put 'dired-find-alternate-file 'disabled nil)

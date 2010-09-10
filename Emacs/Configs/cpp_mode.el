@@ -1,19 +1,20 @@
 ;; (load-file "~/cedet/common/cedet.el")
+(load-file "~/Temp/cedet/common/cedet.el")
 
-;; (require 'semantic-ia)
-;; (require 'semantic-gcc)
+(require 'semantic-ia)
+(require 'semantic-gcc)
 
 (require 'semantic)
-(setq semantic-mode 1)
-;;(semantic-load-enable-code-helpers)
-;; (semantic-load-enable-excessive-code-helpers)
+; (setq semantic-mode 1)
+; (semantic-load-enable-code-helpers)
+(semantic-load-enable-excessive-code-helpers)
 
 (defun my-semantic-hook ()
   (imenu-add-to-menubar "TAGS"))
 (add-hook 'semantic-init-hooks 'my-semantic-hook)
 
-;; (require 'semanticdb)
-;; (global-semanticdb-minor-mode 1)
+(require 'semanticdb)
+(global-semanticdb-minor-mode 1)
 
 
 ;; enable ctags for some languages:
@@ -35,4 +36,4 @@
 
 
 ;; (semantic-add-system-include "~/exp/include/boost_1_37" 'c++-mode)
-(setq semantic-load-turn-useful-things-on t)
+;; (setq semantic-load-turn-useful-things-on t)
