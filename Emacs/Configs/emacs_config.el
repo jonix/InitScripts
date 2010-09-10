@@ -414,6 +414,18 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 ;; ======= <<< Org mode end ===========
 
+;; ======= <<< Bind Pomodoro technique with Org-mode ======
+(add-to-list 'org-modules 'org-timer)
+(setq org-timer-default-timer 25)
+(add-hook 'org-clock-in-hook '(lambda ()
+								(if (not org-timer-current-timer)
+									(org-timer-set-timer '(16)))))
+
+;; Now org-clock-in
+
+;; ======= <<< Pomodoro end ===========
+
+
 ;; === >>> Complete anything support =====
 
 ;; Add company The package to COMP(lete) ANY(thing)
