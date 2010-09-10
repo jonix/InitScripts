@@ -259,6 +259,12 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
  	      buffer-file-name))))
 ;; === <<< Open files with sudo privs end =========
 
+;; Let Emacs tell me (at my requests) what and how the previous function were
+(defun describe-last-function()
+  (interactive)
+  (describe-function last-command))
+
+
 
 ;; === <<< Reindent the copy&pasted code start =======
 (defadvice yank (after indent-region activate)
