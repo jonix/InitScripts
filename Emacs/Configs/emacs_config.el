@@ -20,7 +20,7 @@
 
 ;; (load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
 (load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
-
+;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode_2.el")
 
 
 ;; Disable the built-in version of Cedet
@@ -111,6 +111,20 @@
 ;; Show time in status bar.
 (setq european-calendar-style t)
 (display-time)
+
+;; Let the calendar start the weeks on monday
+;; (setq calendar-week-start-day 1) ;; as opposed to 0 (sunday)
+
+;; Show week numbers in Calendar
+(setq calendar-week-start-day 1
+      calendar-intermonth-text
+      '(propertize
+        (format "%2d"
+                (car
+                 (calendar-iso-from-absolute
+                  (calendar-absolute-from-gregorian (list month day year)))))
+        'font-lock-face 'font-lock-function-name-face))
+
 
 ;; To remove excessive colors when viewing white space
 (setq whitespace-style (quote
@@ -223,6 +237,13 @@
 
 ;; Add support for Ack (a better grep)
 (require 'ack)
+
+;; Add support for reStructuredText
+(require 'rst)
+(setq auto-mode-alist
+      (append '(("\\.txt$" . rst-mode)
+                ("\\.rst$" . rst-mode)
+                ("\\.rest$" . rst-mode)) auto-mode-alist))
 
 
 ;; Open file recursively
@@ -427,8 +448,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; ======= <<< Pomodoro end ===========
 
 
-;; === >>> Complete anything support =====
 
+
+;; === >>> Complete anything support =====
 ;; Add company The package to COMP(lete) ANY(thing)
 ;; (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins/company")
 ;; (autoload 'company-mode "company" nil t)

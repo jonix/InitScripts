@@ -7,7 +7,7 @@
 ;; Requirements:
 ;; Status: not intended to be distributed yet
 
-(load-file "~/Temp/cedet/common/cedet.el")
+(load-file "~/.InitScripts/Emacs/Plugins/cedet/common/cedet.el")
 
 (semantic-load-enable-excessive-code-helpers)
 ;;(semantic-load-enable-semantic-debugging-helpers)
