@@ -412,6 +412,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (autoload 'services-lookup      "services" "Perform a service lookup" t)
 (autoload 'services-clear-cache "services" "Clear the service cache"  t)
 
+;; Looking up TLD (top level domains) by abbrevation or complete country name
+(autoload 'tld "tld" "Perform a TLD lookup" t)
+
 
 ;; For Git commands
 ;;(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
