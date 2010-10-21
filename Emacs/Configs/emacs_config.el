@@ -540,6 +540,10 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; Add scratch buffer with previous selected mode active
 (autoload 'scratch "scratch" nil t)
 
+;; Ensure the cursor is top/bottom most when scrolling, I.E the mouse reaches top/bottom of the document
+(require 'fscroll)
+
+
 ;;; Loading extracted settings ;;;
 (load-file "~/.InitScripts/Emacs/Configs/emacs_config_highlighting.el")
 (load-file "~/.InitScripts/Emacs/Configs/emacs_config_keybindings.el")
