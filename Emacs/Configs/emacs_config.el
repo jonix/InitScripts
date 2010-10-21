@@ -408,6 +408,11 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (autoload 'protocols-lookup      "protocols" "Perform a protocol lookup" t)
 (autoload 'protocols-clear-cache "protocols" "Clear the protocols cache" t)
 
+;; For looking up services by name
+(autoload 'services-lookup      "services" "Perform a service lookup" t)
+(autoload 'services-clear-cache "services" "Clear the service cache"  t)
+
+
 ;; For Git commands
 ;;(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
 ;;(require 'magit)
