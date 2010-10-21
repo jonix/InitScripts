@@ -401,6 +401,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (require 'ido)
 (ido-mode t)
 
+;; For box quoting
+(require 'boxquote)
+
 ;; For Git commands
 ;;(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
 ;;(require 'magit)

@@ -76,3 +76,10 @@
 ;; semantic-analyze-possible-completions
 
 (global-set-key "\C-cf" 'browse-url-at-point)
+
+;; For box quoting
+;; (global-set-key [(shift f2)]  'af-bookmark-cycle-reverse )        ;; Prev bookmark
+
+(global-set-key "\C-xx" 'boxquote-region)
+(global-set-key "\C-xX" 'boxquote-insert-file)
+

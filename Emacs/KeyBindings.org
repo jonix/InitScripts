@@ -35,6 +35,8 @@
 * Formatting
 ** [M-x align-regexp] - Align region with regex. Ex. ' = '
 ** [M-x delete-trailing-whitespace] - Removes white spaces
+** `C-xx`      Box quote the selection
+** `C-xX`      Insert file as a box quoted text
 * Editing
 ** `C-x C-r`   Open Recent file menu
 ** `C-x M-f`   Find file recursively
