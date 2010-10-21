@@ -404,6 +404,10 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; For box quoting
 (require 'boxquote)
 
+;; For looking up protocol names
+(autoload 'protocols-lookup      "protocols" "Perform a protocol lookup" t)
+(autoload 'protocols-clear-cache "protocols" "Clear the protocols cache" t)
+
 ;; For Git commands
 ;;(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
 ;;(require 'magit)
