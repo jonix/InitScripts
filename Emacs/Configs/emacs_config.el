@@ -424,6 +424,7 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+(setq org-return-follows-link t)
 ;; === End << Setup org-mode TODO actions ===
 
 ;; ======= >>> Org mode start =======

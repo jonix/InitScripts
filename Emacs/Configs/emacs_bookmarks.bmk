@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("DayPlanner.org"
+(("Bugs_Features.org"
+ (filename . "~/Projects/Work/Mapiton/Docs/Bugs_Features.org")
+ (front-context-string . "hings good to kn")
+ (rear-context-string . "\n* Misc notes (t")
+ (position . 98))
+("DayPlanner.org"
  (filename . "~/Documents/GTD/DayPlanner.org")
  (front-context-string)
  (rear-context-string . "TUP: hidestars\n\n")

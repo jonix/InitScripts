@@ -8,13 +8,18 @@
  '(aquamacs-tool-bar-user-customization nil t)
  '(cua-mode t nil (cua-base))
  '(display-time-mode t)
+;; '(global-semantic-tag-folding-mode t nil (semantic-util-modes))
  '(isearch-allow-scroll t)
  '(js2-auto-indent-p t)
  '(js2-enter-indents-newline t)
+ '(ns-alternate-modifier (quote super))
+ '(ns-command-modifier (quote meta))
  '(ns-tool-bar-display-mode (quote both) t)
  '(ns-tool-bar-size-mode (quote regular) t)
  '(php-manual-path "~/Documents/PHPDoc/")
  '(save-place t nil (saveplace))
+ '(semantic-idle-scheduler-idle-time 3)
+ '(semantic-self-insert-show-completion-function (lambda nil (semantic-ia-complete-symbol-menu (point))))
  '(show-paren-mode t))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
