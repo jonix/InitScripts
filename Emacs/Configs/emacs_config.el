@@ -544,6 +544,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (require 'fscroll)
 
 
+;; Add support for encode (obfuscate) to a URL path to contain % characters
+(autoload 'obfuscate-url "obfusurl" "Obfuscate URL under point" t)
+
 ;;; Loading extracted settings ;;;
 (load-file "~/.InitScripts/Emacs/Configs/emacs_config_highlighting.el")
 (load-file "~/.InitScripts/Emacs/Configs/emacs_config_keybindings.el")
