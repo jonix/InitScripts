@@ -406,6 +406,12 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (require 'ido)
 (ido-mode t)
 
+;; Added support for highlighting FIXME in code comments
+(require 'fic-mode)
+(add-hook 'c++-mode-hook 'turn-on-fic-mode)
+(add-hook 'emacs-lisp-mode-hook 'turn-on-fic-mode)
+
+
 ;; For box quoting
 (require 'boxquote)
 
