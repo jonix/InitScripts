@@ -416,6 +416,11 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (autoload 'tld "tld" "Perform a TLD lookup" t)
 
 
+;; Show a silly thinking bubble with the selected text
+(autoload 'thinks "thinks" "Wraps the selected text in a thinking bubble" t)
+;; (require 'thinks)
+
+
 ;; For Git commands
 ;;(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
 ;;(require 'magit)
