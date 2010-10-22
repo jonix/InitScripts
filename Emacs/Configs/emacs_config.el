@@ -392,7 +392,12 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; ===== >>> Bookmark support end ====
 
 
-;;;; For YASnippet (TextMate like snippets, think "cl+<Tab>" for a full C++ class definition)
+;; Improving M-x similar to IDO enhances Open File mechanism
+(require 'smex)
+(smex-initialize)
+
+
+;; For YASnippet (TextMate like snippets, think "cl+<Tab>" for a full C++ class definition)
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
 (yas/load-directory "~/.InitScripts/Emacs/Plugins/yasnippet/snippets")
