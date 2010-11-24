@@ -2,13 +2,18 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Bugs_Features.org"
+(("DateDiary"
+ (filename . "~/Documents/Personal/ImportantDates.org.gpg")
+ (front-context-string)
+ (rear-context-string . "h se det med mig")
+ (position . 1519))
+("Bugs_Features.org"
  (filename . "~/Projects/Work/Mapiton/Docs/Bugs_Features.org")
  (front-context-string . "hings good to kn")
  (rear-context-string . "\n* Misc notes (t")
  (position . 98))
 ("DayPlanner.org"
- (filename . "~/Documents/GTD/DayPlanner.org")
+ (filename . "~/Documents/GTD/DayPlanner.org.gpg")
  (front-context-string)
  (rear-context-string . "TUP: hidestars\n\n")
  (position . 42))
@@ -22,13 +27,13 @@
  (front-context-string . "** `C-;`       C")
  (rear-context-string . "egion-rectangle\n")
  (position . 1827))
-("Todo.org"
- (filename . "~/Documents/GTD/Todo.org")
+("CycoreSystems TODO"
+ (filename . "~/Documents/GTD/Todo.org.gpg")
  (front-context-string . "* Remember\n** fd")
  (rear-context-string . "her reasons\n\n\n\n\n")
  (position . 2639))
 ("Personal.org"
- (filename . "~/Documents/GTD/Personal.org")
+ (filename . "~/Documents/GTD/Personal.org.gpg")
  (front-context-string . "* Arbete\n** Koll")
  (rear-context-string . "010-07-06 Tue>\n\n")
  (position . 88))
