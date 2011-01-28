@@ -1,8 +1,21 @@
 	#!/bin/bash
 
 #export PS1="\h:\W \u\$"
-export PS1="\u:\w> "
+#export PS1="\u:\w> "
 
+export PS1="\u:\W$ "
+
+
+
+# Print working directory after a cd.
+cd() {
+    if [[ $@ == '-' ]]; then
+        builtin cd "$@" > /dev/null  # We'll handle pwd.
+    else
+        builtin cd "$@"
+    fi
+    echo -e "   \033[1;30m"`pwd`"\033[0m"
+}
 
 ### For grep coloring ####
 export GREP_OPTIONS='--color=auto'

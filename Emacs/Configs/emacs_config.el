@@ -415,7 +415,12 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; ===== >>> Bookmark support end ====
 
 
-;;;; For YASnippet (TextMate like snippets, think "cl+<Tab>" for a full C++ class definition)
+;; Improving M-x similar to IDO enhances Open File mechanism
+(require 'smex)
+(smex-initialize)
+
+
+;; For YASnippet (TextMate like snippets, think "cl+<Tab>" for a full C++ class definition)
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
 (yas/load-directory "~/.InitScripts/Emacs/Plugins/yasnippet/snippets")
@@ -423,6 +428,32 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; For IDO (Improved buffer switching, much like TextMate ALT+T fuzzy matching) (Ovverides C-x C-f and C-x b)
 (require 'ido)
 (ido-mode t)
+
+;; Added support for highlighting FIXME in code comments
+(require 'fic-mode)
+(add-hook 'c++-mode-hook 'turn-on-fic-mode)
+(add-hook 'emacs-lisp-mode-hook 'turn-on-fic-mode)
+
+
+;; For box quoting
+(require 'boxquote)
+
+;; For looking up protocol names
+(autoload 'protocols-lookup      "protocols" "Perform a protocol lookup" t)
+(autoload 'protocols-clear-cache "protocols" "Clear the protocols cache" t)
+
+;; For looking up services by name
+(autoload 'services-lookup      "services" "Perform a service lookup" t)
+(autoload 'services-clear-cache "services" "Clear the service cache"  t)
+
+;; Looking up TLD (top level domains) by abbrevation or complete country name
+(autoload 'tld "tld" "Perform a TLD lookup" t)
+
+
+;; Show a silly thinking bubble with the selected text
+(autoload 'thinks "thinks" "Wraps the selected text in a thinking bubble" t)
+;; (require 'thinks)
+
 
 ;; For Git commands
 ;;(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
@@ -561,6 +592,13 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 ;; Add scratch buffer with previous selected mode active
 (autoload 'scratch "scratch" nil t)
+
+;; Ensure the cursor is top/bottom most when scrolling, I.E the mouse reaches top/bottom of the document
+(require 'fscroll)
+
+
+;; Add support for encode (obfuscate) to a URL path to contain % characters
+(autoload 'obfuscate-url "obfusurl" "Obfuscate URL under point" t)
 
 ;;; Loading extracted settings ;;;
 (load-file "~/.InitScripts/Emacs/Configs/emacs_config_highlighting.el")

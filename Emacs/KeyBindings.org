@@ -18,16 +18,12 @@
        List all bookmarks (`list-bookmarks').
 *** `M-x bookmark-save'
        Save all the current bookmark values in the default bookmark file.
-
-
 * Compilation keybindings
 ** `C-cc` compile
 ** `C-cv` recompile
     Shortcut to compile a buffer that has already been compiled at least once
 ** `C-c.` Go to next error
 ** `C-c,` Go to previous errors
-
-
 * Navigational keybindings
 ** `C-l NUMBER <RET>` Go to line number in buffer
 ** `C-c C-o` Go to file under cursor
@@ -39,16 +35,13 @@
 ** `f5` C++ ebrowse tree mode
 ** `C-s C-s` Search again for the same string
 ** `C-s C-w` Search for word under cursor. Press C-w to include more words
-
 ** `C-x <SPC> r` Save the position into register 'r'
 ** `C-x r j r` Jump back to position stored in register 'r'
-
-
 * Formatting
+** `C-xx`      Box quote the selection
+** `C-xX`      Insert file as a box quoted text
 ** [M-x align-regexp] - Align region with regex. Ex. ' = '
 ** [M-x delete-trailing-whitespace] - Removes white spaces
-
-
 * Editing
 ** `C-x C-r`   Open Recent file menu
 ** `C-x M-f`   Find file recursively
@@ -60,15 +53,16 @@
 ** `C-;`       Comment selected region
 ** `C-:`       Uncomment selected region
 ** `C-tab`     (PHP) Complete built-in PHP functions
+** `C-x 4 f`   find-file-other-window
+** `C-xx`      Box quote selected region
+** `C-xX`      Box quote insert file
 ** [M-x highlight-phrase] - Highlight all occurrences of the phrase
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
-** `C-x 4 f`   find-file-other-window
-
-
 * Misc
+** `C-c d`    Insert date and time in the format of YYYY-MM-DD HH:NN
 ** `M-!`      Run the shell command and show the output in mini buffer
-*** `M-n`      When in M-! mode, provide some default choices
+*** `M-n`     When in M-! mode, provide some default choices
 ** `M-|`      Run the shell command with the selected region as input data.
 ** `C-u M-|`  Run the shell command with the selected region as input data. Replace selection with output
 ** `C-xs`     Open file with sudo privileges
@@ -88,36 +82,29 @@
 ** [M-x make-directory] - Creates a directory
 ** `C-cf`     Open URL at point in system web browser
 ** `M-$`      Show suggestion for misspelled word
-
-
 * Org-mode
 ** Links
 *** Project planning with org-mode - http://www.contextualdevelopment.com/articles/2008/project-planning
 *** Remember work flow - http://orgmode.org/worg/users/rpr.php
 *** Wiki: http://www.emacswiki.org/emacs/RememberMode
-** `C-c C-x C-c` Switch to Column view
-** `C-c C-s` - Schedule a date
-** `C-c r` (remember-mode) A scratch buffer that is saved for fast jotting of thoughts
+** `C-c C-x C-c`  Switch to Column view
+** `C-c C-s`      Schedule a date
+** `C-c r`        (remember-mode) A scratch buffer that is saved for fast jotting of thoughts
 *** Can use tags to open a specific remember file (n for notes.org, t for todo.org, etc)
-
 ** `C-c !` Add current date
 ** `C-c <` Add current date
+** `C-u C-c C-l`  Insert a file link in the document (TAB completion of path supported)
 *** A date buffer must exist
 ** `C-c C-e A` Export to ASCII buffer, do not create a file.
-
-
 * Remember mode
 ** Tutorial - http://members.optusnet.com.au/~charles57/GTD/remember.html
 ** `C-c r`   Switch to remember mode file(s)
 ** `C-c C-c` Save and close the buffer and go back to previous buffer where you worked
-
-
 * C++ mode
 ** (Semantic mode must be enabled)
 *** `C-c C-d d` Parse function and generate a Doxygen comment block of the function signature
 *** `C-c C-d f` Fold the Doxygen comment
 *** `C-c C-d u` Unfold the Doxygen comment
-
 ** `[M-x visit-tags-table]` load the pre-generated TAGS file
 ** `M-.`     Go to tag under cursor
 ** `C-u M-.` Go to next tag
@@ -126,13 +113,11 @@
 ** `C-M-.`   Search for symbols that matches the pattern
 ** `C-c c`   Compile file
 ** `C-``     Jump to next error
-
 * Shell mode
 ** `M-p` - Previous command in history
 ** `M-n` - Next command in history
 ** `C-c C-o` - Deletes output of previous command
 ** `C-c C-r` - Moves back to previous command in window
-
 * Bookmark mode
 ** `C-x r l` - Open the Bookmark buffer
 ** `C-x r m` - Add file to Bookmark file
@@ -148,7 +133,6 @@
 *** w     - Location of file associated with bookmark
 *** DEL   - Remove mark from previous line
 *** q     - Exit bookmark list
-
 * Textmate mode
 ** `M-t` - Go to File
 ** `M-T` - Go to Symbol
@@ -163,14 +147,14 @@
 ** `C-Down arrow` - Column Down
 ** `M-RET - Insert Newline at Line's End
 ** `CM-t - Reset File Cache (for Go to File)
-
-
 * General notes
+** `C-ct`    Switch between h/cpp file
 ** The single most useful Emacs feature - http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature
-** Ten essential Emacs tips and tricks - http://web.psung.name/emacstips/essential.html
-** For a more ergonomic Emacs - http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
+** Ten essential Emacs tips and tricks  - http://web.psung.name/emacstips/essential.html
+** For a more ergonomic Emacs           - http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
 ** Drawing ascii charts
 *** Ditaa
 **** Renders an ascii image to full featured graphics file (jpg, png, etc)
 *** Artist mode
 **** Draw ascii arts with the mouse withing Emacs using a mouse
+

@@ -2,7 +2,7 @@
 ### General aliases
 
 # A coloured ls
-alias l='ls -lFG'
+alias l='ls -lFGh'
 
 # A ls that only lists directories
 alias lsd='ls -lF |grep /'
