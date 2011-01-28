@@ -1,3 +1,8 @@
+#+STARTUP: hidestars
+#+STARTUP: showall
+#+OPTIONS: H:1 num:t toc:t \n:nil @:t ::t |:t ^:t f:t TeX:t
+
+
 * Bookmark key bindings
 ** [f2]     - Cycle bookmark forward
 ** [S-f2]   - Cycle bookmark previous
@@ -63,7 +68,7 @@
 
 * Misc
 ** `M-!`      Run the shell command and show the output in mini buffer
-** `M-n`      When in M-! mode, provide some default choices
+*** `M-n`      When in M-! mode, provide some default choices
 ** `M-|`      Run the shell command with the selected region as input data.
 ** `C-u M-|`  Run the shell command with the selected region as input data. Replace selection with output
 ** `C-xs`     Open file with sudo privileges
@@ -74,15 +79,16 @@
 ** [M-x gs]   Open Git status in current Git repository
 *** http://philjackson.github.com/magit/magit.html
 ** [M-x re-builder] - Interactive Regex builder realtime display
-
+** `C-x ESC ESC` - Repeat last complex command ([M-x command] kind of stuff]
+** `C-x z`    Repeat the last command (Move cursor, repeat last character, etc)
+*** `z` Repeat last command
 ** [M-x describe-last-function] - Looks up the previous function and describes it
-** `C-x z`    Repeat the last command
 ** `C-x C-+`  Increase the font size
 ** `C-x C--`  Decrease the font size
 ** [M-x make-directory] - Creates a directory
-
 ** `C-cf`     Open URL at point in system web browser
 ** `M-$`      Show suggestion for misspelled word
+
 
 * Org-mode
 ** Links
@@ -94,14 +100,17 @@
 ** `C-c r` (remember-mode) A scratch buffer that is saved for fast jotting of thoughts
 *** Can use tags to open a specific remember file (n for notes.org, t for todo.org, etc)
 
+** `C-c !` Add current date
 ** `C-c <` Add current date
-
+*** A date buffer must exist
+** `C-c C-e A` Export to ASCII buffer, do not create a file.
 
 
 * Remember mode
 ** Tutorial - http://members.optusnet.com.au/~charles57/GTD/remember.html
 ** `C-c r`   Switch to remember mode file(s)
 ** `C-c C-c` Save and close the buffer and go back to previous buffer where you worked
+
 
 * C++ mode
 ** (Semantic mode must be enabled)
@@ -117,6 +126,43 @@
 ** `C-M-.`   Search for symbols that matches the pattern
 ** `C-c c`   Compile file
 ** `C-``     Jump to next error
+
+* Shell mode
+** `M-p` - Previous command in history
+** `M-n` - Next command in history
+** `C-c C-o` - Deletes output of previous command
+** `C-c C-r` - Moves back to previous command in window
+
+* Bookmark mode
+** `C-x r l` - Open the Bookmark buffer
+** `C-x r m` - Add file to Bookmark file
+** While in Bookmark buffer
+*** d     - Mark for deletion
+*** u     - Unmark
+*** r     - Rename
+*** x     - Delete
+*** s     - Save all bookmarks
+*** m     - Mark
+*** v     - View bookmarked spots ;; "f" also works on a single file
+*** t     - Toggle display longlist/shortlist
+*** w     - Location of file associated with bookmark
+*** DEL   - Remove mark from previous line
+*** q     - Exit bookmark list
+
+* Textmate mode
+** `M-t` - Go to File
+** `M-T` - Go to Symbol
+** `M-l` - Go to Line
+** `M-L` - Select Line (or expand Selection to select lines)
+** `M-/` - Comment Line (or Selection/Region)
+** `M-]` - Shift Right (currently indents region)
+** `M-[` - Shift Left  (not yet implemented)
+** `CM-]` - Align Assignments
+** `CM-[` - Indent Line
+** `C-Up arrow`   - Column Up
+** `C-Down arrow` - Column Down
+** `M-RET - Insert Newline at Line's End
+** `CM-t - Reset File Cache (for Go to File)
 
 
 * General notes
