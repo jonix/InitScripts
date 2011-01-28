@@ -38,6 +38,12 @@
 ;; Disable the Toolbar
 (tool-bar-mode -1)
 
+;; Let long lines disapear out into the right margin
+(setq-default truncate-lines t)
+;; truncate even even when screen is split into multiple windows
+(setq-default truncate-partial-width-windows nil)
+
+
 ;; Auto byte-compile lisp plugins
 (require 'auto-async-byte-compile)
 (setq auto-async-byte-compile-exclude-files-regexp "/junk/")
@@ -381,6 +387,7 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; ======= >>> Easy Gnu Privacy Guard (eGPG) ==========
 (require 'epa)
 (epa-file-enable)
+;; (setq epa-armor t) ;; Ascii armor the encrypted file
  ;; ====== <<< Easy Gnu Privacy Guard (eGPG) end ==========
 
 ;; ====== >>> Recent files support ==========
@@ -430,6 +437,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+;; Follow symbolic links when pressing enter or tab
+(setq org-return-follows-link t)
+(setq org-tab-follows-link t)
 ;; === End << Setup org-mode TODO actions ===
 
 ;; ======= >>> Org mode start =======
@@ -527,7 +537,7 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; ==== Start Compile-Mode =====
 (autoload 'mode-compile "mode-compile"
   "Command to compile current buffer file based on the major mode" t)
- (global-set-key "\C-cc" 'mode-compile)
+ (global-set-key "\C-cb" 'mode-compile)
  (autoload 'mode-compile-kill "mode-compile"
   "Command to kill a compilation launched by `mode-compile'" t)
  (global-set-key "\C-ck" 'mode-compile-kill)
