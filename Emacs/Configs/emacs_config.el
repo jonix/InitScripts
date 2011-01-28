@@ -218,6 +218,16 @@
  (lambda()
    (flyspell-prog-mode)))
 
+;; (defun fd-switch-dictionary()
+;;   (interactive)
+;;      (let* ((dic ispell-current-dictionary)
+;; 			(change (if (string= dic "deutsch8") "english" "deutsch8")))
+;; 	   (ispell-change-dictionary change)
+;;        (message "Dictionary switched from %s to %s" dic change)
+;;      )
+;; )
+
+;;; FlySpell End ;;;
 
 
 ;; Tell Emacs the Tab length
@@ -325,7 +335,7 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; === Start >> To tell Emacs to use a sane Tab&Space policy ===
-(setq-default tab-width 4) ; or any other preferred value
+(setq-default tab-width 2) ; or any other preferred value
 (setq cua-auto-tabify-rectangles nil)
 
 (defadvice align (around smart-tabs activate)
