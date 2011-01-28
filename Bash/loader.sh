@@ -73,12 +73,20 @@ else
 	echo "Did not load mapiton shortcuts"
 fi
 
-## For the Mapiton project
+## For the Gallery Monkey project
 if [ -f ~/.InitScripts/Bash/gallery_monkey_shortcuts.sh ] ; then
 	echo "Loading Gallery Monkey shortcuts"
 	. ~/.InitScripts/Bash/gallery_monkey_shortcuts.sh
 else
 	echo "Did not load Gallery Monkey shortcuts"
+fi
+
+## For the Crenna.se project
+if [ -f ~/.InitScripts/Bash/crenna_shortcuts.sh ] ; then
+	echo "Loading Crenna.se shortcuts"
+	. ~/.InitScripts/Bash/crenna_shortcuts.sh
+else
+	echo "Did not load Crenna shortcuts"
 fi
 
 ## For the CycoreFx Website FS on local machine
