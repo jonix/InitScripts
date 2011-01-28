@@ -18,6 +18,10 @@
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
 (setq bookmark-default-file "~/.InitScripts/Emacs/Configs/emacs_bookmarks.bmk")
 
+;; Emulate some things from Textmate
+(require 'textmate)
+(textmate-mode)
+
 ;; Setup C++ mode
 (load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
 ;;(load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
