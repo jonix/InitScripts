@@ -98,7 +98,7 @@ selected.  If the speedbar frame is active, then select the attached frame.
 
 ;;;### (autoloads nil nil ("bigclock.el" "dframe.el" "fsum.el" "sb-ant.el"
 ;;;;;;  "sb-html.el" "sb-image.el" "sb-texinfo.el" "speedbar-load.el")
-;;;;;;  (19580 55537 69611))
+;;;;;;  (19629 55713 77535))
 
 ;;;***
 

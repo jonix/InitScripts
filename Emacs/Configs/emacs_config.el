@@ -18,9 +18,11 @@
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
 (setq bookmark-default-file "~/.InitScripts/Emacs/Configs/emacs_bookmarks.bmk")
 
-;; (load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
-(load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
-;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode_2.el")
+;; Setup C++ mode
+(load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
+;;(load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
+;;;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode_2.el")
+;; (load-file "~/.InitScripts/Emacs/Configs/new_cedet_mode.el")
 
 
 ;; Disable the built-in version of Cedet

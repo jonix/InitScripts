@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2008 Eric M. Ludlam
 
-;; Author: Jonatan Andersson <jonix@Jonatan-Anderssons-MacBook.local>
-;; Created: 2010-08-31 12:25:25+0200
+;; Author: Jonatan Andersson <jonix@komputix>
+;; Created: 2010-10-07 16:31:33+0200
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

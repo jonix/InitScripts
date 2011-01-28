@@ -2,8 +2,8 @@
 
 ;;; Copyright (C) 2007 Daniel Debertin (debertin@gmail.com)
 
-;; Author: Jonatan Andersson <jonix@Jonatan-Anderssons-MacBook.local>
-;; Created: 2010-08-31 12:25:48+0200
+;; Author: Jonatan Andersson <jonix@komputix>
+;; Created: 2010-10-07 16:31:56+0200
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

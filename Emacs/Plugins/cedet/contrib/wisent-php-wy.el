@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2008 Free Software Foundation
 
-;; Author: Jonatan Andersson <jonix@Jonatan-Anderssons-MacBook.local>
-;; Created: 2010-08-31 12:25:49+0200
+;; Author: Jonatan Andersson <jonix@komputix>
+;; Created: 2010-10-07 16:31:57+0200
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

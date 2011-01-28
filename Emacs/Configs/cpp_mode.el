@@ -1,12 +1,13 @@
 ;; (load-file "~/cedet/common/cedet.el")
-(load-file "~/Temp/cedet/common/cedet.el")
+;; (load-file "~/Temp/cedet/common/cedet.el")
+(load-file "~/.InitScripts/Emacs/Plugins/cedet/common/cedet.el")
 
 (require 'semantic-ia)
 (require 'semantic-gcc)
 
 (require 'semantic)
-; (setq semantic-mode 1)
-; (semantic-load-enable-code-helpers)
+(setq semantic-mode 1)
+(semantic-load-enable-code-helpers)
 (semantic-load-enable-excessive-code-helpers)
 
 (defun my-semantic-hook ()
@@ -36,4 +37,4 @@
 
 
 ;; (semantic-add-system-include "~/exp/include/boost_1_37" 'c++-mode)
-;; (setq semantic-load-turn-useful-things-on t)
+(setq semantic-load-turn-useful-things-on t)
