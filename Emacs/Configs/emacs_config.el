@@ -168,8 +168,8 @@
 (setq make-backup-files nil)
 
 ;; Tell Emacs to use SmartTab
-(require 'smart-tab)
-(global-smart-tab-mode 1)
+;;(require 'smart-tab)
+;;(global-smart-tab-mode 1)
 
 ;; Tell Emacs to save before compiling
 (defun my-save-and-compile ()
