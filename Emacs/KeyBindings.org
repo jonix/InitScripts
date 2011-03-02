@@ -56,6 +56,7 @@
 ** `C-x 4 f`   find-file-other-window
 ** `C-xx`      Box quote selected region
 ** `C-xX`      Box quote insert file
+** `M-\`       Expand word dynamically (Like ESC in Textmate)
 ** [M-x highlight-phrase] - Highlight all occurrences of the phrase
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
@@ -139,7 +140,7 @@
 ** `M-T` - Go to Symbol
 ** `M-l` - Go to Line
 ** `M-L` - Select Line (or expand Selection to select lines)
-** `M-/` - Comment Line (or Selection/Region)
+** `M-;` - Comment Line (or Selection/Region)
 ** `M-]` - Shift Right (currently indents region)
 ** `M-[` - Shift Left  (not yet implemented)
 ** `CM-]` - Align Assignments
