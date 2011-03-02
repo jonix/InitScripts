@@ -8,6 +8,7 @@ echo "Loading Linux specific settings"
 LANG=sv_SE.utf8
 GDM_LANG=sv_SE.utf8
 
+export JAVA_HOME=/usr/
 
 #export EDITOR="emacs -c"
 #export VISUAL="emacs -c"

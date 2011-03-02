@@ -9,7 +9,7 @@ echo "Loading Mac OS X specific settings"
 
 PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin
-PATH=$PATH:~/Applications/bin:~/Scripts:~/Scripts/GitScripts:~/Projects/Work/Mapiton/Native/Pigsty/MacOSX
+PATH=$PATH:~/Applications/bin:
 export PATH
 
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/Applications/lib:
@@ -20,5 +20,5 @@ export EDITOR="/usr/bin/mate --wait --change-dir"
 
 #export CC=/usr/bin/gcc-4.2
 #export CPP=/usr/bin/cpp-4.2
-#export CXX=/usr/bin/g++-4.2 
+#export CXX=/usr/bin/g++-4.2
 #export CXXCPP=/usr/bin/c++-4.2

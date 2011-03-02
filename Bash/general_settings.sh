@@ -33,6 +33,10 @@ export GREP_COLOR='1;32' # Regular
 # Setting the path for MacPorts.
 #export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
+PATH=$PATH:~/Scripts:~/Scripts/GitScripts:~/Projects/Work/Mapiton/Native/Pigsty/MacOSX
+export PATH
+
+
 fortunePath=`which fortune`
 if [ ! -z $fortunePath ] ; then
 	echo ""
