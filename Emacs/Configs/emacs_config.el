@@ -616,11 +616,11 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 (put 'narrow-to-region 'disabled nil)
 
-;; Disable Quit Emacs
-(defun dont-kill-emacs()
-  (interactive)
-  (error (substitute-command-keys "To exit emacs: \\[kill-emacs]")))
-(global-set-key "\C-x\C-c" 'dont-kill-emacs)
+;; ;; Disable Quit Emacs
+;; (defun dont-kill-emacs()
+;;   (interactive)
+;;   (error (substitute-command-keys "To exit emacs: \\[kill-emacs]")))
+;; (global-set-key "\C-x\C-c" 'dont-kill-emacs)
 
 ;; In dired mode, go up to parent directory by pressing backspace
 (define-key dired-mode-map (kbd "<backspace>") 'dired-up-directory)
