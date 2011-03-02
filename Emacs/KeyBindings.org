@@ -113,6 +113,7 @@
 ** `C-M-.`   Search for symbols that matches the pattern
 ** `C-c c`   Compile file
 ** `C-``     Jump to next error
+** `C-cf`    Use IDO and TAGS file for opening "project" files
 * Shell mode
 ** `M-p` - Previous command in history
 ** `M-n` - Next command in history

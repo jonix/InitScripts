@@ -627,3 +627,15 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; Revert dired lists on revisiting them
 (setq dired-auto-revert-buffer t)
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; Letting IDO complete files within a TAGS file
+;; Setting TAGS file in the root project directory, may give me a "project management" system
+(defun ido-find-file-in-tag-files ()
+	(interactive)
+	(save-excursion
+		(let ((enable-recursive-minibuffers t))
+			(visit-tags-table-buffer))
+		(find-file
+		 (expand-file-name
+			(ido-completing-read
+			 "Project file: " (tags-table-files) nil t)))))

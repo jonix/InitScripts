@@ -107,3 +107,5 @@
 (define-key global-map [(meta f9)]  'cscope-display-buffer)
 (define-key global-map [(meta f10)] 'cscope-display-buffer-toggle)
 
+;; TAGS file lookup aided with IDO
+(global-set-key "\C-c\C-f" 'ido-find-file-in-tag-files)
