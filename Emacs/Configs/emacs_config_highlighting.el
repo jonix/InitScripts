@@ -107,7 +107,7 @@ the directories in the INCLUDE environment variable."
 
 ;; For loading C++/header file counterpart
 (load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
-(define-key global-map "\C-xg" 'sourcepair-load)
+(define-key global-map "\C-ct" 'sourcepair-load)
 
 ;; For using EBrowse (ctags for C++)
 (global-set-key [f5] 'ebrowse-tree-mode)

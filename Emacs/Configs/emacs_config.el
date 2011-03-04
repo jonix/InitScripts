@@ -654,6 +654,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 			(setq buffer (car list))))
 	(message "Refreshed open files"))
 
+;; fix for Ubuntu 10.10 problem with flyspell (enabling caused an error)
+(setq flyspell-issue-welcome-flag nil)
+
 ;;; Speedbar same frame experiments
 
 (require 'sr-speedbar)
