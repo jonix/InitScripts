@@ -149,6 +149,18 @@
 ** `C-Down arrow` - Column Down
 ** `M-RET - Insert Newline at Line's End
 ** `CM-t - Reset File Cache (for Go to File)
+* SpeedBar (File navigation) [sr-toggle-speedbar]
+** `U` Go to parent folder
+** `+` Unfold item
+** `-` Fold item
+** `g` Refresh Speedbar
+** `n/p` Move to next/Previous item
+** `M-n/M-p` Move to next/previous item in confined space
+** `b` Switch into Quick Buffer mode (reverts back after one use)
+** `f` Switch into File Buffer mode (default)
+** `r` Reverts to previous mode
+** `Enter` Open folder, open file
+** Documentation at http://www.gnu.org/software/emacs/manual/html_node/speedbar/index.html#Top
 * General notes
 ** `C-ct`    Switch between h/cpp file
 ** The single most useful Emacs feature - http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature
@@ -160,3 +172,5 @@
 *** Artist mode
 **** Draw ascii arts with the mouse withing Emacs using a mouse
 
+
+ LocalWords:  SpeedBar speedbar
