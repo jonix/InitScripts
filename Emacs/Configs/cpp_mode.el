@@ -38,3 +38,11 @@
 
 ;; (semantic-add-system-include "~/exp/include/boost_1_37" 'c++-mode)
 (setq semantic-load-turn-useful-things-on t)
+
+;; ECB
+(add-to-list 'load-path
+						 "~/.InitScripts/Emacs/Plugins/ecb")
+
+;; (load-file "~/.InitScripts/Emacs/Plugins/ecb/ecb.el")
+(require 'ecb)
+
