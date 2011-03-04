@@ -171,6 +171,5 @@
 **** Renders an ascii image to full featured graphics file (jpg, png, etc)
 *** Artist mode
 **** Draw ascii arts with the mouse withing Emacs using a mouse
+** IDO Discussion at http://www.masteringemacs.org/articles/2010/10/10/introduction-to-ido-mode/
 
-
- LocalWords:  SpeedBar speedbar

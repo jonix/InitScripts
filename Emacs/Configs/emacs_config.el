@@ -430,6 +430,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 ;; For IDO (Improved buffer switching, much like TextMate ALT+T fuzzy matching) (Ovverides C-x C-f and C-x b)
 (require 'ido)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(setq ido-ignore-extensions t)
 (ido-mode t)
 
 ;; Added support for highlighting FIXME in code comments
