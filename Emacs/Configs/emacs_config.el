@@ -22,6 +22,9 @@
 (require 'textmate)
 (textmate-mode)
 
+;; Ruby UnitTest code
+(require 'ruby-test)
+
 ;; Setup C++ mode
 (load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
 ;;(load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
