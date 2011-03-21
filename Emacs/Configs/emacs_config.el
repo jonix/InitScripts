@@ -12,81 +12,47 @@
 
 ;; To keep custom variables in their own file
 ;; via the customize interface (M-x customize*)
-(setq custom-file "~/.InitScripts/Emacs/Configs/emacs_custom.el")
+(setq custom-file "~/.InitScripts/Emacs/Configs/custom_ui_configs.el")
 (load custom-file 'noerror)
 
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
-(setq bookmark-default-file "~/.InitScripts/Emacs/Configs/emacs_bookmarks.bmk")
-
-;; Emulate some things from Textmate
-(require 'textmate)
-(textmate-mode)
-
-;; Ruby UnitTest code
-(require 'ruby-test)
-
-;; Setup C++ mode
-(load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
-;;(load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
-;;;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode_2.el")
-;; (load-file "~/.InitScripts/Emacs/Configs/new_cedet_mode.el")
-
-
-;; Disable the built-in version of Cedet
-;; (setq load-path
-;;       (remove (concat "/usr/share/emacs/"
-;; 		      (substring emacs-version 0 -2) "/lisp/cedet")
-;; 	      load-path))
+(setq bookmark-default-file "~/.InitScripts/Emacs/Configs/bookmarks.bmk")
 
 ;; Disable the Toolbar
 (tool-bar-mode -1)
+
+;; Disable Lisp debugging mode
+(setq debug-on-error nil)
+
+;; Disable Ctrl+x, Ctrl+c, and other "standardized" keyboard shortcuts for copy and paste text. Why? Because Ctrl+x is used in many key combinations.
+(cua-mode nil)
+
 
 ;; Let long lines disapear out into the right margin
 (setq-default truncate-lines t)
 ;; truncate even even when screen is split into multiple windows
 (setq-default truncate-partial-width-windows nil)
 
+;; Open file recursively
+(require 'find-recursive)
 
 ;; Auto byte-compile lisp plugins
 (require 'auto-async-byte-compile)
 (setq auto-async-byte-compile-exclude-files-regexp "/junk/")
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 
-;; Lookup Qt C++ doc
-;; (require 'qtdoc)
+;; Ensure the cursor is top/bottom most when scrolling, I.E the mouse reaches top/bottom of the document
+(require 'fscroll)
 
-
-;; Start Emacs in Daemon mode. If you have run Emacs once a daemon is started in the background which all other Emacs is connected to, hence a much faster startup time
-;; (server-start)
-
-;; Save all buffers before compiling
-(setq compilation-ask-about-save nil)
-
-;; Follow the ouput from Compilation buffer
-;; (setq compilation-scroll-output t)
-;; Follow the output from Compilation buffer until first error appears
-(setq compilation-scroll-output 'first-error)
-
-;; Aliases - Shortening of often used commands
-(defalias 'gf 'grep-find)
-(defalias 'fd 'find-dired)
-(defalias 'sh 'shell)
-
-(defalias 'qrr 'query-replace-regexp)
-(defalias 'lml 'list-matching-lines)
-(defalias 'dml 'delete-matching-lines)
-(defalias 'rof 'recentf-open-files)
-
-(defalias 'gs 'magit-status)
-
-(defalias 'eb 'eval-buffer)
-(defalias 'er 'eval-region)
-(defalias 'ee 'eval-expression)
-
+;; Add scratch buffer with previous selected mode active
+(autoload 'scratch "scratch" nil t)
 
 ;; The startup screen is annoying.
 (setq inhibit-startup-message t)
 ;; (setq initial-scratch-message nil)
+
+;; Prevent Emacs from making backup files
+(setq make-backup-files nil)
 
 ;; Change buffer does not fail if in mini-buffer
 ;; (setq enable-recursive-minibuffers t)
@@ -108,6 +74,10 @@
 ;; Remove prompt that forces full “yes” or “no” when "y" or "no" suffice.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; Advanced option to view only a sub-section of a buffer
+(put 'narrow-to-region 'disabled nil)
+
+
 ;; For using the built-in clipboard provided by the OS
 (setq menu-bar-enable-clipboard t)
 
@@ -127,6 +97,77 @@
 (setq european-calendar-style t)
 (display-time)
 
+;; Start Emacs in Daemon mode. If you have run Emacs once a daemon is started in the background which all other Emacs is connected to, hence a much faster startup time
+;; (server-start)
+
+;; Follow the ouput from Compilation buffer
+;; (setq compilation-scroll-output t)
+;; Follow the output from Compilation buffer until first error appears
+(setq compilation-scroll-output 'first-error)
+
+;; For easier navigation between multiple visible windows
+;; Use meta-arrow keys for simulating CTRL+o
+(windmove-default-keybindings 'meta)
+
+;; Let M-x shell show correct colors when working with shell
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;; Setup aliases for M-x functions
+(load-file "~/.InitScripts/Emacs/Configs/aliases.el")
+
+;; Setup TAB config
+(load-file "~/.InitScripts/Emacs/Configs/tab_config.el")
+
+;; Setup recent file config
+(load-file "~/.InitScripts/Emacs/Configs/recent_file_config.el")
+
+;; Setup recent file config
+(load-file "~/.InitScripts/Emacs/Configs/whitespace_config.el")
+
+;; Setup C++ mode
+(load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
+;;(load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
+;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode_2.el")
+;; (load-file "~/.InitScripts/Emacs/Configs/new_cedet_mode.el")
+
+;; Setup GPG mode
+(load-file "~/.InitScripts/Emacs/Configs/gpg_config.el")
+
+;; Setup Org-mode
+(load-file "~/.InitScripts/Emacs/Configs/org_config.el")
+
+;; Setup ReStructuredText-mode (rst)
+(load-file "~/.InitScripts/Emacs/Configs/rst_mode.el")
+
+;; Setup Rich text format-mode (rtf)
+(load-file "~/.InitScripts/Emacs/Configs/rtf_mode.el")
+
+;; Setup Ruby-mode
+(load-file "~/.InitScripts/Emacs/Configs/ruby_config.el")
+
+;; Setup spell checking
+(load-file "~/.InitScripts/Emacs/Configs/spellchecking_config.el")
+
+;; Setup Service lookup
+(load-file "~/.InitScripts/Emacs/Configs/service_lookup.el")
+
+;; Setup Bookmark support
+(load-file "~/.InitScripts/Emacs/Plugins/bookmark_cycling.el")
+
+;; Setup Folding support
+(load-file "~/.InitScripts/Emacs/Configs/folding_support.el")
+
+;; Setup speedbar config
+(load-file "~/.InitScripts/Emacs/Configs/speedbar_config.el")
+
+;; Setup syntax highlighting
+(load-file "~/.InitScripts/Emacs/Configs/highlighting_config.el")
+
+;; Setup common keyboard shortcuts
+(load-file "~/.InitScripts/Emacs/Configs/keybindings_config.el")
+
+
+
 ;; Let the calendar start the weeks on monday
 ;; (setq calendar-week-start-day 1) ;; as opposed to 0 (sunday)
 
@@ -141,138 +182,25 @@
         'font-lock-face 'font-lock-function-name-face))
 
 
-;; To remove excessive colors when viewing white space
-(setq whitespace-style (quote
-  ( spaces tabs newline space-mark tab-mark newline-mark)))
-;; make whitespace-mode use “¶” for newline and “▷” for tab.
-;; together with the rest of its defaults
-(setq whitespace-display-mappings
- '(
-   (space-mark 32 [183] [46]) ; normal space
-   (space-mark 160 [164] [95])
-   (space-mark 2208 [2212] [95])
-   (space-mark 2336 [2340] [95])
-   (space-mark 3616 [3620] [95])
-   (space-mark 3872 [3876] [95])
-   (newline-mark 10 [182 10]) ; newline
-   (tab-mark 9 [9655 9] [92 9]) ; tab
-))
-
-;; To remove trailing whitespaces
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 ;; move cursor one line when going past end of page
 (setq scroll-step 1)
 
 ;; something else that should make scrolling nicer
 (setq scroll-conservatively 1)
 
-;; Prevent Emacs from making backup files
-(setq make-backup-files nil)
-
-;; Tell Emacs to use SmartTab
-;;(require 'smart-tab)
-;;(global-smart-tab-mode 1)
-
-;; Tell Emacs to save before compiling
-(defun my-save-and-compile ()
-  (interactive)
-  (save-buffer 0)
-  (compile compile-command)
-)
-
-;; Tell Emacs to spell check documents (aspell)
-(defun turn-spell-checking-on ()
-  "Turn speck-mode or flyspell-mode on."
-  ;; (speck-mode 1)
-  (flyspell-mode 1)
-  )
-(add-hook 'text-mode-hook 'turn-spell-checking-on)
-(add-hook 'org-mode-hook  'turn-spell-checking-on)
-;;(add-hook 'c-mode-common-hook   'hs-minor-mode)
-;;(add-hook 'c-mode-common-hook
-;;		  (lambda()
-;;			(flyspell-prog-mode 1)))
-(add-hook 'org-mode-hook
- (lambda()
-   (flyspell-mode 1)))
-
-(add-hook 'LaTeX-mode-hook
- (lambda()
-   (flyspell-mode 1)))
-
-(add-hook 'c-mode-common-hook
- (lambda()
-   (flyspell-prog-mode)))
-
-(add-hook 'php-mode-hook
- (lambda()
-   (flyspell-prog-mode)))
-
-(add-hook 'ruby-mode-hook
- (lambda()
-   (flyspell-prog-mode)))
-
-(add-hook 'perl-mode-hook
- (lambda()
-   (flyspell-prog-mode)))
-
-(add-hook 'javascript-mode-hook
- (lambda()
-   (flyspell-prog-mode)))
-
-;; (defun fd-switch-dictionary()
-;;   (interactive)
-;;      (let* ((dic ispell-current-dictionary)
-;; 			(change (if (string= dic "deutsch8") "english" "deutsch8")))
-;; 	   (ispell-change-dictionary change)
-;;        (message "Dictionary switched from %s to %s" dic change)
-;;      )
-;; )
-
-;;; FlySpell End ;;;
-
-
-;; Tell Emacs the Tab length
-;; For general indentation
-;; (setq-default c-basic-offset 4)
-
 ;; This might only be necessary on Mac OS X
 ;; Note: Scrollbars on OS X is relative to the amount of scrolling (bottom of document is a very small scrollbar)
 (when window-system
   (mwheel-install))
 
+;; For transparancy
 ;; (set-frame-parameter (selected-frame) 'alpha 70)
-
-;; For Delete to delete characters forward instead of backwards
-(normal-erase-is-backspace-mode 0)
-;; (keyboard-translate ?\C-? ?\C-d)
-
-;; make C-h delete (not Help) in ttys
-(global-set-key [?\C-h] 'backward-delete-char)
-
-;; Del will delete forward and Backspace will delete backwards
-(normal-erase-is-backspace-mode)
-
-;; Help is now M-? instead of C-h
-(global-set-key "\M-\?" 'help-command)
 
 ;; Add support for Cups printing
 (setq lpr-command "xpp")
 
 ;; Add support for Ack (a better grep)
 (require 'ack)
-
-;; Add support for reStructuredText
-(require 'rst)
-(setq auto-mode-alist
-      (append '(("\\.txt$" . rst-mode)
-                ("\\.rst$" . rst-mode)
-                ("\\.rest$" . rst-mode)) auto-mode-alist))
-
-
-;; Open file recursively
-(require 'find-recursive)
 
 ;; ==== <<<< Copy lines (instead of killing and instantly yanking) ================
 (defun copy-line (&optional arg)
@@ -311,11 +239,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
   (interactive)
   (describe-function last-command))
 
-
-;; Add Google weather to Org-mod
-(require 'google-weather)
-(require 'org-google-weather)
-
 ;; === <<< Reindent the copy&pasted code start =======
 (defadvice yank (after indent-region activate)
  (when (member major-mode '(c++-mode emacs-lisp-mode python-mode c-mode ruby-mode))
@@ -325,65 +248,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 	(goto-char (region-end))))
 
 ;; === >>> Reindent the copy&pasted code end =======
-
-
-;; Tell Emacs to have a fixed compilation buffers
-;; (Special Buffer Frames)
-;; (setq special-display-buffer-names
-;;	  '("*Completions*" "*grep*" "*tex-shell*"))
-
-
-;; For easier navigation between multiple visible windows
-;; Use meta-arrow keys for simulating CTRL+o
-(windmove-default-keybindings 'meta)
-
-;; Let M-x shell show correct colors when working with shell
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-;; === Start >> To tell Emacs to use a sane Tab&Space policy ===
-(setq-default tab-width 2) ; or any other preferred value
-(setq cua-auto-tabify-rectangles nil)
-
-(defadvice align (around smart-tabs activate)
-  (let ((indent-tabs-mode nil)) ad-do-it))
-
-(defadvice align-regexp (around smart-tabs activate)
-  (let ((indent-tabs-mode nil)) ad-do-it))
-
-(defmacro smart-tabs-advice (function offset)
-  (defvaralias offset 'tab-width)
-  `(defadvice ,function (around smart-tabs activate)
-     (if indent-tabs-mode
-         (progn
-          (save-excursion
-             (beginning-of-line)
-             (while (looking-at "\t*\\( +\\)\t+")
-               (replace-match "" nil nil nil 1)))
-           (setq tab-width tab-width)
-           (let ((tab-width fill-column)
-                 (,offset fill-column))
-             ad-do-it))
-       ad-do-it)))
-
-;; Sane Tabs for C/C++
-(smart-tabs-advice c-indent-line c-basic-offset)
-(smart-tabs-advice c-indent-region c-basic-offset)
-;; Sane Tabs for Ruby
-(smart-tabs-advice ruby-indent-line ruby-indent-level)
-(setq ruby-indent-tabs-mode t)
-;; Sane Tabs for Perl
-(smart-tabs-advice cperl-indent-line cperl-indent-level)
-;; Sane Tabs for Javascript
-(smart-tabs-advice js2-indent-line js2-basic-offset)
-;; Sane Tabs for Python
-(smart-tabs-advice python-indent-line-1 python-indent)
-(add-hook 'python-mode-hook
-		  (lambda ()
-			(setq indent-tabs-mode t)
-			(setq tab-width (default-value 'tab-width))))
-
-
-;; === End << To tell Emacs to use a sane Tab&Space policy ===
 
 
 ;; === <<< To make a new script executable when saving start =========
@@ -400,36 +264,19 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
               (concat "Saved as script: " buffer-file-name)))))
 ;; === >>> To make a new script executable when saving end =========
 
-;; ======= >>> Easy Gnu Privacy Guard (eGPG) ==========
-(require 'epa)
-(epa-file-enable)
-;; (setq epa-armor t) ;; Ascii armor the encrypted file
- ;; ====== <<< Easy Gnu Privacy Guard (eGPG) end ==========
-
-;; ====== >>> Recent files support ==========
-(require 'recentf) ;; save recently used files
-(recentf-mode t)
-(setq
-   recentf-max-saved-items 100
-   recentf-max-menu-items 25
-)
-(add-hook 'kill-emacs-hook 'recentf-save-list)
-;; ====== <<< Recent files end ==========
-
-;; ===== <<< Bookmark support ====
-(load-file "~/.InitScripts/Emacs/Plugins/bookmark_cycling.el")
-;; ===== >>> Bookmark support end ====
-
-
 ;; Improving M-x similar to IDO enhances Open File mechanism
 (require 'smex)
 (smex-initialize)
 
+;; Emulate some things from Textmate
+(require 'textmate)
+(textmate-mode)
 
 ;; For YASnippet (TextMate like snippets, think "cl+<Tab>" for a full C++ class definition)
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
 (yas/load-directory "~/.InitScripts/Emacs/Plugins/yasnippet/snippets")
+
 
 ;; For IDO (Improved buffer switching, much like TextMate ALT+T fuzzy matching) (Ovverides C-x C-f and C-x b)
 (require 'ido)
@@ -443,26 +290,15 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (add-hook 'c++-mode-hook 'turn-on-fic-mode)
 (add-hook 'emacs-lisp-mode-hook 'turn-on-fic-mode)
 
-
 ;; For box quoting
 (require 'boxquote)
-
-;; For looking up protocol names
-(autoload 'protocols-lookup      "protocols" "Perform a protocol lookup" t)
-(autoload 'protocols-clear-cache "protocols" "Clear the protocols cache" t)
-
-;; For looking up services by name
-(autoload 'services-lookup      "services" "Perform a service lookup" t)
-(autoload 'services-clear-cache "services" "Clear the service cache"  t)
-
-;; Looking up TLD (top level domains) by abbrevation or complete country name
-(autoload 'tld "tld" "Perform a TLD lookup" t)
-
 
 ;; Show a silly thinking bubble with the selected text
 (autoload 'thinks "thinks" "Wraps the selected text in a thinking bubble" t)
 ;; (require 'thinks)
 
+;; Add support for encode (obfuscate) to a URL path to contain % characters
+(autoload 'obfuscate-url "obfusurl" "Obfuscate URL under point" t)
 
 ;; For Git commands
 ;;(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
@@ -480,41 +316,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
   ; (setq uniquify-buffer-name-style 'post-forward)
 )
 
-;; === Start >> Setup org-mode TODO actions ===
-(setq load-path (cons "~/.InitScripts/Emacs/Plugins/org-mode/lisp" load-path))
-(require 'org-install)
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
-;; Follow symbolic links when pressing enter or tab
-(setq org-return-follows-link t)
-(setq org-tab-follows-link t)
-;; === End << Setup org-mode TODO actions ===
-
-;; ======= >>> Org mode start =======
-;; Remember
-(org-remember-insinuate)
-  (setq org-indent-mode t)
-  (setq org-hide-leading-stars t)
-  (setq org-directory "~/Documents/GTD/")
-  (setq org-default-notes-file (concat org-directory "/notes.org"))
-
-;; ======= <<< Org mode end ===========
-
-;; ======= <<< Bind Pomodoro technique with Org-mode ======
-(add-to-list 'org-modules 'org-timer)
-(setq org-timer-default-timer 25)
-(add-hook 'org-clock-in-hook '(lambda ()
-								(if (not org-timer-current-timer)
-									(org-timer-set-timer '(16)))))
-
-;; Now org-clock-in
-
-;; ======= <<< Pomodoro end ===========
-
-
-
 
 ;; === >>> Complete anything support =====
 ;; Add company The package to COMP(lete) ANY(thing)
@@ -528,11 +329,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 (add-hook 'text-mode-hook 'table-recognize)
 ;; ==== <<< Ascii Table support end =====
 
-;; Synthax highlight RTF file structure
-(autoload 'rtf-mode "rtf-mode.el" "RTF mode" t)
-(add-to-list 'auto-mode-alist
-  '("\\.rtf$" . rtf-mode))
-
 ;; ==== >>> Ditaa support (Render ascii to graphics)
 (setq ditaa-cmd "java -jar ~/Scripts/ditaa0_9.jar")
 (defun ditaa-generate()
@@ -542,88 +338,21 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; ==== <<< Ditaa support end =========
 
 
-;; ==== >>> Folding support start =====
-(defun toggle-selective-display (column)
-  (interactive "P")
-  (set-selective-display
-   (or column
-	   (unless selective-display
-		 (1+ (current-column))))))
-
-(defun toggle-hiding (column)
-  (interactive "P")
-  (if hs-minor-mode
-	  (if (condition-case nil
-			  (hs-toggle-hiding)
-			(error t))
-		  (hs-show-all))
-	(toggle-selective-display column)))
-
-(global-set-key (kbd "C-+") 'toggle-hiding)
-(global-set-key [C-kp-add] 'toggle-hiding)
-(global-set-key (kbd "C-\\") 'toggle-selective-display)
-
-(add-hook 'c-mode-common-hook   'hs-minor-mode)
-(add-hook 'php-mode-hook        'hs-minor-mode)
-(add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
-(add-hook 'java-mode-hook       'hs-minor-mode)
-(add-hook 'lisp-mode-hook       'hs-minor-mode)
-(add-hook 'perl-mode-hook       'hs-minor-mode)
-(add-hook 'sh-mode-hook         'hs-minor-mode)
-;; ===== <<< Folding end =======
-
 ;; (load "~/.InitScripts/Emacs/Plugins/icicles-install")
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins/icicles")
 (require 'icicles)
 
-
-;; Doxygen/Javadoc help
-;;(require 'doc-mode)
-;; (add-hook 'c-mode-common-hook 'doc-mode)
-
 ;; Automatically load TAGS file
 (require 'etags-table)
-
-;; ==== Start Compile-Mode =====
-(autoload 'mode-compile "mode-compile"
-  "Command to compile current buffer file based on the major mode" t)
- (global-set-key "\C-cb" 'mode-compile)
- (autoload 'mode-compile-kill "mode-compile"
-  "Command to kill a compilation launched by `mode-compile'" t)
- (global-set-key "\C-ck" 'mode-compile-kill)
-;; ==== Start Compile-Mode End =====
 
 ;; Put etags information in bookmark
 ;; (defun ivan-etags-bookmark ()
 ;;  (bookmark-set tagname))
 ;;(add-hook 'find-tag-hook 'ivan-etags-bookmark)
 
-
-;; Add scratch buffer with previous selected mode active
-(autoload 'scratch "scratch" nil t)
-
-;; Ensure the cursor is top/bottom most when scrolling, I.E the mouse reaches top/bottom of the document
-(require 'fscroll)
-
-
-;; Add support for encode (obfuscate) to a URL path to contain % characters
-(autoload 'obfuscate-url "obfusurl" "Obfuscate URL under point" t)
-
-;;; Loading extracted settings ;;;
-(load-file "~/.InitScripts/Emacs/Configs/emacs_config_highlighting.el")
-(load-file "~/.InitScripts/Emacs/Configs/emacs_config_keybindings.el")
-
 ;; ========================================================
 ;; Override add-ons fixation on setting debug mode
 
-;; Disable Lisp debugging mode
-(setq debug-on-error nil)
-
-;; Disable Ctrl+x, Ctrl+c, and other "standardized" keyboard shortcuts for copy and paste text. Why? Because Ctrl+x is used in many key combinations.
-(cua-mode nil)
-
-
-(put 'narrow-to-region 'disabled nil)
 
 ;; ;; Disable Quit Emacs
 ;; (defun dont-kill-emacs()
@@ -662,41 +391,5 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 			(setq list (cdr list))
 			(setq buffer (car list))))
 	(message "Refreshed open files"))
-
-;; fix for Ubuntu 10.10 problem with flyspell (enabling caused an error)
-(setq flyspell-issue-welcome-flag nil)
-
-;;; Speedbar same frame experiments
-
-(require 'sr-speedbar)
-(global-set-key (kbd "s-s") 'sr-speedbar-toggle)
-
-
-;;  (require 'speedbar)
-;; ; (defconst my-speedbar-buffer-name "SPEEDBAR")
-;; (defconst my-speedbar-buffer-name " SPEEDBAR") ; try this if you get "Wrong type argument: stringp, nil"
-;; (defun my-speedbar-no-separate-frame ()
-;; 	(interactive)
-;; 	(when (not (buffer-live-p speedbar-buffer))
-;; 		(setq speedbar-buffer (get-buffer-create my-speedbar-buffer-name)
-;;           speedbar-frame (selected-frame)
-;;           dframe-attached-frame (selected-frame)
-;;           speedbar-select-frame-method 'attached
-;;           speedbar-verbosity-level 0
-;;           speedbar-last-selected-file nil)
-;; 		(set-buffer speedbar-buffer)
-;;     (speedbar-mode)
-;;     (speedbar-reconfigure-keymaps)
-;;     (speedbar-update-contents)
-;;     (speedbar-set-timer 1)
-;;     (make-local-hook 'kill-buffer-hook)
-;;     (add-hook 'kill-buffer-hook
-;; 							(lambda () (when (eq (current-buffer) speedbar-buffer)
-;; 													 (setq speedbar-frame nil
-;; 																 dframe-attached-frame nil
-;; 																 speedbar-buffer nil)
-;; 													 (speedbar-set-timer nil)))))
-;; 	(set-window-buffer (selected-window)
-;; 										 (get-buffer my-speedbar-buffer-name)))
 
 

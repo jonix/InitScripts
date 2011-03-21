@@ -1,3 +1,10 @@
+;; Disable the built-in version of Cedet
+;; (setq load-path
+;;       (remove (concat "/usr/share/emacs/"
+;; 		      (substring emacs-version 0 -2) "/lisp/cedet")
+;; 	      load-path))
+
+
 ;; (load-file "~/cedet/common/cedet.el")
 ;; (load-file "~/Temp/cedet/common/cedet.el")
 (load-file "~/.InitScripts/Emacs/Plugins/cedet/common/cedet.el")
@@ -45,4 +52,38 @@
 
 ;; (load-file "~/.InitScripts/Emacs/Plugins/ecb/ecb.el")
 (require 'ecb)
+
+;; ==== Start Compile-Mode =====
+(autoload 'mode-compile "mode-compile"
+  "Command to compile current buffer file based on the major mode" t)
+(global-set-key "\C-cb" 'mode-compile)
+(autoload 'mode-compile-kill "mode-compile"
+  "Command to kill a compilation launched by `mode-compile'" t)
+(global-set-key "\C-ck" 'mode-compile-kill)
+;; ==== Start Compile-Mode End =====
+
+
+;; Save all buffers before compiling
+(setq compilation-ask-about-save nil)
+
+;; Tell Emacs to save before compiling
+(defun my-save-and-compile ()
+  (interactive)
+  (save-buffer 0)
+  (compile compile-command)
+)
+
+
+;; Tell Emacs to have a fixed compilation buffers
+;; (Special Buffer Frames)
+;; (setq special-display-buffer-names
+;;	  '("*Completions*" "*grep*" "*tex-shell*"))
+
+
+;; Lookup Qt C++ doc
+;; (require 'qtdoc)
+
+;; Doxygen/Javadoc help
+;;(require 'doc-mode)
+;; (add-hook 'c-mode-common-hook 'doc-mode)
 

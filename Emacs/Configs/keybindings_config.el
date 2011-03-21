@@ -2,6 +2,21 @@
 
 ;; Keystroke customization (functions)
 
+;; For Delete to delete characters forward instead of backwards
+(normal-erase-is-backspace-mode 0)
+;; (keyboard-translate ?\C-? ?\C-d)
+
+;; make C-h delete (not Help) in ttys
+(global-set-key [?\C-h] 'backward-delete-char)
+
+;; Del will delete forward and Backspace will delete backwards
+(normal-erase-is-backspace-mode)
+
+;; Help is now M-? instead of C-h
+(global-set-key "\M-\?" 'help-command)
+
+
+
 ;; For compilations
 (global-set-key "\C-cc" 'compile)         ; to compile from within Emacs
 (global-set-key "\C-cv" 'recompile)       ; to compile from within Emacs

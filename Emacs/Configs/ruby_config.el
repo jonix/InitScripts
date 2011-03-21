@@ -24,3 +24,7 @@
 		 (if (and (not (null buffer-file-name)) (file-writable-p buffer-file-name))
 			 (flymake-mode))
 ))
+
+;; Ruby UnitTest code
+(require 'ruby-test)
+
