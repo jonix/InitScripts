@@ -312,6 +312,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
   (describe-function last-command))
 
 
+;; Add Google weather to Org-mod
+(require 'google-weather)
+(require 'org-google-weather)
 
 ;; === <<< Reindent the copy&pasted code start =======
 (defadvice yank (after indent-region activate)
