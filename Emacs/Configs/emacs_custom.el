@@ -23,7 +23,8 @@
  '(save-place t nil (saveplace))
  '(semantic-idle-scheduler-idle-time 3)
  '(semantic-self-insert-show-completion-function (lambda nil (semantic-ia-complete-symbol-menu (point))))
- '(show-paren-mode t))
+ '(show-paren-mode t)
+ '(vc-handled-backends (quote (Git SVN Bzr CVS Hg Mtn Arch))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
