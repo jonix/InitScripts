@@ -127,6 +127,17 @@
 (setq european-calendar-style t)
 (display-time)
 
+;; Let URL at mouse point be clickable
+(global-set-key [S-mouse-2] 'browse-url-at-mouse)
+
+;; Ease the GDB integration
+(setq gdb-many-windows t)
+
+; Open a frame with content from kill-ring
+(when (require 'browse-kill-ring nil 'noerror)
+  (browse-kill-ring-default-keybindings))
+
+
 ;; Let the calendar start the weeks on monday
 ;; (setq calendar-week-start-day 1) ;; as opposed to 0 (sunday)
 
