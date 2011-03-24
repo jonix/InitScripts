@@ -61,6 +61,7 @@
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
 * Misc
+** `M-y`      Cycle kill-ring content directly after C-y, otherwise show a popup with kill-ring content
 ** `C-c d`    Insert date and time in the format of YYYY-MM-DD HH:NN
 ** `M-!`      Run the shell command and show the output in mini buffer
 *** `M-n`     When in M-! mode, provide some default choices
@@ -83,6 +84,13 @@
 ** [M-x make-directory] - Creates a directory
 ** `C-cf`     Open URL at point in system web browser
 ** `M-$`      Show suggestion for misspelled word
+** [shift-mouse-2] - Open URL at mouse  point in system default browser
+** [M-x describe-key]   - Gives the key combination of a menu, or describes what is bound to a certain key combination
+** [M-x make-directory] - Creates a directory
+** [M-x gs]             - Open Git status in current Git repository
+*** http://philjackson.github.com/magit/magit.html
+** [M-x re-builder]     - Interactive Regex builder realtime display
+** [M-x describe-last-function] - Looks up the previous function and describes it
 * Org-mode
 ** Links
 *** Project planning with org-mode - http://www.contextualdevelopment.com/articles/2008/project-planning
