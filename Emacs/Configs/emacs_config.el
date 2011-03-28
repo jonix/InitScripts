@@ -21,6 +21,9 @@
 ;; Disable the Toolbar
 (tool-bar-mode -1)
 
+;; Preserve the owner and group of the file you're editing
+(setq backup-by-copying-when-mismatch t)
+
 ;; Disable Lisp debugging mode
 (setq debug-on-error nil)
 
@@ -49,7 +52,9 @@
 
 ;; The startup screen is annoying.
 (setq inhibit-startup-message t)
-;; (setq initial-scratch-message nil)
+
+;; Start with an empty scratch buffer
+(setq initial-scratch-message nil)
 
 ;; Prevent Emacs from making backup files
 (setq make-backup-files nil)
@@ -86,6 +91,11 @@
 
 ; Kill the line including the new line character
 (setq kill-whole-line t)
+
+;; Set up browse-kill-ring.  M-y invokes browse-kill-ring.
+;;(require 'browse-kill-ring+)
+;;(browse-kill-ring-default-keybindings)
+
 
 ; Try to have wordboundary on seperate lines (don't cut words in half)
 ; (global-visual-line-mode 1)
@@ -145,6 +155,15 @@
 ;; Setup Ruby-mode
 (load-file "~/.InitScripts/Emacs/Configs/ruby_config.el")
 
+;; Setup CSS-mode
+(load-file "~/.InitScripts/Emacs/Configs/css_mode.el")
+
+;; Setup PHP-mode
+(load-file "~/.InitScripts/Emacs/Configs/php_mode.el")
+
+;; Setup CSS-mode
+(load-file "~/.InitScripts/Emacs/Configs/perl_mode.el")
+
 ;; Setup spell checking
 (load-file "~/.InitScripts/Emacs/Configs/spellchecking_config.el")
 
@@ -192,6 +211,11 @@
 ;; Note: Scrollbars on OS X is relative to the amount of scrolling (bottom of document is a very small scrollbar)
 (when window-system
   (mwheel-install))
+
+;; Load WinnerMode, a global minor mode that allows undo and redo of
+;; window configuration with commands 'C-c left' and 'C-c right'.
+(winner-mode 1)
+
 
 ;; For transparancy
 ;; (set-frame-parameter (selected-frame) 'alpha 70)
