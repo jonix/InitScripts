@@ -167,6 +167,9 @@
 ;; Setup spell checking
 (load-file "~/.InitScripts/Emacs/Configs/spellchecking_config.el")
 
+;; Setup Git support
+(load-file "~/.InitScripts/Emacs/Configs/git_mode.el")
+
 ;; Setup Service lookup
 (load-file "~/.InitScripts/Emacs/Configs/service_lookup.el")
 
@@ -331,15 +334,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 ;; Add support for encode (obfuscate) to a URL path to contain % characters
 (autoload 'obfuscate-url "obfusurl" "Obfuscate URL under point" t)
-
-;; For Git commands
-;;(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
-;;(require 'magit)
-(add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
-(require 'magit)
-(require 'git)
-(require 'git-blame)
-
 
 ;; uniquify.el is a helper routine to help give buffer names a better unique name.
 (when (load "uniquify" 'NOERROR)
