@@ -200,6 +200,17 @@
 ;; Let the calendar start the weeks on monday
 ;; (setq calendar-week-start-day 1) ;; as opposed to 0 (sunday)
 
+;; Make a window sticky (I.E compilation window does not appear in this window)
+(defun toggle-sticky-buffer-window ()
+  "Toggle whether this window is dedicated to this buffer."
+  (interactive)
+  (set-window-dedicated-p
+   (selected-window)
+   (not (window-dedicated-p (selected-window))))
+  (if (window-dedicated-p (selected-window))
+      (message "Window is now dedicated.")
+    (message "Window is no longer dedicated.")))
+
 ;; Show week numbers in Calendar
 (setq calendar-week-start-day 1
       calendar-intermonth-text

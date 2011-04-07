@@ -15,7 +15,8 @@
 ;; Help is now M-? instead of C-h
 (global-set-key "\M-\?" 'help-command)
 
-
+;; Toggle sticky buffer (no replace of designated buffer)
+(global-set-key "\C-cy" 'toggle-sticky-buffer-window)
 
 ;; For compilations
 (global-set-key "\C-cc" 'compile)         ; to compile from within Emacs
