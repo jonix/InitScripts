@@ -1,5 +1,5 @@
 #+STARTUP: hidestars
-#+STARTUP: showall
+#+STARTUP: hideall
 #+OPTIONS: H:1 num:t toc:t \n:nil @:t ::t |:t ^:t f:t TeX:t
 
 
@@ -61,6 +61,7 @@
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
 * Misc
+** `C-c d`    Insert time and date
 ** `M-y`      Cycle kill-ring content directly after C-y, otherwise show a popup with kill-ring content
 ** `C-c d`    Insert date and time in the format of YYYY-MM-DD HH:NN
 ** `M-!`      Run the shell command and show the output in mini buffer
@@ -121,9 +122,12 @@
 ** `M-*`     Pop back from tag
 ** `C-M-.`   Search for symbols that matches the pattern
 ** `C-c c`   Compile file
+** `C-c b`   Smart compile file
 ** `M-gn`    Jump to next error
 ** `M-gp`    Jump to previous error
 ** `C-cf`    Use IDO and TAGS file for opening "project" files
+** `C-cy`    Toggle stickiness for buffers (buffers will not be replaced by 'new' buffer)
+*** The author talks about Winner mode, where change of buffer positions can be undone
 * Shell mode
 ** `M-p` - Previous command in history
 ** `M-n` - Next command in history

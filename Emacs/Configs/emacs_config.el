@@ -39,6 +39,11 @@
 ;; Open file recursively
 (require 'find-recursive)
 
+;; Use `find` with dired
+(require 'find-dired)
+;; Make find-dired faster
+(setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld"))
+
 ;; Auto byte-compile lisp plugins
 (require 'auto-async-byte-compile)
 (setq auto-async-byte-compile-exclude-files-regexp "/junk/")
