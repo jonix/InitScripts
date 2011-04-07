@@ -187,9 +187,6 @@
 ;; Setup syntax highlighting
 (load-file "~/.InitScripts/Emacs/Configs/highlighting_config.el")
 
-;; Setup common keyboard shortcuts
-(load-file "~/.InitScripts/Emacs/Configs/keybindings_config.el")
-
 ;; Let URL at mouse point be clickable
 (global-set-key [S-mouse-2] 'browse-url-at-mouse)
 
@@ -430,3 +427,5 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 	(message "Refreshed open files"))
 
 
+;; Setup common keyboard shortcuts
+(load-file "~/.InitScripts/Emacs/Configs/keybindings_config.el")
