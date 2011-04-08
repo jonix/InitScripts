@@ -361,6 +361,10 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
   ; (setq uniquify-buffer-name-style 'post-forward)
 )
 
+;; Update the selected TAGS file everytime you save a defined file
+;; Note: You need to visit-tags-table for this to function
+(require 'etags-update)
+
 
 ;; === >>> Complete anything support =====
 ;; Add company The package to COMP(lete) ANY(thing)

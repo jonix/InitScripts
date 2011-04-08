@@ -111,11 +111,16 @@
 ** `C-c r`   Switch to remember mode file(s)
 ** `C-c C-c` Save and close the buffer and go back to previous buffer where you worked
 * C++ mode
-** (Semantic mode must be enabled)
-*** `C-c C-d d` Parse function and generate a Doxygen comment block of the function signature
-*** `C-c C-d f` Fold the Doxygen comment
-*** `C-c C-d u` Unfold the Doxygen comment
+** `[M-x etags-update-mode]` Enable etags-update-mode for auto update TAGS file when saving
+*** From URL: https://github.com/mattkeller/etags-update/blob/master/README.ma
+*** (Step -1: Copy Perl script etags-update.pl to a directory in your PATH)
+*** Step 0: Start Emacs
+*** Step 1: Manually visit-tags-table
+*** Step 2: Manually activate the minor-mode 'M-x etags-update-mode'
+*** Step 3: Save a file for TAGS file to be updated.
 ** `[M-x visit-tags-table]` load the pre-generated TAGS file
+** `C-ct`    Switch between h/cpp file
+
 ** `M-.`     Go to tag under cursor
 ** `C-u M-.` Go to next tag
 ** `C-u - M-.` Go to previous tag
@@ -128,6 +133,10 @@
 ** `C-cf`    Use IDO and TAGS file for opening "project" files
 ** `C-cy`    Toggle stickiness for buffers (buffers will not be replaced by 'new' buffer)
 *** The author talks about Winner mode, where change of buffer positions can be undone
+** For following functions 'Semantic mode' must be enabled
+*** `C-c C-d d` Parse function and generate a Doxygen comment block of the function signature
+*** `C-c C-d f` Fold the Doxygen comment
+*** `C-c C-d u` Unfold the Doxygen comment
 * Shell mode
 ** `M-p` - Previous command in history
 ** `M-n` - Next command in history
@@ -175,7 +184,6 @@
 ** `Enter` Open folder, open file
 ** Documentation at http://www.gnu.org/software/emacs/manual/html_node/speedbar/index.html#Top
 * General notes
-** `C-ct`    Switch between h/cpp file
 ** The single most useful Emacs feature - http://stackoverflow.com/questions/60367/the-single-most-useful-emacs-feature
 ** Ten essential Emacs tips and tricks  - http://web.psung.name/emacstips/essential.html
 ** For a more ergonomic Emacs           - http://xahlee.org/emacs/ergonomic_emacs_keybinding.html
