@@ -18,6 +18,7 @@
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
 (setq bookmark-default-file "~/.InitScripts/Emacs/Configs/bookmarks.bmk")
 
+
 ;; Disable the Toolbar
 (tool-bar-mode -1)
 
@@ -87,7 +88,6 @@
 ;; Advanced option to view only a sub-section of a buffer
 (put 'narrow-to-region 'disabled nil)
 
-
 ;; For using the built-in clipboard provided by the OS
 (setq menu-bar-enable-clipboard t)
 
@@ -130,7 +130,7 @@
 ;; Setup aliases for M-x functions
 (load-file "~/.InitScripts/Emacs/Configs/aliases.el")
 
-;; Setup TAB config
+;; Setup TAB key config
 (load-file "~/.InitScripts/Emacs/Configs/tab_config.el")
 
 ;; Setup recent file config
@@ -186,6 +186,9 @@
 
 ;; Setup syntax highlighting
 (load-file "~/.InitScripts/Emacs/Configs/highlighting_config.el")
+
+;; Setup TAG file support
+(load-file "~/.InitScripts/Emacs/Configs/etags_config.el")
 
 ;; Let URL at mouse point be clickable
 (global-set-key [S-mouse-2] 'browse-url-at-mouse)
@@ -361,10 +364,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
   ; (setq uniquify-buffer-name-style 'post-forward)
 )
 
-;; Update the selected TAGS file everytime you save a defined file
-;; Note: You need to visit-tags-table for this to function
-(require 'etags-update)
-
 
 ;; === >>> Complete anything support =====
 ;; Add company The package to COMP(lete) ANY(thing)
@@ -390,14 +389,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; (load "~/.InitScripts/Emacs/Plugins/icicles-install")
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins/icicles")
 (require 'icicles)
-
-;; Automatically load TAGS file
-(require 'etags-table)
-
-;; Put etags information in bookmark
-;; (defun ivan-etags-bookmark ()
-;;  (bookmark-set tagname))
-;;(add-hook 'find-tag-hook 'ivan-etags-bookmark)
 
 ;; ========================================================
 ;; Override add-ons fixation on setting debug mode
