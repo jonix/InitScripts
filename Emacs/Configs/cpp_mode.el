@@ -79,7 +79,13 @@
 ;; Treat .h files as C++ header files
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
+;; For loading C++/header file counterpart
+(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
+(define-key global-map "\C-ct" 'sourcepair-load)
 
+;; For using EBrowse (ctags for C++)
+(global-set-key [f5] 'ebrowse-tree-mode)
+(add-to-list 'auto-mode-alist '("BROWSE\\.*" . ebrowse-tree-mode))
 
 ;; Tell Emacs to have a fixed compilation buffers
 ;; (Special Buffer Frames)

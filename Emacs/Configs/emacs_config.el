@@ -26,20 +26,19 @@
 (setq bookmark-default-file "~/.InitScripts/Emacs/Configs/bookmarks.bmk")
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
-;; Misc customization of Emacs appearance
+;; Appearance customization
 ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Setup syntax highlighting
+;; Tell Emacs to use syntax highlighting
 (setq global-font-lock-mode t)
 (setq font-lock-mode-maximum-decoration t)
 (require 'font-lock)
 
 ;; Highlight matching parenthesis () [] {} <> (depending on the mode)
 (require 'paren)
-
 
 ;; Disable the Toolbar
 (tool-bar-mode -1)
@@ -238,14 +237,29 @@
 ;; Setup syntax highlighting
 (load-file "~/.InitScripts/Emacs/Configs/highlighting_config.el")
 
+;; Tell Emacs to syntax highlight file that is emacs_config
+(setq auto-mode-alist (append
+	  '(("emacs_config" . lisp-mode))
+			 auto-mode-alist)
+      )
+
 ;; Setup C++ mode
 (load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
 ;;(load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode_2.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/new_cedet_mode.el")
 
+;; Setup CMake-mode
+(load-file "~/.InitScripts/Emacs/Configs/cmake_mode.el")
+
+;; Setup Scons/Waf-mode
+(load-file "~/.InitScripts/Emacs/Configs/waf_mode.el")
+
 ;; Setup Org-mode
 (load-file "~/.InitScripts/Emacs/Configs/org_config.el")
+
+;; Setup Pomodoro-mode
+(load-file "~/.InitScripts/Emacs/Configs/pomodoro_mode.el")
 
 ;; Setup ReStructuredText-mode (rst)
 (load-file "~/.InitScripts/Emacs/Configs/rst_mode.el")
@@ -258,7 +272,6 @@
 
 ;; Setup Perl-mode
 (load-file "~/.InitScripts/Emacs/Configs/perl_mode.el")
-
 
 ;; Setup Arduino-mode
 (load-file "~/.InitScripts/Emacs/Configs/arduino_mode.el")
