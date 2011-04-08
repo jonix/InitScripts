@@ -73,6 +73,13 @@
   (compile compile-command)
 )
 
+;; === Start >> Treat standard C++ header files with no file extension as C++ files ===
+(require 'cl)
+
+;; Treat .h files as C++ header files
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
+
 
 ;; Tell Emacs to have a fixed compilation buffers
 ;; (Special Buffer Frames)

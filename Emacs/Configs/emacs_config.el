@@ -259,24 +259,29 @@
 ;; Setup Perl-mode
 (load-file "~/.InitScripts/Emacs/Configs/perl_mode.el")
 
+
+;; Setup Arduino-mode
+(load-file "~/.InitScripts/Emacs/Configs/arduino_mode.el")
+
 ;; Setup CSS-mode
 (load-file "~/.InitScripts/Emacs/Configs/css_mode.el")
 
 ;; Setup PHP-mode
 (load-file "~/.InitScripts/Emacs/Configs/php_mode.el")
 
-;; Setup Perl-mode
-(load-file "~/.InitScripts/Emacs/Configs/perl_mode.el")
+;; Setup Latex mode
+(load-file "~/.InitScripts/Emacs/Configs/latex_mode.el")
 
+;; Setup XML-mode
+(load-file "~/.InitScripts/Emacs/Configs/xml_mode.el")
 
-;; Setup Service lookup
-(load-file "~/.InitScripts/Emacs/Configs/service_lookup.el")
+;; Setup XHTML-mode
+(load-file "~/.InitScripts/Emacs/Configs/nxhtml_mode.el")
 
-;; Setup Bookmark support
-(load-file "~/.InitScripts/Emacs/Plugins/bookmark_cycling.el")
+;; Setup XHTML-mode
+(load-file "~/.InitScripts/Emacs/Configs/js_mode.el")
 
-;; Setup Folding support
-(load-file "~/.InitScripts/Emacs/Configs/folding_support.el")
+;; Setup for Ruby and Ruby On Rails
 
 
 
