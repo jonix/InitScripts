@@ -289,7 +289,8 @@
 (load-file "~/.InitScripts/Emacs/Configs/xml_mode.el")
 
 ;; Setup XHTML-mode
-(load-file "~/.InitScripts/Emacs/Configs/nxhtml_mode.el")
+;; This is already included in Emacs 23
+;;(load-file "~/.InitScripts/Emacs/Configs/nxhtml_mode.el")
 
 ;; Setup XHTML-mode
 (load-file "~/.InitScripts/Emacs/Configs/js_mode.el")
