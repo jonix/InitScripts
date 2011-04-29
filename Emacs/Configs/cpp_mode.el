@@ -17,7 +17,10 @@
   (interactive)
   (save-buffer 0)
   (compile compile-command)
-	)
+)
+
+(load-file "~/.InitScripts/Emacs/Plugins/sourcepair.el")
+
 
 ;; === Start >> Treat standard C++ header files with no file extension as C++ files ===
 (require 'cl)

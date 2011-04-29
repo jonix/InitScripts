@@ -305,7 +305,7 @@
 ;; This is already included in Emacs 23
 ;;(load-file "~/.InitScripts/Emacs/Configs/nxhtml_mode.el")
 
-;; Setup XHTML-mode
+;; Setup Javascript-mode
 (load-file "~/.InitScripts/Emacs/Configs/js_mode.el")
 
 ;; Setup for Ruby and Ruby On Rails
@@ -497,7 +497,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
               (concat "Saved as script: " buffer-file-name)))))
 ;; === >>> To make a new script executable when saving end =========
 
-
 (defun revert-all-buffers ()
 	"Refreshes all open buffers from their respective files"
 	(interactive)
@@ -515,3 +514,4 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 ;; Setup common keyboard shortcuts
 (load-file "~/.InitScripts/Emacs/Configs/keybindings_config.el")
+
