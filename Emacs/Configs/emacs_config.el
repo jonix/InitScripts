@@ -94,7 +94,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
-;; Misc core functinality
+;; Misc core functionality
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -172,6 +172,19 @@
 ;; Revert dired lists on revisiting them
 (setq dired-auto-revert-buffer t)
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; Advanced paren-matching (including custom paired delimeter)
+(require 'mic-paren)
+(paren-activate)
+
+(add-hook 'LaTeX-mode-hook
+					(function (lambda ()
+											(paren-toggle-matching-quoted-paren 1)
+											(paren-toggle-matching-paired-delimiter 1))))
+
+(add-hook 'c-mode-common-hook
+					(function (lambda ()
+											(paren-toggle-open-paren-context 1))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

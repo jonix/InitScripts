@@ -48,8 +48,8 @@
 ** `C-x r x r` Put region in register r
 ** `C-x r i r` Paste text from register r into buffer at cursor
 ** `C-c C-k`   Copy line (instead of killing&yanking)
-** `C-x r k`   Kill the selected region-rectangle
-** `C-x r y`   Yank the selected region-rectangle
+** `C-x r k`   Kill the selected rectangle / column
+** `C-x r y`   Yank the selected rectangle / column
 ** `C-;`       Comment selected region
 ** `C-:`       Uncomment selected region
 ** `C-tab`     (PHP) Complete built-in PHP functions
