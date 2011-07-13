@@ -354,6 +354,9 @@
 (autoload 'thinks "thinks" "Wraps the selected text in a thinking bubble" t)
 ;; (require 'thinks)
 
+(require 'tea-time)
+(setq tea-time-sound "~/.InitScripts/Emacs/Plugins/ding.wav")
+
 ;; Add support for encode (obfuscate) to a URL path to contain % characters
 (autoload 'obfuscate-url "obfusurl" "Obfuscate URL under point" t)
 
