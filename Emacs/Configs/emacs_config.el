@@ -53,6 +53,28 @@
 (setq-default truncate-lines t)
 ;; truncate even even when screen is split into multiple windows
 (setq-default truncate-partial-width-windows nil)
+;; Enable line numbering in the mode line
+(setq line-number-mode t)
+;; Enable column numbering in the mode line
+(setq column-number-mode t)
+
+;; highlight columns 78 to 80 in some modes
+;; (require 'column-marker)
+;; (dolist (hook '(emacs-lisp-mode-hook
+;;                 cperl-mode-hook
+;;                 shell-mode-hook
+;;                 text-mode-hook
+;;                 change-log-mode-hook
+;;                 makefile-mode-hook
+;;                 message-mode-hook
+;; 								org-mode-hook
+;;                 texinfo-mode-hook))
+;;   (add-hook hook (lambda ()
+;;                    (interactive)
+;;                    (column-marker-1 78)
+;;                    (column-marker-2 79)
+;;                    (column-marker-3 80))))
+
 
 ;; Ensure the cursor is top/bottom most when scrolling, I.E the mouse reaches top/bottom of the document
 (require 'fscroll)
@@ -187,6 +209,9 @@
 											(paren-toggle-open-paren-context 1))))
 
 
+(setq flyspell-issue-welcome-flag nil) ;; fix flyspell problem
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Behaviour configuration
@@ -238,7 +263,9 @@
 (load-file "~/.InitScripts/Emacs/Configs/ido_config.el")
 
 ;; Setup Icicles support
-(load-file "~/.InitScripts/Emacs/Configs/icicles_config.el")
+;; (load-file "~/.InitScripts/Emacs/Configs/icicles_config.el")
+
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

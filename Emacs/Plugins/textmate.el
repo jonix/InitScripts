@@ -144,7 +144,7 @@ the project root.")
      (define-key map [(meta shift down)] 'textmate-column-down-with-select))
 	  (t ;; Any other version
 	   (define-key map [(meta return)] 'textmate-next-line)
-	   (define-key map [(control c)(control t)] 'textmate-clear-cache)
+	   ;; (define-key map [(control c)(control t)] 'textmate-clear-cache)
 	   (define-key map [(control c)(control a)] 'align)
 	   (define-key map [(control tab)] 'textmate-shift-right)
 	   (define-key map [(control shift tab)] 'textmate-shift-left)
