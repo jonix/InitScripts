@@ -384,6 +384,11 @@
 (require 'tea-time)
 (setq tea-time-sound "~/.InitScripts/Emacs/Plugins/ding.wav")
 
+
+;; Play Music from within Emacs using Emms
+(load-file "~/.InitScripts/Emacs/Configs/multimedia.el")
+
+
 ;; Add support for encode (obfuscate) to a URL path to contain % characters
 (autoload 'obfuscate-url "obfusurl" "Obfuscate URL under point" t)
 
