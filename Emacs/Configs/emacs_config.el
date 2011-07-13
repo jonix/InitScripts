@@ -340,6 +340,13 @@
 (add-hook 'c++-mode-hook 'turn-on-fic-mode)
 (add-hook 'emacs-lisp-mode-hook 'turn-on-fic-mode)
 
+;; Add support for Pomodoro
+(require 'pomodoro)
+
+;; For Pomodoro
+(define-key global-map "\C-ct" 'pomodoro)
+
+
 ;; For box quoting
 (require 'boxquote)
 

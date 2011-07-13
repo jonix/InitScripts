@@ -37,6 +37,7 @@
 ** `C-s C-w` Search for word under cursor. Press C-w to include more words
 ** `C-x <SPC> r` Save the position into register 'r'
 ** `C-x r j r` Jump back to position stored in register 'r'
+** `C-x C-r` Open recent opened file history dialog
 * Formatting
 ** `C-xx`      Box quote the selection
 ** `C-xX`      Insert file as a box quoted text
@@ -61,6 +62,7 @@
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
 * Misc
+** `C-ct`     Start Pomodoro task
 ** `C-c d`    Insert time and date
 ** `M-y`      Cycle kill-ring content directly after C-y, otherwise show a popup with kill-ring content
 ** `C-c d`    Insert date and time in the format of YYYY-MM-DD HH:NN

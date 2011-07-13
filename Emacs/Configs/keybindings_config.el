@@ -125,3 +125,4 @@
 
 ;; TAGS file lookup aided with IDO
 (global-set-key "\C-c\C-f" 'ido-find-file-in-tag-files)
+
