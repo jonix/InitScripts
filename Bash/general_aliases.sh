@@ -29,3 +29,13 @@ alias baz='bzr'
 ### Coloured less/cat
 alias cless='vim -u /usr/share/vim/vim72/macros/less.vim'
 alias ccat='vim -u /usr/share/vim/vim72/macros/less.vim'
+
+
+### In Bash change directory to the same active buffer in Emacs
+### URL: http://www.reddit.com/r/emacs/comments/hd3jm/from_my_bashrc_jump_to_emacss_current_directory/
+
+#alias jm='eval cd $(....)'
+alias jm='eval cd $(emacsclient -e "(with-current-buffer (window-buffer (frame-selected-window)) default-directory)" | '"sed -E 's/(^\")|(\"$)//g')"
+
+# For Mac OS
+#alias jm='cd $(emacsclient -e "(with-current-buffer (window-buffer (frame-selected-window)) (expand-file-name default-directory))" | '"sed -E 's/(^\")|(\"$)//g')"
