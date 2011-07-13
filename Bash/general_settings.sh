@@ -5,7 +5,11 @@
 
 export PS1="\u:\W$ "
 
-
+## For Emacs
+export EDITOR=~/Scripts/edit
+#ec() {
+#    emacsclient -n $1
+#}
 
 # Print working directory after a cd.
 cd() {
