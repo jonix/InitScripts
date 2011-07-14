@@ -32,10 +32,7 @@
 (add-hook 'org-clock-in-hook '(lambda ()
 																(if (not org-timer-current-timer)
 																		(org-timer-set-timer '(16)))))
-;; Now org-clock-in
-
 ;; ======= <<< Pomodoro end ===========
-
 
 
 ;; ====== >>> Google weather start ==========
