@@ -158,6 +158,8 @@
 
 ;; For using the built-in clipboard provided by the OS
 (setq menu-bar-enable-clipboard t)
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
 ; Deleting files goes to OS's trash folder
 (setq delete-by-moving-to-trash t)
