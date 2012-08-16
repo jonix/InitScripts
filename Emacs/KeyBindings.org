@@ -38,6 +38,7 @@
 ** `C-x <SPC> r` Save the position into register 'r'
 ** `C-x r j r` Jump back to position stored in register 'r'
 ** `C-x C-r` Open recent opened file history dialog
+** `M-p` or `M-n` while in C-x mode to change to previous/next directories from the history
 * Formatting
 ** `C-xx`      Box quote the selection
 ** `C-xX`      Insert file as a box quoted text
@@ -61,6 +62,7 @@
 ** [M-x highlight-phrase] - Highlight all occurrences of the phrase
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
+** 'C-x C-d'   Open a dired buffer
 * Misc
 ** `C-h b`    Show bound Keybindings
 ** `C-ct`     Start Pomodoro task
