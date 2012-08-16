@@ -81,6 +81,10 @@
 ;; Open file at point
 (global-set-key "\C-xp" 'find-file-at-point)
 
+;; Revert/reload the file
+(global-set-key "\C-c\C-r" 'revert-buffer)
+
+
 ;; (defun my-next-tag ()
 ;; (interactive)
 ;; (find-tag t nil))
