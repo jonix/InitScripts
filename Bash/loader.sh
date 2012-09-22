@@ -82,12 +82,12 @@ else
 fi
 
 ## For the Crenna.se project
-if [ -f ~/.InitScripts/Bash/crenna_shortcuts.sh ] ; then
-	echo "Loading Crenna.se shortcuts"
-	. ~/.InitScripts/Bash/crenna_shortcuts.sh
-else
-	echo "Did not load Crenna shortcuts"
-fi
+#if [ -f ~/.InitScripts/Bash/crenna_shortcuts.sh ] ; then
+#	echo "Loading Crenna.se shortcuts"
+#	. ~/.InitScripts/Bash/crenna_shortcuts.sh
+#else
+#	echo "Did not load Crenna shortcuts"
+#fi
 
 ## For the CycoreFx Website FS on local machine
 if [ -f ~/.InitScripts/Bash/ccfx_website_shortcuts.sh ] ; then
@@ -97,7 +97,15 @@ else
 	echo "Did not loadccfx website shortcuts"
 fi
 
+## For navigating to Studier folder on local machine
+if [ -f ~/.InitScripts/Bash/studies_shortcuts.sh ] ; then
+	echo "Loading Studies shortcuts"
+	. ~/.InitScripts/Bash/studies_shortcuts.sh
+else
+	echo "Did not load Studies shortcuts"
+fi
+
+
 
 echo ""
 echo ""
-

@@ -102,7 +102,7 @@
 
 ;; Enable Mac OS X Antialiasing fonts
 ;; Seems to be defaulted to non-nil
-;; (setq ns-antialias-text t)
+(setq ns-antialias-text t)
 
 ;; For smooth scrolling
 ;; (require 'smooth-scrolling)
@@ -159,7 +159,10 @@
 ;; For using the built-in clipboard provided by the OS
 (setq menu-bar-enable-clipboard t)
 (setq x-select-enable-clipboard t)
-(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+;; This line causes problems with MacOS X and Emacs 24
+;; (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+(setq interprogram-paste-function 'x-selection-value)
+
 
 ; Deleting files goes to OS's trash folder
 (setq delete-by-moving-to-trash t)
@@ -200,18 +203,18 @@
 ;; Advanced paren-matching (including custom paired delimeter)
 (require 'mic-paren)
 (paren-activate)
-
 (add-hook 'LaTeX-mode-hook
 					(function (lambda ()
 											(paren-toggle-matching-quoted-paren 1)
 											(paren-toggle-matching-paired-delimiter 1))))
-
 (add-hook 'c-mode-common-hook
 					(function (lambda ()
 											(paren-toggle-open-paren-context 1))))
 
 
 (setq flyspell-issue-welcome-flag nil) ;; fix flyspell problem
+;; (setq-default ispell-program-namE "aspell")
+(setq ispell-program-name "/usr/local/bin/aspell")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -286,7 +289,7 @@
       )
 
 ;; Setup C++ mode
-(load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
+;; (load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
 ;;(load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode_2.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/new_cedet_mode.el")
@@ -375,7 +378,6 @@
 ;; For Pomodoro
 (define-key global-map "\C-ct" 'pomodoro)
 
-
 ;; For box quoting
 (require 'boxquote)
 
@@ -460,13 +462,6 @@
                  (calendar-iso-from-absolute
                   (calendar-absolute-from-gregorian (list month day year)))))
         'font-lock-face 'font-lock-function-name-face))
-
-
-
-;; This might only be necessary on Mac OS X
-;; Note: Scrollbars on OS X is relative to the amount of scrolling (bottom of document is a very small scrollbar)
-(when window-system
-  (mwheel-install))
 
 ;; Load WinnerMode, a global minor mode that allows undo and redo of
 ;; window configuration with commands 'C-c left' and 'C-c right'.
@@ -556,6 +551,8 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 	(message "Refreshed open files"))
 
 
+(load-file "~/.InitScripts/Emacs/Configs/macosx_settings.el")
+
+
 ;; Setup common keyboard shortcuts
 (load-file "~/.InitScripts/Emacs/Configs/keybindings_config.el")
-
