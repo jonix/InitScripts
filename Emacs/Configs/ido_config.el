@@ -66,3 +66,8 @@
 	 (delq nil (mapcar
 							(lambda (x) (and (char-equal (string-to-char x) ?.) x))
 							ido-temp-list))))
+
+
+
+;; Find File At Pointo
+(setq ido-use-filename-at-point 'guess)
