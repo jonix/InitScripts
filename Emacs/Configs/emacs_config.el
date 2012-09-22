@@ -160,9 +160,8 @@
 (setq menu-bar-enable-clipboard t)
 (setq x-select-enable-clipboard t)
 ;; This line causes problems with MacOS X and Emacs 24
-;; (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+;;(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 (setq interprogram-paste-function 'x-selection-value)
-
 
 ; Deleting files goes to OS's trash folder
 (setq delete-by-moving-to-trash t)

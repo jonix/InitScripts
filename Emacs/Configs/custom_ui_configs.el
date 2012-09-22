@@ -24,6 +24,7 @@
  '(save-place t nil (saveplace))
  '(semantic-idle-scheduler-idle-time 3)
  '(semantic-self-insert-show-completion-function (lambda nil (semantic-ia-complete-symbol-menu (point))))
+ '(text-mode-hook (quote (smart-spacing-mode table-recognize turn-spell-checking-on auto-detect-wrap)))
  '(vc-handled-backends (quote (Git SVN Bzr CVS Hg Mtn Arch)))
  '(visual-line-mode nil t))
 (custom-set-faces
@@ -32,18 +33,4 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(flymake-errline ((t (:background "black" :foreground "yellow"))))
- '(latex-mode-default ((t (:inherit text-mode-default :stipple nil :strike-through nil :underline nil :slant normal :weight normal :height 130 :width normal :family "Monaco")))))
-
-;; Check custom-file compatibility
-(when (and (boundp 'aquamacs-version-id)
-           (< (floor (/ aquamacs-version-id 10))
-	   (floor (/ aquamacs-customization-version-id 10))))
-  (defadvice frame-notice-user-settings (before show-version-warning activate)
-    (defvar aquamacs-backup-custom-file nil "Backup of `custom-file', if any.")
-    (setq aquamacs-backup-custom-file "~/.InitScripts/Emacs/Configs/customizations.2.0.el")
-    (let ((msg "Aquamacs options were saved by a more recent program version.
-Errors may occur.  Save Options to overwrite the customization file. The original, older customization file was backed up to ~/.InitScripts/Emacs/Configs/customizations.2.0.el."))
-      (if window-system
-	  (x-popup-dialog t (list msg '("OK" . nil) 'no-cancel) "Warning")
-	(message msg)))))
-;; End compatibility check
+ '(latex-mode-default ((t (:inherit text-mode-default :stipple nil :strike-through nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Monaco")))))
