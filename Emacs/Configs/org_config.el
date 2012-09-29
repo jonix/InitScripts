@@ -25,6 +25,14 @@
 
 ;; ======= <<< Org mode end ===========
 
+;; ======= >>>> Let Org-mode and YAS play nice togheter ===========
+(add-hook 'org-mode-hook
+          (lambda ()
+            (org-set-local 'yas/trigger-key [tab])
+            (define-key yas/keymap [tab] 'yas/next-field-group)))
+;; ======= <<< Org mode + YASnippet ===========
+
+
 ;; ======= >>> Start Pomodoro =========
 ;; Bind Pomodoro technique with Org-mode
 (add-to-list 'org-modules 'org-timer)
