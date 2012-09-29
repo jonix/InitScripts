@@ -7,6 +7,10 @@
   ;; (speck-mode 1)
   (flyspell-mode 1)
   )
+
+(setq ispell-dictionary "swedish")
+
+
 (add-hook 'text-mode-hook 'turn-spell-checking-on)
 (add-hook 'org-mode-hook  'turn-spell-checking-on)
 ;;(add-hook 'c-mode-common-hook   'hs-minor-mode)
