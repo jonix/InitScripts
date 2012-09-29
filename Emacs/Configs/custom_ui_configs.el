@@ -6,6 +6,7 @@
  '(aquamacs-additional-fontsets nil t)
  '(aquamacs-customization-version-id 215 t)
  '(aquamacs-tool-bar-user-customization nil t)
+ '(auto-fill-function nil t)
  '(completion-ignored-extensions (quote (".o" "~" ".bin" ".lbin" ".so" ".a" ".ln" ".blg" ".bbl" ".elc" ".lof" ".glo" ".idx" ".lot" ".svn/" ".hg/" ".git/" ".bzr/" "Build/" "CVS/" "_darcs/" "_MTN/" ".fmt" ".tfm" ".class" ".fas" ".lib" ".mem" ".x86f" ".sparcf" ".fasl" ".ufsl" ".fsl" ".dxl" ".pfsl" ".dfsl" ".p64fsl" ".d64fsl" ".dx64fsl" ".lo" ".la" ".gmo" ".mo" ".toc" ".aux" ".cp" ".fn" ".ky" ".pg" ".tp" ".vr" ".cps" ".fns" ".kys" ".pgs" ".tps" ".vrs" ".pyc" ".pyo")))
  '(cua-mode t nil (cua-base))
  '(default-frame-alist (quote ((menu-bar-lines . 1) (foreground-color . "Black") (background-color . "White") (cursor-type . box) (cursor-color . "Red") (vertical-scroll-bars . right) (internal-border-width . 0) (left-fringe . 1) (right-fringe) (fringe) (tool-bar-lines . 0))))
@@ -13,6 +14,7 @@
  '(ecb-compile-window-height 6)
  '(ecb-options-version "2.40")
  '(ecb-source-path (quote ("~/Projects/Work/Mapiton/Native/Source" ("/home/jonix/Projects/Work/Mapiton/Native/Source/WatchBoar/Source" "WatchBoar"))))
+ '(fringe-indicator-alist (quote ((continuation nil nil) (truncation left-truncation right-truncation) (continuation left-continuation right-continuation) (overlay-arrow . right-triangle) (up . up-arrow) (down . down-arrow) (top top-left-angle top-right-angle) (bottom bottom-left-angle bottom-right-angle top-right-angle top-left-angle) (top-bottom left-bracket right-bracket top-right-angle top-left-angle) (empty-line . empty-line) (unknown . question-mark))) t)
  '(isearch-allow-scroll t)
  '(js2-auto-indent-p t)
  '(js2-enter-indents-newline t)
@@ -26,7 +28,8 @@
  '(semantic-self-insert-show-completion-function (lambda nil (semantic-ia-complete-symbol-menu (point))))
  '(text-mode-hook (quote (smart-spacing-mode table-recognize turn-spell-checking-on auto-detect-wrap)))
  '(vc-handled-backends (quote (Git SVN Bzr CVS Hg Mtn Arch)))
- '(visual-line-mode nil t))
+ '(visual-line-mode t t)
+ '(word-wrap t))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
