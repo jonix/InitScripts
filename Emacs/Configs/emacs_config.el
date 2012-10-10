@@ -272,6 +272,9 @@
 ;; Setup Insert date support
 (load-file "~/.InitScripts/Emacs/Configs/date_config.el")
 
+;; Setup predictive system for faster input
+;; No worky under Aquamacs
+;;(load-file "~/.InitScripts/Emacs/Configs/predictive_config.el")
 
 
 
@@ -552,8 +555,10 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 			(setq buffer (car list))))
 	(message "Refreshed open files"))
 
-
-(load-file "~/.InitScripts/Emacs/Configs/macosx_settings.el")
+;; Load Mac OS X specific settings
+(when (boundp 'aquamacs-version)
+	(load-file "~/.InitScripts/Emacs/Configs/macosx_settings.el")
+)
 
 
 ;; Setup common keyboard shortcuts
