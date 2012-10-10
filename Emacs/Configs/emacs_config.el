@@ -269,6 +269,9 @@
 ;; Setup Icicles support
 ;; (load-file "~/.InitScripts/Emacs/Configs/icicles_config.el")
 
+;; Setup Insert date support
+(load-file "~/.InitScripts/Emacs/Configs/date_config.el")
+
 
 
 

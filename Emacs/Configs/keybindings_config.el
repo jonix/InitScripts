@@ -109,7 +109,9 @@
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-(global-set-key (kbd "C-c d") 'ourcomments-insert-date-and-time)
+;;(global-set-key (kbd "C-c d") 'ourcomments-insert-date-and-time)
+(global-set-key "\C-c\C-d" 'insert-current-date-time)
+(global-set-key "\C-c\C-t" 'insert-current-time)
 
 
 ;; C/C++ source code lookup key bindings (cscope)
@@ -136,4 +138,3 @@
 (global-set-key "\C-cp"    'emms-next)
 (global-set-key "\C-c\C-p" 'emms-previous)
 (global-set-key "\C-c\C-p" 'emms-playlistmode-go)
-

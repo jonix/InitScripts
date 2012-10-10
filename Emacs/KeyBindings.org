@@ -66,7 +66,8 @@
 * Misc
 ** `C-h b`    Show bound Keybindings
 ** `C-ct`     Start Pomodoro task
-** `C-c d`    Insert time and date
+** `C-c C-d`  Insert time and date
+** `C-c C-t`  Insert time
 ** `M-y`      Cycle kill-ring content directly after C-y, otherwise show a popup with kill-ring content
 ** `C-c d`    Insert date and time in the format of YYYY-MM-DD HH:NN
 ** `M-!`      Run the shell command and show the output in mini buffer
