@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Enter equation mode
+#name : Symbol for reell (Bold R)
 # --
-\$\\$0\$
+\\mathbb{R}

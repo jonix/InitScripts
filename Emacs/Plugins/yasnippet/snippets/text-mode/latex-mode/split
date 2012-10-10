@@ -1,4 +1,5 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Enter equation mode
+#name : split equation
 # --
-\$\\$0\$
+\begin{split}
+\end{split}

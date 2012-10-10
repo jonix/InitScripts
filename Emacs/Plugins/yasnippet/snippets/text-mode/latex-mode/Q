@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Enter equation mode
+#name : Symbol for Quotient (Bold Q)
 # --
-\$\\$0\$
+\\mathbb{Q}

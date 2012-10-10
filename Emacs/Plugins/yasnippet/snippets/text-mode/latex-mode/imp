@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Enter equation mode
+#name : =>
 # --
-\$\\$0\$
+\\implies

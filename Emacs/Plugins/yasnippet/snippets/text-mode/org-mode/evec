@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Enter equation mode
+#name : $\vector{}$
 # --
-\$\\$0\$
+\$\vec{$0}\$

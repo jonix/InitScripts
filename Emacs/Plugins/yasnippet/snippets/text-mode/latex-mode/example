@@ -1,0 +1,6 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : begin{example}...end{example}
+# --
+\begin{example}
+	$1
+\end{example}

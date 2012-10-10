@@ -20,6 +20,7 @@
        Save all the current bookmark values in the default bookmark file.
 * Compilation keybindings
 ** `C-cc` compile
+*** Even works for Latex
 ** `C-cv` recompile
     Shortcut to compile a buffer that has already been compiled at least once
 ** `C-c.` Go to next error
@@ -98,6 +99,30 @@
 *** http://philjackson.github.com/magit/magit.html
 ** [M-x re-builder]     - Interactive Regex builder realtime display
 ** [M-x describe-last-function] - Looks up the previous function and describes it
+* Latex-mode
+** `C-c C-c`    Compile Latex code to PDF
+** `C-c C-p C-b` Enable Latex preview in buffer
+** YA-snippets
+*** Look in the menu for current shortcuts
+** Tips on realtime Latex
+*** Latexmk re-runs pdftex or whatever every time you save your *.tex-file. Instead of preview I do:
+**** Open Emacs, C-x C-f => new file, type some skeleton of the
+			LaTeX-file including \end{document}, save it (C-x C-s),
+			compile it the first time (C-c C-c RET) and open it in the viewer (again C-c C-c RET).
+			I open bash, navigate into the folder containing my LaTeX-file and type
+			latexmk -pvc -pdf filename.tex
+			Then latexmk compiles my document and repeats that each time I save a new version inside Emacs.
+			If you employ a pdf-viewer which is able to reload the pdf from
+			harddisk every time it changes (Skim)
+			you are very close to an instant preview.
+**** Problem is when you make a syntax error, the hidden terminal running latexmk will complain, but you will never see it
+***** Solution: Make Growl parse the output from latexmk and notify when a syntax error occurs
+*** http://stackoverflow.com/questions/738755/dont-make-me-manually-abort-a-latex-compile-when-theres-an-error
+*** PDF Preview inside Emacs
+*** Split the window vertically
+*** Compile the Latex document
+*** Open the PDF file in the second buffer
+*** Whenever you recompile the Latex code, the PDF buffer will revert to the newly compiled PDF file
 * Org-mode
 ** Links
 *** Project planning with org-mode - http://www.contextualdevelopment.com/articles/2008/project-planning
@@ -201,4 +226,3 @@
 *** Artist mode
 **** Draw ascii arts with the mouse withing Emacs using a mouse
 ** IDO Discussion at http://www.masteringemacs.org/articles/2010/10/10/introduction-to-ido-mode/
-
