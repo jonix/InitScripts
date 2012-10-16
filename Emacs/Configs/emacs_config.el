@@ -394,6 +394,10 @@
 (setq tea-time-sound "~/.InitScripts/Emacs/Plugins/ding.wav")
 
 
+;; Golden Ratio
+(require 'golden-ratio)
+(golden-ratio-enable)
+
 ;; Play Music from within Emacs using Emms
 (load-file "~/.InitScripts/Emacs/Configs/multimedia.el")
 
