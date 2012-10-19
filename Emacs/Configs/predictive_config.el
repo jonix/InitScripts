@@ -1,5 +1,5 @@
 ;; predictive install location
-(add-to-list 'load-path "~/.InitScripts/Emacs/Plugins//predictive")
+(add-to-list 'load-path "~/.InitScripts/Emacs/Plugins/predictive")
 ;; dictionary locations
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins/predictive/latex/")
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins/predictivetexinfo/")
@@ -8,7 +8,7 @@
 (require 'predictive)
 
 ;;(add-to-list 'load-path "~/.InitScripts/Emacs/Plugins//predictive")
-;;(autoload 'predictive-mode "predictive" "predictive" t)
+;; (autoload 'predictive-mode "predictive" "predictive" t)
 ;;(set-default 'predictive-auto-add-to-dict t)
 ;;(setq predictive-main-dict 'rpg-dictionary
 ;;      predictive-auto-learn t

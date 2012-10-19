@@ -274,7 +274,7 @@
 
 ;; Setup predictive system for faster input
 ;; No worky under Aquamacs
-;;(load-file "~/.InitScripts/Emacs/Configs/predictive_config.el")
+(load-file "~/.InitScripts/Emacs/Configs/predictive_config.el")
 
 
 
