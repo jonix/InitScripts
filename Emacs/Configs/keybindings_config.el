@@ -133,8 +133,17 @@
 (global-set-key "\C-c\C-f" 'ido-find-file-in-tag-files)
 
 ;;; Define Multimedia keybinding for playing music
-(global-set-key "\C-cs"    'emms-start)
-(global-set-key "\C-c\C-s" 'emms-stop)
-(global-set-key "\C-cp"    'emms-next)
-(global-set-key "\C-c\C-p" 'emms-previous)
-(global-set-key "\C-c\C-p" 'emms-playlistmode-go)
+;; (global-set-key "\C-cs"    'emms-start)
+;; (global-set-key "\C-c\C-s" 'emms-stop)
+;; (global-set-key "\C-cp"    'emms-next)
+;; (global-set-key "\C-c\C-p" 'emms-previous)
+;; (global-set-key "\C-c\C-p" 'emms-playlistmode-go)
+
+;; Set YAsnippet
+;; (global-set-key [f6] 'yas/expand)
+
+;; Set Latex goto next error
+(global-set-key "\C-ce" 'TeX-next-error)
+(global-set-key "\C-c\C-e" 'TeX-next-error)
+(global-set-key "\C-cp" 'TeX-previous-error)
+(global-set-key "\C-c\C-p" 'TeX-previous-error)

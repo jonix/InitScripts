@@ -100,8 +100,12 @@
 ** [M-x re-builder]     - Interactive Regex builder realtime display
 ** [M-x describe-last-function] - Looks up the previous function and describes it
 * Latex-mode
-** `C-c C-c`    Compile Latex code to PDF
+** `C-c C-c`     Compile Latex code to PDF
 ** `C-c C-p C-b` Enable Latex preview in buffer
+** `C-c e`       Goto next error
+** `M-g n`       Goto next error
+** `C-c p`       Goto previous error (Err msg: Not supported)
+** `M-g p`       Goto previous error (Err msg: Not supported)
 ** YA-snippets
 *** Look in the menu for current shortcuts
 ** Tips on realtime Latex

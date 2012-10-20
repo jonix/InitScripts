@@ -567,3 +567,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 ;; Setup common keyboard shortcuts
 (load-file "~/.InitScripts/Emacs/Configs/keybindings_config.el")
+
+(setq server-use-tcp t)
+(server-start)
