@@ -348,6 +348,9 @@
 ;; Setup for Ruby and Ruby On Rails
 
 
+;; Setup YASnipppet support
+;; Setup Javascript-mode
+(load-file "~/.InitScripts/Emacs/Configs/yasnippets_config.el")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -366,11 +369,6 @@
 ;; Emulate some things from Textmate
 (require 'textmate)
 (textmate-mode)
-
-;; For YASnippet (TextMate like snippets, think "cl+<Tab>" for a full C++ class definition)
-(require 'yasnippet) ;; not yasnippet-bundle
-(yas/initialize)
-(yas/load-directory "~/.InitScripts/Emacs/Plugins/yasnippet/snippets")
 
 ;; Added support for highlighting FIXME in code comments
 (require 'fic-mode)
@@ -560,10 +558,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 	(message "Refreshed open files"))
 
 ;; Load Mac OS X specific settings
-(when (boundp 'aquamacs-version)
+;;(when (boundp 'aquamacs-version)
 	(load-file "~/.InitScripts/Emacs/Configs/macosx_settings.el")
-)
-
+;;)
 
 ;; Setup common keyboard shortcuts
 (load-file "~/.InitScripts/Emacs/Configs/keybindings_config.el")
