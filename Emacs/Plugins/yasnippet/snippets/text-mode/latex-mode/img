@@ -1,0 +1,7 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Create a list
+# --
+\begin{figure}[h!]
+\center\includegraphics[scale=0.5]{$1}
+\caption{$2}
+\end{figure}

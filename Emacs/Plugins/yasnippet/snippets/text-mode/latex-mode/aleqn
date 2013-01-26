@@ -1,0 +1,8 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Aligned long equation
+# --
+\\begin{equation*}
+  \\begin{aligned}
+	$0
+	\\end{aligned}
+\\end{equation*}

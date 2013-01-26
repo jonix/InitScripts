@@ -1,6 +1,5 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
 #name : \begin{definition}...\end{definition}
 # --
-\\begin{equation}
-	$0
-\\end{equation}
+\begin{definition}{$0}
+\end{definition}
