@@ -23,3 +23,9 @@
   ;; (setq interprogram-paste-function 'x-selection-value)
 	;; Which is set in emacs_config.el file
 )
+
+
+;; Remap meta-key from alt to command
+;; Now you can type @, [], | using alt-2, alt-8, alt-9, alt-7
+(setq mac-option-modifier 'none)
+(setq mac-command-modifier 'meta)
