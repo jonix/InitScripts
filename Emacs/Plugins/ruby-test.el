@@ -468,4 +468,3 @@ for the current buffer or the optional FILENAME."
 
 (provide 'ruby-test)
 ;;; ruby-test.el ends here
-

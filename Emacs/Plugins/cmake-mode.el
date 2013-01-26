@@ -177,11 +177,11 @@ the indentation.  Otherwise it retains the same position on the line"
   (setq save-point (point))
   (goto-char (point-min))
   (while (re-search-forward "^\\([ \t]*\\)\\(\\w+\\)\\([ \t]*(\\)" nil t)
-    (replace-match 
-     (concat 
-      (match-string 1) 
-      (downcase (match-string 2)) 
-      (match-string 3)) 
+    (replace-match
+     (concat
+      (match-string 1)
+      (downcase (match-string 2))
+      (match-string 3))
      t))
   (goto-char save-point)
   )

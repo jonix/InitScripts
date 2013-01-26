@@ -146,4 +146,3 @@ Cancel prevoius timer, started by this function"
 
 (provide 'tea-time)
 ;;; tea-time.el ends here
-
