@@ -1,0 +1,7 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Determinatn
+# --
+$\begin{vmatrix}
+  x & y \\\\
+  z & v
+\end{vmatrix}$

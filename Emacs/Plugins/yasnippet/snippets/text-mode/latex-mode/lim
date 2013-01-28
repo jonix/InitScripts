@@ -1,0 +1,4 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Limit
+# --
+\lim \limits_{${1:n} \to ${2:\infty}}\frac{$4}{$5}$0

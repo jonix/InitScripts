@@ -1,0 +1,4 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Double bar fraction
+# --
+$\quad \left \Vert \frac{${1:a}}{${2:c}} \right \|$

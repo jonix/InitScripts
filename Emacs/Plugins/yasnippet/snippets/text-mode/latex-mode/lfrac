@@ -1,0 +1,4 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Long fraction
+# --
+\left${1:(}\\frac{$4}{$5}\right${2:)}

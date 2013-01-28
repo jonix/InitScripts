@@ -1,0 +1,7 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Equation system
+# --
+\$$1 = \begin{cases}
+   $2, & \mbox{$3 } n\mbox{$4} \\
+   $5, & \mbox{$5 } n\mbox{$7}
+\end{cases}$

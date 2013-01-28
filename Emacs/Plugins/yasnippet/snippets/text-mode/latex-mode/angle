@@ -1,0 +1,4 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Angle symbol
+# --
+\measuredangle ${1:45}^\circ

@@ -1,0 +1,4 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Binomial symbol
+# --
+\binom{${1:n}}{${2:p}}

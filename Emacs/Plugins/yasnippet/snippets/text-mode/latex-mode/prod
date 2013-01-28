@@ -1,0 +1,4 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Product symbol
+# --
+\prod \limits_{${1:k=1}}^${2:N} ${3:k^2}
