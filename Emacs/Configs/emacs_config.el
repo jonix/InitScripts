@@ -308,8 +308,11 @@
 ;; Setup Org-mode
 (load-file "~/.InitScripts/Emacs/Configs/org_config.el")
 
+;; Setup Remember
+(load-file "~/.InitScripts/Emacs/Configs/remember_config.el")
+
 ;; Setup Pomodoro-mode
-(load-file "~/.InitScripts/Emacs/Configs/pomodoro_mode.el")
+;;(load-file "~/.InitScripts/Emacs/Configs/pomodoro_mode.el")
 
 ;; Setup ReStructuredText-mode (rst)
 (load-file "~/.InitScripts/Emacs/Configs/rst_mode.el")

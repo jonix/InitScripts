@@ -3,7 +3,7 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("Passwords"
- (filename . "/media/MacSys/Users/jonix/Documents/Personal/Passwords.org.gpg")
+ (filename . "~/Documents/Personal/Passwords.org.gpg")
  (front-context-string . "-*- mode: org -*")
  (rear-context-string)
  (position . 1))

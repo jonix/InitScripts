@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Binomial symbol
+#name : Binomial symbol (Full expansion)
 # --
 \binom{${1:n}}{${2:p}} = \frac{{$1}!}{{$2}!({$1}-{$2})!}$0

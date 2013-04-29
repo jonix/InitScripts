@@ -16,8 +16,6 @@
 
 
 ;; ======= >>> Org mode start =======
-;; Remember
-(org-remember-insinuate)
 (setq org-indent-mode t)
 (setq org-hide-leading-stars t)
 (setq org-directory "~/Documents/GTD/")
@@ -47,11 +45,11 @@
 
 ;; ======= >>> Start Pomodoro =========
 ;; Bind Pomodoro technique with Org-mode
-(add-to-list 'org-modules 'org-timer)
-(setq org-timer-default-timer 25)
-(add-hook 'org-clock-in-hook '(lambda ()
-																(if (not org-timer-current-timer)
-																		(org-timer-set-timer '(16)))))
+;;(add-to-list 'org-modules 'org-timer)
+;;(setq org-timer-default-timer 25)
+;;(add-hook 'org-clock-in-hook '(lambda ()
+;;																(if (not org-timer-current-timer)
+;;																		(org-timer-set-timer '(16)))))
 ;; ======= <<< Pomodoro end ===========
 
 

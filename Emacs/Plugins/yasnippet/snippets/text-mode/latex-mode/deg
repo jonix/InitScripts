@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
 #name : \degree
 # --
-\degree
+$${1:45}^\circ$ $0
