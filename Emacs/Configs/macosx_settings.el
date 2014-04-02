@@ -4,6 +4,10 @@
 		(setenv "PATH"
 						(shell-command-to-string "source $HOME/.InitScripts/Bash/macosx_path.sh && printf $PATH")))
 
+;; Enable Mac OS X Antialiasing fonts
+;; Seems to be defaulted to non-nil
+(setq ns-antialias-text t)
+
 ;; This might only be necessary on Mac OS X
 ;; Note: Scrollbars on OS X is relative to the amount of scrolling (bottom of document is a very small scrollbar)
 (when window-system
@@ -24,8 +28,14 @@
 	;; Which is set in emacs_config.el file
 )
 
-
+;; If uncommented: you cannot write stuff that requires alt, why???
 ;; Remap meta-key from alt to command
 ;; Now you can type @, [], | using alt-2, alt-8, alt-9, alt-7
-(setq mac-option-modifier 'none)
-(setq mac-command-modifier 'meta)
+;; (setq mac-option-modifier 'none)
+;; (setq mac-command-modifier 'meta)
+;; (setq ns-function-modifier 'hyper)
+
+;; keybinding to toggle full screen mode
+(global-set-key (quote [M-f10]) (quote ns-toggle-fullscreen))
+
+(add-to-list 'ido-ignore-files "\\.DS_Store")
