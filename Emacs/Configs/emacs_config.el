@@ -32,6 +32,12 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+;; Change background to black, and default text to gray
+(setq default-frame-alist '((background-color . "black")
+	(foreground-color . "gray")))
+
+
 ;; Tell Emacs to use syntax highlighting
 (setq global-font-lock-mode t)
 (setq font-lock-mode-maximum-decoration t)
