@@ -8,3 +8,9 @@ else
 	echo "ERROR: Could not locate the shell customization loader"
 fi
 
+
+# added by Anaconda 1.7.0 installer
+export PATH="/Users/jonix/anaconda/bin:$PATH"
+
+# added by Anaconda 1.9.1 installer
+export PATH="/Users/jonix/anaconda/bin:$PATH"
