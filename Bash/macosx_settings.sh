@@ -17,3 +17,12 @@ export EDITOR="/usr/bin/mate --wait --change-dir"
 #export CPP=/usr/bin/cpp-4.2
 #export CXX=/usr/bin/g++-4.2
 #export CXXCPP=/usr/bin/c++-4.2
+
+export LANG="sv_SE.UTF-8"
+export LC_COLLATE="sv_SE.UTF-8"
+export LC_CTYPE="sv_SE.UTF-8"
+export LC_MESSAGES="sv_SE.UTF-8"
+export LC_MONETARY="sv_SE.UTF-8"
+export LC_NUMERIC="sv_SE.UTF-8"
+export LC_TIME="sv_SE.UTF-8"
+export LC_ALL=
