@@ -20,6 +20,11 @@ the directories in the INCLUDE environment variable."
 
 (add-to-list 'magic-fallback-mode-alist '(buffer-standard-include-p . c++-mode))
 
+;; Tell Emacs to syntax highlight file that is emacs_config
+(setq auto-mode-alist (append
+											 '(("emacs_config" . lisp-mode))
+											 auto-mode-alist)
+      )
 
 ;; == Start >> C++ IDE setup ==
 ;; ---- Deprecated -----
@@ -95,4 +100,3 @@ the directories in the INCLUDE environment variable."
 ;; ==== <<< Cedet end =========
 
 ;; =============== Disabled C++ support end ====================
-

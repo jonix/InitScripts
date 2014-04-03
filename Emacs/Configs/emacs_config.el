@@ -239,7 +239,7 @@
 ;; Setup recent file config
 (load-file "~/.InitScripts/Emacs/Configs/recent_file_config.el")
 
-;; Setup recent file config
+;; Setup whitespace file config
 (load-file "~/.InitScripts/Emacs/Configs/whitespace_config.el")
 
 ;; Setup GPG mode
@@ -253,12 +253,20 @@
 
 ;; Setup Bookmark support
 (load-file "~/.InitScripts/Emacs/Plugins/bookmark_cycling.el")
+(load-file "~/.InitScripts/Emacs/Configs/bookmark_keybindings.el")
 
 ;; Setup Folding support
 (load-file "~/.InitScripts/Emacs/Configs/folding_support.el")
 
 ;; Setup speedbar config
 (load-file "~/.InitScripts/Emacs/Configs/speedbar_config.el")
+
+;; Golden Ratio
+(load-file "~/.InitScripts/Emacs/Configs/goldenratio_config.el")
+
+;; Play Music from within Emacs using Emms
+(load-file "~/.InitScripts/Emacs/Configs/multimedia_config.el")
+(load-file "~/.InitScripts/Emacs/Configs/multimedia_keybindings.el")
 
 ;; Setup TAG file support
 (load-file "~/.InitScripts/Emacs/Configs/etags_config.el")
@@ -294,17 +302,13 @@
 ;; Setup syntax highlighting
 (load-file "~/.InitScripts/Emacs/Configs/highlighting_config.el")
 
-;; Tell Emacs to syntax highlight file that is emacs_config
-(setq auto-mode-alist (append
-	  '(("emacs_config" . lisp-mode))
-			 auto-mode-alist)
-      )
-
 ;; Setup C++ mode
 ;; (load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
-;;(load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
+;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode_2.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/new_cedet_mode.el")
+(load-file "~/.InitScripts/Emacs/Configs/cpp_keybindings.el")
+
 
 ;; Setup CMake-mode
 (load-file "~/.InitScripts/Emacs/Configs/cmake_mode.el")
@@ -314,6 +318,7 @@
 
 ;; Setup Org-mode
 (load-file "~/.InitScripts/Emacs/Configs/org_config.el")
+(load-file "~/.InitScripts/Emacs/Configs/org_keybindings.el")
 
 ;; Setup Remember
 (load-file "~/.InitScripts/Emacs/Configs/remember_config.el")
@@ -341,9 +346,11 @@
 
 ;; Setup PHP-mode
 (load-file "~/.InitScripts/Emacs/Configs/php_mode.el")
+(load-file "~/.InitScripts/Emacs/Configs/php_keybindings.el")
 
 ;; Setup Latex mode
 (load-file "~/.InitScripts/Emacs/Configs/latex_mode.el")
+(load-file "~/.InitScripts/Emacs/Configs/latex_keybindings.el")
 
 ;; Setup XML-mode
 (load-file "~/.InitScripts/Emacs/Configs/xml_mode.el")
@@ -400,14 +407,6 @@
 
 (require 'tea-time)
 (setq tea-time-sound "~/.InitScripts/Emacs/Plugins/ding.wav")
-
-
-;; Golden Ratio
-(require 'golden-ratio)
-(golden-ratio-enable)
-
-;; Play Music from within Emacs using Emms
-(load-file "~/.InitScripts/Emacs/Configs/multimedia.el")
 
 
 ;; Add support for encode (obfuscate) to a URL path to contain % characters

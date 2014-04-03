@@ -1,4 +1,5 @@
 ;;; Keybindings for Emacs ;;;
+;;; More specific keybindings for various emacs-mode specifified by <mode>_keybindings.el
 
 ;; Keystroke customization (functions)
 
@@ -18,21 +19,15 @@
 ;; Toggle sticky buffer (no replace of designated buffer)
 (global-set-key "\C-cy" 'toggle-sticky-buffer-window)
 
-;; For compilations
-(global-set-key "\C-cc" 'compile)         ; to compile from within Emacs
-(global-set-key "\C-cv" 'recompile)       ; to compile from within Emacs
-(global-set-key "\C-c." 'next-error)   		; Go to next error
-(global-set-key "\C-c," 'previous-error)	; Go to previous error
+;; Open file with sudo privs
+(global-set-key "\C-cs" 'find-alternative-file-with-sudo)
 
 ;; For line jump to
 (global-set-key "\C-l" 'goto-line) ; Go to a specified line number
 
-;; Open file with sudo privs
-(global-set-key "\C-cs" 'find-alternative-file-with-sudo)
-
 ;; Commenting
-(global-set-key (kbd "C-;") 'comment-region); Comment a selection
-(global-set-key (kbd "C-:") 'uncomment-region); Remove comments from a section
+(global-set-key (kbd "C-;") 'comment-region)   ; Comment a selection
+(global-set-key (kbd "C-:") 'uncomment-region) ; Remove comments from a section
 
 ;; Folding support (fold code to view just the head of a function, first line of a comment, etc)
 (load "folding" 'nomessage 'noerror)
@@ -42,26 +37,13 @@
 ;; I don't see any advantages from simple abbrev-expand
 (global-set-key (kbd "M-/") 'hippie-expand)
 
+; regexp replace
+(global-set-key "\M-\C-r" `query-replace-regexp)
 
-(global-set-key "\M-\C-r" `query-replace-regexp) 		; regexp replace
-
-(global-set-key "\C-co" 'ffap)     ; Go to file under cursor
+; Go to file under cursor
+(global-set-key "\C-co" 'ffap)
 
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
-;;  (define-key global-map "\C-cr" 'org-remember)
-(global-set-key "\C-cr" 'org-remember)
-(global-set-key (kbd "<C-tab>") 'php-complete-function)
-
-;; Bookmarking ;;
-(global-set-key [f7] 'bookmark-set)
-(global-set-key [f8]  'af-bookmark-cycle-forward )                ;; Next bookmark
-(global-set-key [(shift f8)]  'af-bookmark-cycle-reverse )        ;; Prev bookmark
-(global-set-key [(shift f7)]  'af-bookmark-clear-all )    ;; Remove all bookmarks
-
-;; (global-set-key (kbd "<M-f2>") 'bookmark-set)
-;; (global-set-key [f2]  'af-bookmark-cycle-forward )                ;; Next bookmark
-;; (global-set-key [(shift f2)]  'af-bookmark-cycle-reverse )        ;; Prev bookmark
-;; (global-set-key [(control shift f2)]  'af-bookmark-clear-all )    ;; Remove all bookmarks
 
 ;; Alias C-x k to C-xC-k and C-xC-c
 ;; Kill named buffer
@@ -114,36 +96,8 @@
 (global-set-key "\C-c\C-t" 'insert-current-time)
 
 
-;; C/C++ source code lookup key bindings (cscope)
-(define-key global-map [(control f3)]  'cscope-set-initial-directory)
-(define-key global-map [(control f4)]  'cscope-unset-initial-directory)
-(define-key global-map [(control f5)]  'cscope-find-this-symbol)
-(define-key global-map [(control f6)]  'cscope-find-global-definition)
-(define-key global-map [(control f7)]
-  'cscope-find-global-definition-no-prompting)
-(define-key global-map [(control f8)]  'cscope-pop-mark)
-(define-key global-map [(control f9)]  'cscope-next-symbol)
-(define-key global-map [(control f10)] 'cscope-next-file)
-(define-key global-map [(control f11)] 'cscope-prev-symbol)
-(define-key global-map [(control f12)] 'cscope-prev-file)
-(define-key global-map [(meta f9)]  'cscope-display-buffer)
-(define-key global-map [(meta f10)] 'cscope-display-buffer-toggle)
-
 ;; TAGS file lookup aided with IDO
 (global-set-key "\C-c\C-f" 'ido-find-file-in-tag-files)
 
-;;; Define Multimedia keybinding for playing music
-;; (global-set-key "\C-cs"    'emms-start)
-;; (global-set-key "\C-c\C-s" 'emms-stop)
-;; (global-set-key "\C-cp"    'emms-next)
-;; (global-set-key "\C-c\C-p" 'emms-previous)
-;; (global-set-key "\C-c\C-p" 'emms-playlistmode-go)
-
 ;; Set YAsnippet
 ;; (global-set-key [f6] 'yas/expand)
-
-;; Set Latex goto next error
-(global-set-key "\C-ce" 'TeX-next-error)
-(global-set-key "\C-c\C-e" 'TeX-next-error)
-(global-set-key "\C-cp" 'TeX-previous-error)
-(global-set-key "\C-c\C-p" 'TeX-previous-error)
