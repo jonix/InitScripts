@@ -25,6 +25,11 @@
 (add-to-list 'load-path "~/.InitScripts/Emacs/Plugins")
 (setq bookmark-default-file "~/.InitScripts/Emacs/Configs/bookmarks.bmk")
 
+;; Add Emacs new package management system
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
