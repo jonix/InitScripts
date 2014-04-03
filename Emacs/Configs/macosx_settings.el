@@ -35,7 +35,4 @@
 ;; (setq mac-command-modifier 'meta)
 ;; (setq ns-function-modifier 'hyper)
 
-;; keybinding to toggle full screen mode
-(global-set-key (quote [M-f10]) (quote ns-toggle-fullscreen))
-
 (add-to-list 'ido-ignore-files "\\.DS_Store")

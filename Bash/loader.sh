@@ -3,7 +3,6 @@
 ## Loading general customization
 
 if [ -f ~/.InitScripts/Bash/general_settings.sh ] ; then
-	echo "Loading general settings"
 	. ~/.InitScripts/Bash/general_settings.sh
 else
 	echo "Did not load general settings"
@@ -54,6 +53,12 @@ elif [ `uname` == "Darwin" ] ; then
 		. ~/.InitScripts/Bash/macosx_settings.sh
 	else
 		echo "No Mac OS X specific settings file found"
+	fi
+
+	if [ -f ~/.InitScripts/Bash/macosx_alias.sh ] ; then
+	   . ~/.InitScripts/Bash/macosx_alias.sh
+	else
+		echo "No Mac OS X specific aliases found"
 	fi
 else
 	echo "Unknown OS, does not load any OS specific settings"

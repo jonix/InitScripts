@@ -1,8 +1,9 @@
 #!/bin/bash
 
+echo "Loading general settings"
+
 #export PS1="\h:\W \u\$"
 #export PS1="\u:\w> "
-
 export PS1="\u:\W$ "
 
 ## For Emacs
