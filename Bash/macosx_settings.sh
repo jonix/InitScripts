@@ -11,7 +11,7 @@ echo "Loading Mac OS X specific settings"
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/Applications/lib:
 export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
 
-export EDITOR="/usr/bin/mate --wait --change-dir"
+#export EDITOR="/usr/bin/mate --wait --change-dir"
 
 #export CC=/usr/bin/gcc-4.2
 #export CPP=/usr/bin/cpp-4.2

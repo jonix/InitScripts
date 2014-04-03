@@ -6,10 +6,15 @@
 export PS1="\u:\W$ "
 
 ## For Emacs
-export EDITOR=~/Scripts/edit
+#export EDITOR=~/Scripts/edit
 #ec() {
 #    emacsclient -n $1
 #}
+
+# Try to startup Emacs as a daemon
+export ALTERNATE_EDITOR=""
+export EDITOR=emacsclient
+
 
 # Print working directory after a cd.
 cd() {
@@ -108,5 +113,3 @@ shopt -s histappend
 # use the up/down keys to cycle through a list of commands starting with the given letters
 bind '"\e[A"':history-search-backward
 bind '"\e[B"':history-search-forward
-
-export ALTERNATE_EDITOR=""
