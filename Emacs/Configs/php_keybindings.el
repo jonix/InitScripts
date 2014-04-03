@@ -1,1 +1,7 @@
-(global-set-key (kbd "<C-tab>") 'php-complete-function)
+(defun jonix-add-php-keys ()
+	(local-set-key (kbd "C-c e") 'next-error)
+	(local-set-key (kbd "C-c p") 'previous-error)
+	(local-set-key (kbd "<C-tab>") 'php-complete-function)
+	(local-set-key (kbd "<f1>") 'jonix-php-symbol-lookup)
+)
+(add-hook 'php-mode-hook `jonix-add-php-keys)

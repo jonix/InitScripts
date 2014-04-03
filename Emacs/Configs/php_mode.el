@@ -7,3 +7,12 @@
 (setq mumamo-background-colors nil)
 ;; (set-face-background "mmm-default-submode-face" nil)
 ;; (set-face-background 'mmm-default-submode-face "gray16")
+
+(defun jonix-php-symbol-lookup ()
+  (interactive)
+  (let ((symbol (symbol-at-point)))
+    (if (not symbol)
+        (message "No symbol at point.")
+
+      (browse-url (concat "http://php.net/manual-lookup.php?pattern="
+                          (symbol-name symbol))))))
