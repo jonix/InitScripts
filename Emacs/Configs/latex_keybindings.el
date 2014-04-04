@@ -6,5 +6,6 @@
 (defun jonix-add-latex-keys ()
 	(local-set-key (kbd "C-c e") 'next-error)
 	(local-set-key (kbd "C-c p") 'previous-error)
+	(local-set-key (kbd "C-c l") 'latex-math-preview-expression)
 )
 (add-hook 'latex-mode-hook `jonix-add-latex-keys)

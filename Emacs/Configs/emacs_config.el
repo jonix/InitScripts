@@ -26,9 +26,9 @@
 (setq bookmark-default-file "~/.InitScripts/Emacs/Configs/bookmarks.bmk")
 
 ;; Add Emacs new package management system
-(require 'package)
-(add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;(require 'package)
+;(add-to-list 'package-archives
+;  '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -222,7 +222,6 @@
 ;; (setq-default ispell-program-namE "aspell")
 (setq ispell-program-name "/usr/local/bin/aspell")
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Behaviour configuration
@@ -370,6 +369,28 @@
 (load-file "~/.InitScripts/Emacs/Configs/yasnippets_config.el")
 
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Game and fun
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(load-file "~/.InitScripts/Emacs/Configs/2048_config.el")
+
+;; For box quoting
+(require 'boxquote)
+
+;; Show a silly thinking bubble with the selected text
+(autoload 'thinks "thinks" "Wraps the selected text in a thinking bubble" t)
+;; (require 'thinks)
+
+(require 'tea-time)
+(setq tea-time-sound "~/.InitScripts/Emacs/Plugins/ding.wav")
+
+;; For transparancy
+;; (set-frame-parameter (selected-frame) 'alpha 70)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Misc helper functions
@@ -397,16 +418,6 @@
 
 ;; For Pomodoro
 (define-key global-map "\C-ct" 'pomodoro)
-
-;; For box quoting
-(require 'boxquote)
-
-;; Show a silly thinking bubble with the selected text
-(autoload 'thinks "thinks" "Wraps the selected text in a thinking bubble" t)
-;; (require 'thinks)
-
-(require 'tea-time)
-(setq tea-time-sound "~/.InitScripts/Emacs/Plugins/ding.wav")
 
 
 ;; Add support for encode (obfuscate) to a URL path to contain % characters
@@ -482,10 +493,6 @@
 ;; Load WinnerMode, a global minor mode that allows undo and redo of
 ;; window configuration with commands 'C-c left' and 'C-c right'.
 (winner-mode 1)
-
-
-;; For transparancy
-;; (set-frame-parameter (selected-frame) 'alpha 70)
 
 ;; Add support for Cups printing
 (setq lpr-command "xpp")

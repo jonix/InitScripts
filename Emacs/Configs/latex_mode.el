@@ -27,6 +27,30 @@
 )
 (add-hook  'LaTeX-mode-hook  'pdfskim  t) ; AUCTeX LaTeX mode
 
+
+;; Preview a region that contains a math formula
+(autoload 'latex-math-preview-expression "latex-math-preview" nil t)
+(autoload 'latex-math-preview-insert-symbol "latex-math-preview" nil t)
+(autoload 'latex-math-preview-save-image-file "latex-math-preview" nil t)
+(autoload 'latex-math-preview-beamer-frame "latex-math-preview" nil t)
+
+(require 'latex-preview-pane)
+
+
+;; Test from Latex extra - Should define some sane key shortcuts
+;;(eval-after-load 'latex '(latex/setup-keybinds))
+
+
+;; Extra bits for previewig expression
+;(add-to-list 'latex-math-preview-text-symbol-datasets
+; 	     latex-math-preview-textcomp-symbol-data)
+;(add-to-list 'latex-math-preview-text-symbol-datasets
+;	     latex-math-preview-pifont-zapf-dingbats-symbol-data)
+;(add-to-list 'latex-math-preview-text-symbol-datasets
+;	     latex-math-preview-pifont-symbol-fonts-symbol-data)
+
+
+
 ;; (setq TeX-view-program-list
 ;;      '(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline %q")))
 
