@@ -1,7 +1,0 @@
-#name : header
-#group : definitions
-# --
-#!/usr/bin/env ruby
-BEGIN {$VERBOSE = true}
-
-$0

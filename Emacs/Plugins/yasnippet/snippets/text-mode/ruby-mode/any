@@ -1,6 +1,0 @@
-#name : any? { |...| ... }
-#group : collections
-# --
-any? do |${e}| 
-	$0
-end

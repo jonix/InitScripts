@@ -1,6 +1,0 @@
-#name : collect { |...| ... }
-#group : collections
-# --
-collect do |${e}| 
-	$0
-end

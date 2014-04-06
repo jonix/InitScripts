@@ -1,6 +1,0 @@
-#name : each_cons(...) { |...| ... }
-#group : collections
-# --
-each_cons(${1:2}) do |${group}| 
-	$0
-end

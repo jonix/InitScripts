@@ -1,6 +1,0 @@
-#name : delete_if { |...| ... }
-#group : collections
-# --
-delete_if do |${e} 
-	$0
-end

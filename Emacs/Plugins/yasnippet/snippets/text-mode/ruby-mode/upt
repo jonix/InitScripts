@@ -1,6 +1,0 @@
-#name : upto(...) { |n| ... }
-#group : control structure
-# --
-upto(${n}) do |${i}|
-  $0
-end
