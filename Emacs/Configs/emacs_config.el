@@ -127,11 +127,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Enable auto-complete
-(require 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
-(add-to-list 'ac-dictionary-directories "~/.InitScripts/Emacs/plugins/dict")
-
+(load-file "~/.InitScripts/Emacs/Configs/auto-complete_config.el")
 
 ;; Preserve the owner and group of the file you're editing
 (setq backup-by-copying-when-mismatch t)
@@ -307,10 +303,12 @@
 (load-file "~/.InitScripts/Emacs/Configs/highlighting_config.el")
 
 ;; Setup C++ mode
+;;(load-file "~/.InitScripts/Emacs/Configs/cpp_mode2.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode_2.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/new_cedet_mode.el")
+
 (load-file "~/.InitScripts/Emacs/Configs/cpp_keybindings.el")
 
 
