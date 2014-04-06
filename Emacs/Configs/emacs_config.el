@@ -126,6 +126,12 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Enable auto-complete
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+(add-to-list 'ac-dictionary-directories "~/.InitScripts/Emacs/plugins/dict")
+
 
 ;; Preserve the owner and group of the file you're editing
 (setq backup-by-copying-when-mismatch t)
