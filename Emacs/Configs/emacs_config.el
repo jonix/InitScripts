@@ -26,10 +26,9 @@
 (setq bookmark-default-file "~/.InitScripts/Emacs/Configs/bookmarks.bmk")
 
 ;; Add Emacs new package management system
-;(require 'package)
-;(add-to-list 'package-archives
-;  '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -261,7 +260,7 @@
 (load-file "~/.InitScripts/Emacs/Configs/speedbar_config.el")
 
 ;; Golden Ratio
-(load-file "~/.InitScripts/Emacs/Configs/goldenratio_config.el")
+;;(load-file "~/.InitScripts/Emacs/Configs/goldenratio_config.el")
 
 ;; Play Music from within Emacs using Emms
 (load-file "~/.InitScripts/Emacs/Configs/multimedia_config.el")
