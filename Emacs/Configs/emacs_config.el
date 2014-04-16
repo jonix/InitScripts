@@ -26,9 +26,12 @@
 (setq bookmark-default-file "~/.InitScripts/Emacs/Configs/bookmarks.bmk")
 
 ;; Add Emacs new package management system
-(require 'package)
-(add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -171,10 +174,10 @@
 ;;(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 (setq interprogram-paste-function 'x-selection-value)
 
-; Deleting files goes to OS's trash folder
+;; Deleting files goes to OS's trash folder
 (setq delete-by-moving-to-trash t)
 
-; Kill the line including the new line character
+;; Kill the line including the new line character
 (setq kill-whole-line t)
 
 ;; Set up browse-kill-ring.  M-y invokes browse-kill-ring.
@@ -261,6 +264,9 @@
 ;; Setup speedbar config
 (load-file "~/.InitScripts/Emacs/Configs/speedbar_config.el")
 
+;; Setup general project mode
+(load-file "~/.InitScripts/Emacs/Configs/projectile_config.el")
+
 ;; Golden Ratio
 ;;(load-file "~/.InitScripts/Emacs/Configs/goldenratio_config.el")
 
@@ -302,15 +308,17 @@
 ;; Setup syntax highlighting
 (load-file "~/.InitScripts/Emacs/Configs/highlighting_config.el")
 
+;; Setup python
+(load-file "~/.InitScripts/Emacs/Configs/python_config.el")
+
+
 ;; Setup C++ mode
-;;(load-file "~/.InitScripts/Emacs/Configs/cpp_mode2.el")
+(load-file "~/.InitScripts/Emacs/Configs/cpp_mode2.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/cpp_mode.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/cedet_mode_2.el")
 ;; (load-file "~/.InitScripts/Emacs/Configs/new_cedet_mode.el")
-
 (load-file "~/.InitScripts/Emacs/Configs/cpp_keybindings.el")
-
 
 ;; Setup CMake-mode
 (load-file "~/.InitScripts/Emacs/Configs/cmake_mode.el")
