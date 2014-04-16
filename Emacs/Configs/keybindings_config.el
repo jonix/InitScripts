@@ -13,6 +13,12 @@
 ;; Del will delete forward and Backspace will delete backwards
 (normal-erase-is-backspace-mode)
 
+;; For hungry-delete, delete all continous whitespace
+(global-set-key (kbd "C-<delete>") 'c-hungry-delete-forward)
+(global-set-key (kbd "C-<backspace>") 'c-hungry-delete-backwards)
+
+
+
 ;; Help is now M-? instead of C-h
 (global-set-key "\M-\?" 'help-command)
 

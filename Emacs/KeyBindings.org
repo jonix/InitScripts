@@ -64,6 +64,8 @@
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
 ** 'C-x C-d'   Open a dired buffer
+** 'C-<delete>'     Delete forward all continous space
+** 'C-<backspace>'  Delete backward all continous space
 * Misc
 ** `C-h b`    Show bound Keybindings
 ** `C-ct`     Start Pomodoro task
@@ -230,7 +232,7 @@
 *** Artist mode
 **** Draw ascii arts with the mouse withing Emacs using a mouse
 ** IDO Discussion at
-			http://www.masteringemacs.org/articles/2010/10/10/introduction-to-ido-mode/
+	 http://www.masteringemacs.org/articles/2010/10/10/introduction-to-ido-mode/
 * Projectile
 ** C-c p f     - Display a list of all files in the project. With a prefix argument it will clear the cache first.
 ** C-c 4 f     - Jump to a project's file using completion and show it in another window.
