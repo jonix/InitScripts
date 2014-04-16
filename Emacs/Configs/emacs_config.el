@@ -222,15 +222,17 @@
 											(paren-toggle-open-paren-context 1))))
 
 
-(setq flyspell-issue-welcome-flag nil) ;; fix flyspell problem
-;; (setq-default ispell-program-namE "aspell")
-(setq ispell-program-name "/usr/local/bin/aspell")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Behaviour configuration
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;; Setup flsypell
+(load-file "~/.InitScripts/Emacs/Configs/flyspell-config.el")
+(load-file "~/.InitScripts/Emacs/Configs/flyspell-keybindings.el")
 
 
 ;; Setup aliases for M-x functions
@@ -308,8 +310,11 @@
 ;; Setup syntax highlighting
 (load-file "~/.InitScripts/Emacs/Configs/highlighting_config.el")
 
-;; Setup python
+;; Setup Python
 (load-file "~/.InitScripts/Emacs/Configs/python_config.el")
+
+;; Setup Java
+(load-file "~/.InitScripts/Emacs/Configs/java_config.el")
 
 
 ;; Setup C++ mode
