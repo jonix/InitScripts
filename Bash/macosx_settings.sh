@@ -4,6 +4,10 @@
 
 echo "Loading Mac OS X specific settings"
 
+export ANT_HOME="/Users/jonix/Scripts/apache-ant"
+
+export PATH="/Users/jonix/Scripts/apache-ant/bin/:$PATH"
+
 #export PATH="/usr/local/bin:/usr/local/mysql/bin:$PATH"
 #export PATH=/usr/local/mysql/bin:/Applications/MAMP/bin/php5/bin:$PATH:/Users/Jonix/Projects/Work/TopSecret/Mapiton/Native/Pigsty/MacOSX:/Users/Jonix/Scripts:
 
