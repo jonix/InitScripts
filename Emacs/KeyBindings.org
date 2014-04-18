@@ -26,20 +26,20 @@
 ** `C-c.` Go to next error
 ** `C-c,` Go to previous errors
 * Navigational keybindings
-** `C-l NUMBER <RET>` Go to line number in buffer
-** `C-c C-o` Go to file under cursor
-** `M-C-r` Replace text with a regular expression
-** `C-x C-r` Recent file
+** `C-l NUMBER <RET>`  Go to line number in buffer
+** `C-c C-o`           Go to file under cursor
+** `M-C-r`             Replace text with a regular expression
+** `C-x C-r`           Recent file
    Opens a buffer with list of recently opened files where you can navigate to
    by pressing enter on a selected file
-** `C-xg` Toggle between C/C++ implementation file and header file
-** `f5` C++ ebrowse tree mode
-** `C-s C-s` Search again for the same string
-** `C-s C-w` Search for word under cursor. Press C-w to include more words
-** `C-x <SPC> r` Save the position into register 'r'
-** `C-x r j r` Jump back to position stored in register 'r'
-** `C-x C-r` Open recent opened file history dialog
-** `M-p` or `M-n` while in C-x mode to change to previous/next directories from the history
+** `C-xg`              Toggle between C/C++ implementation file and header file
+** `f5`                C++ ebrowse tree mode
+** `C-s C-s`           Search again for the same string
+** `C-s C-w`           Search for word under cursor. Press C-w to include more words
+** `C-x <SPC> r`       Save the position into register 'r'
+** `C-x r j r`         Jump back to position stored in register 'r'
+** `C-x C-r`           Open recent opened file history dialog
+** `M-p` or `M-n`      while in C-x mode to change to previous/next directories from the history
 * Formatting
 ** `C-xx`      Box quote the selection
 ** `C-xX`      Insert file as a box quoted text
@@ -50,7 +50,10 @@
 ** `C-x M-f`   Find file recursively
 ** `C-x r x r` Put region in register r
 ** `C-x r i r` Paste text from register r into buffer at cursor
-** `C-c C-k`   Copy line (instead of killing&yanking)
+** `C-c k`     Copy word
+** `C-c å`     Copy line
+** `C-c C-ä`   Copy sentence
+** `C-c C-ö`   Copy symbol
 ** `C-x r k`   Kill the selected rectangle / column
 ** `C-x r y`   Yank the selected rectangle / column
 ** `C-;`       Comment selected region
@@ -63,7 +66,7 @@
 ** [M-x highlight-phrase] - Highlight all occurrences of the phrase
 ** [M-x whitespace-mode]  - Show invisible characters (tab, space, line feeds)
 *** http://xahlee.org/emacs/whitespace-mode.html
-** 'C-x C-d'   Open a dired buffer
+** 'C-x C-d'        Open a dired buffer
 ** 'C-<delete>'     Delete forward all continous space
 ** 'C-<backspace>'  Delete backward all continous space
 * Misc
