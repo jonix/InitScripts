@@ -308,6 +308,9 @@
 
 ;; Setup TAG file support
 (load-file "~/.InitScripts/Emacs/Configs/etags_config.el")
+;(load-file "~/.InitScripts/Emacs/Configs/gtags_config.el")
+;(load-file "~/.InitScripts/Emacs/Configs/gtags_keybindings.el")
+
 
 ;; Setup Grep replacement
 (load-file "~/.InitScripts/Emacs/Configs/ack_config.el")
