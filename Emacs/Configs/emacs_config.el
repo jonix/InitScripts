@@ -90,7 +90,7 @@
 
 
 ;; Ensure the cursor is top/bottom most when scrolling, I.E the mouse reaches top/bottom of the document
-(require 'fscroll)
+;;(require 'fscroll) ;; For some reason, this made Emacs hang often when scrolling quickly down to the bottom 
 
 ;; move cursor one line when going past end of page
 (setq scroll-step 1)
