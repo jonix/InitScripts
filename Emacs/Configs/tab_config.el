@@ -7,6 +7,8 @@
 ;; (setq-default c-basic-offset 4)
 
 
+;(require 'tabkey2)
+
 ;; === Start >> To tell Emacs to use a sane Tab&Space policy ===
 (setq-default tab-width 2) ; or any other preferred value
 (setq cua-auto-tabify-rectangles nil)
