@@ -64,6 +64,9 @@ extract() {
 }
 
 
+### For ls coloring 
+export LS_OPTIONS="--color=auto"
+alias ls='ls $LS_OPTIONS'
 
 ### For grep coloring ####
 export GREP_OPTIONS='--color=auto'
@@ -85,10 +88,10 @@ PATH=$PATH:~/Scripts:~/Scripts/GitScripts:~/Projects/Work/Mapiton/Native/Pigsty/
 export PATH
 
 
-fortunePath=`which fortune`
+fortunePath=`which fortune 2> /dev/null`
 if [ ! -z $fortunePath ] ; then
 	echo ""
-	echo "-----------"
+	echo "----Fortune Teller-------"
 	fortune
 	echo "-----------"
 	echo ""

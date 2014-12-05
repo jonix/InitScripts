@@ -39,3 +39,6 @@ alias jm='eval cd $(emacsclient -e "(with-current-buffer (window-buffer (frame-s
 
 # For Mac OS
 #alias jm='cd $(emacsclient -e "(with-current-buffer (window-buffer (frame-selected-window)) (expand-file-name default-directory))" | '"sed -E 's/(^\")|(\"$)//g')"
+
+# For compiling pdf files from latex
+alias pdfc='pdflatex -file-line-error -halt-on-error -output-directory /home/jonix/Temp/pdfc'
