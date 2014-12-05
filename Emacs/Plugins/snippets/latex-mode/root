@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Integral symbol
+#name : Square root
 # --
-\int_{$1}^{$2}
+\sqrt{$0}

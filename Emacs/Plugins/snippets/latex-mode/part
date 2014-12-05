@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Integral symbol
+#name : Partiell derivata
 # --
-\int_{$1}^{$2}
+\frac{\partial $1}{\partial $2}$0

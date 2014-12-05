@@ -1,0 +1,9 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Ekvationssystem
+# --
+\\begin\{align*\}
+  \\begin\{cases\}
+	c_1 & c_2 = f \\\\
+	c_2 & c3  = g
+	\\end\{cases\}
+\\end\{align*\}

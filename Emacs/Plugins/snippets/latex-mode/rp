@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Integral symbol
+#name : Right long paranthesis
 # --
-\int_{$1}^{$2}
+\right($1

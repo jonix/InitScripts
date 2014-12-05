@@ -1,4 +1,6 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Integral symbol
+#name : Align equation
 # --
-\int_{$1}^{$2}
+\begin{align*}
+	$0
+\end{align*}

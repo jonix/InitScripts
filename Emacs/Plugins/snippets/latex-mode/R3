@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Integral symbol
+#name : Symbol for reel R^3
 # --
-\int_{$1}^{$2}
+\\mathbb{R}^3

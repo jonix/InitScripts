@@ -1,4 +1,6 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Integral symbol
+#name : begin{sats}...end{sats}
 # --
-\int_{$1}^{$2}
+\begin{sats}
+	$0
+\end{sats}

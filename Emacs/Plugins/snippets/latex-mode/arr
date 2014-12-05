@@ -1,7 +1,7 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
 #name : Array
 # --
-$\begin{pmatrix}
+\begin{pmatrix}
   x & y \\\\
   z & v
-\end{pmatrix}$
+\end{pmatrix}

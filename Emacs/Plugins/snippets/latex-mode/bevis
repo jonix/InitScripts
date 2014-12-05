@@ -1,4 +1,6 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Integral symbol
+#name : begin{bevis}...end{bevis}
 # --
-\int_{$1}^{$2}
+\begin{proof}
+	$0
+\end{proof}

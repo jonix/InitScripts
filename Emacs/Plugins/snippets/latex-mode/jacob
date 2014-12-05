@@ -1,0 +1,11 @@
+#contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
+#name : Jacobian
+# --
+\left|
+{\begin{array}{*{20}c}
+    \frac{\partial x}{\partial u}&
+    \frac{\partial x}{\partial v}&\\\
+    \frac{\partial y}{\partial u}&
+    \frac{\partial y}{\partial v}
+\end{array} }
+\right|

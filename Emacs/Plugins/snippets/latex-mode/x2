@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Integral symbol
+#name : x^2
 # --
-\int_{$1}^{$2}
+x^2

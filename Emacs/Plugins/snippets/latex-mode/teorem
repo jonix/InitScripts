@@ -1,4 +1,6 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Integral symbol
+#name : begin{teorem}...end{teorem}
 # --
-\int_{$1}^{$2}
+\begin{teorem}
+	$1
+\end{teorem}

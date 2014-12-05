@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Integral symbol
+#name : dy (has dep)
 # --
-\int_{$1}^{$2}
+\dif y

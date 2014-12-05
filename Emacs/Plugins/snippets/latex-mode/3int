@@ -1,4 +1,4 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : Integral symbol
+#name : Trippel integral
 # --
-\int_{$1}^{$2}
+\iiint

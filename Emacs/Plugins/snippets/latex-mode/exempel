@@ -1,6 +1,6 @@
 #contributor : Jonatan Andersson (jonatan.andersson@gmail.com)
-#name : \begin{example}...\end{example}
+#name : begin{exempel}...end{exampel}
 # --
-\\begin{exempel}
+\begin{exempel}
 	$0
-\\end{exempel}
+\end{exempel}
